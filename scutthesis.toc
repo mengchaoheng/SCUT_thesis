@@ -1,0 +1,54 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{摘\hskip 1em\relax 要}{I}{chapter*.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Abstract}{II}{chapter*.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{目\hskip 1em\relax 录}{III}{chapter*.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{表格目录}{IV}{chapter*.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{插图目录}{V}{chapter*.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{主要符号对照表}{VI}{chapter*.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{英文缩略词}{VII}{chapter*.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}绪论}{1}{chapter.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}研究背景和意义}{1}{section.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.1}研究背景和意义}{1}{subsection.1.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}模板简介}{2}{chapter.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}主文件}{2}{section.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}章节文件}{4}{section.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}常用环境及参考文献设置}{6}{chapter.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}图}{6}{section.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}表}{8}{section.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}公式}{8}{section.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}定理}{11}{section.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}参考文献}{11}{section.3.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{结\hskip 1em\relax 论}{26}{chapter*.28}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{参考文献}{27}{chapter*.28}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{附\hskip 1em\relax 录}{28}{chapter*.30}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {{附录}1}zotero的安装}{28}{section.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {{附录}2}BibLatex}{28}{section.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{攻读硕士学位期间取得的研究成果}{29}{chapter*.31}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{致\hskip 1em\relax 谢}{30}{chapter*.33}%
+\contentsfinish 
