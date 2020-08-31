@@ -12,5 +12,6 @@ https://github.com/yecfly/scut-thesis
 本模板不再利用Lyx，直接使用TeXstudio进行编辑。
 
 使用之前可有选择性地阅读《一份（不太）简短的LATEX 2ε 介绍》（https://github.com/CTeX-org/lshort-zh-cn.git），
-本模板使用说明在scutthesis.pdf文件。
+本模板使用说明在scutthesis.pdf文件，使用案例为本人的学位论文：
+https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git
 
