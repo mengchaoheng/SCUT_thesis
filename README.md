@@ -1,6 +1,4 @@
-# SCUT_thesis
-华南理工大学硕/博士学位论文LaTeX模板（非官方）
-
+# SCUT_thesis 华南理工大学硕/博士学位论文LaTeX模板（非官方）
 
 本模板由 
 https://github.com/alwintsui/scutthesis 
