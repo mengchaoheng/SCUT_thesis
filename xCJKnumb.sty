@@ -1,0 +1,282 @@
+% This is the file CJKnumb.sty of the CJK package
+%   for typesetting numbers with CJK glyphs.
+%
+% created by Werner Lemberg <wl@gnu.org>
+%
+% Version 4.7.0 (17-Oct-2006)
+%
+%
+% Say e.g. \xCJKnumber{153} to get a CJK representation of this number.
+
+% Copyright (C) 1994-2006  Werner Lemberg <wl@gnu.org>
+%
+% This program is free software; you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation; either version 2 of the License, or
+% (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program in doc/COPYING; if not, write to the Free
+% Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+% MA 02110-1301 USA
+
+\def\fileversion{4.7.0}
+\def\filedate{2006/10/17}
+\ProvidesPackage{xCJKnumb}[\filedate\space\fileversion]
+
+% we suppress any unwanted spaces produced by linefeeds.
+
+\endlinechar \m@ne
+
+% the amount of space to be inserted before and after the circle
+% representing zero
+
+\def\xCJKnullspace{0pt}
+
+% generic number macros. We add them to the CJK encoding hooks.
+
+\def\xCJK@null{\kern\xCJKnullspace无\kern\xCJKnullspace}
+\def\xCJK@zero{零}
+\def\xCJK@one{一}
+\def\xCJK@two{二}
+\def\xCJK@three{三}
+\def\xCJK@four{四}
+\def\xCJK@five{五}
+\def\xCJK@six{六}
+\def\xCJK@seven{七}
+\def\xCJK@eight{八}
+\def\xCJK@nine{九}
+\def\xCJK@ten{十}
+\def\xCJK@hundred{百}
+\def\xCJK@thousand{千}
+\def\xCJK@tenthousand{万}
+\def\xCJK@hundredmillion{亿}
+
+\def\xCJK@minus{负}
+
+\newif\ifxCJK@zero@
+\newif\ifxCJK@previous@
+
+\newif\ifxCJK@null@
+
+\newcount\xCJK@q
+\newcount\xCJK@r
+
+
+\def\xCJK@digit#1{
+  \ifcase #1\relax
+    \ifxCJK@null@ \xCJK@null \else \xCJK@zero \fi \or
+    \xCJK@one \or
+    \xCJK@two \or
+    \xCJK@three \or
+    \xCJK@four \or
+    \xCJK@five \or
+    \xCJK@six \or
+    \xCJK@seven \or
+    \xCJK@eight \or
+    \xCJK@nine
+  \fi}
+
+
+% This macro splits the number in zzyyyyxxxx (2^^31-1 is the largest
+% possible integer in TeX); zz is \xCJK@yi, yyyy is \xCJK@high, and
+% xxxx is \xCJK@low.
+
+\def\xCJK@splitnumber#1{
+  \xCJK@q #1
+  \xCJK@r #1
+
+  \divide\xCJK@q \@M
+  \begingroup
+    \multiply\xCJK@q \@M
+    \advance\xCJK@r -\xCJK@q
+    \ifnum\xCJK@r = \z@
+      \xdef\xCJK@low{}
+    \else
+      \xdef\xCJK@low{\number\xCJK@r}
+    \fi
+  \endgroup
+
+  \ifnum\xCJK@q > \z@
+    \xCJK@r \xCJK@q
+
+    \divide\xCJK@q \@M
+    \begingroup
+      \multiply\xCJK@q \@M
+      \advance\xCJK@r -\xCJK@q
+      \ifnum\xCJK@r = \z@
+        \xdef\xCJK@high{}
+      \else
+        \xdef\xCJK@high{\number\xCJK@r}
+      \fi
+    \endgroup
+
+    \ifnum\xCJK@q > \z@
+      \xdef\xCJK@yi{\number\xCJK@q}
+    \else
+      \xdef\xCJK@yi{}
+    \fi
+  \else
+    \xdef\xCJK@high{}
+    \xdef\xCJK@yi{}
+  \fi
+}
+
+% Here we process four digits
+
+\def\xCJK@processnumber#1{
+  \xCJK@zero@false
+
+  \xCJK@q #1
+  \xCJK@r #1
+
+  \divide\xCJK@q \@m
+  \ifnum\xCJK@q = \z@
+    \ifxCJK@previous@
+      \xCJK@zero@true
+    \fi
+  \else
+    \ifxCJK@zero@
+      \xCJK@zero
+    \fi
+    \xCJK@digit{\xCJK@q}
+    \xCJK@thousand
+    \xCJK@previous@true
+    \xCJK@zero@false
+  \fi
+
+  \multiply\xCJK@q \@m
+  \advance\xCJK@r -\xCJK@q
+  \xCJK@q \xCJK@r
+
+  \divide\xCJK@q 100\relax
+  \ifnum\xCJK@q = \z@
+    \ifxCJK@previous@
+      \xCJK@zero@true
+    \fi
+  \else
+    \ifxCJK@zero@
+      \xCJK@zero
+    \fi
+    \xCJK@digit{\xCJK@q}
+    \xCJK@hundred
+    \xCJK@previous@true
+    \xCJK@zero@false
+  \fi
+
+  \multiply\xCJK@q 100
+  \advance\xCJK@r -\xCJK@q
+  \xCJK@q \xCJK@r
+
+  \divide \xCJK@q 10\relax
+  \ifnum\xCJK@q = \z@
+    \ifxCJK@previous@
+      \xCJK@zero@true
+    \fi
+  \else
+    \ifxCJK@zero@
+      \xCJK@zero
+    \fi
+    \ifnum\xCJK@q = \@ne
+      \ifxCJK@previous@
+        \xCJK@one
+      \fi
+    \else
+      \xCJK@digit{\xCJK@q}
+    \fi
+    \xCJK@ten
+    \xCJK@previous@true
+    \xCJK@zero@false
+  \fi
+
+  \multiply\xCJK@q 10
+  \advance\xCJK@r -\xCJK@q
+
+  \ifnum\xCJK@r = \z@
+  \else
+    \ifxCJK@zero@
+      \xCJK@zero
+    \fi
+    \xCJK@digit{\xCJK@r}
+    \xCJK@previous@true
+  \fi
+}
+
+
+% this command provides a full CJK representation of a number.
+
+\DeclareRobustCommand\xCJKnumber[1]{
+  \xCJK@null@false
+
+  \xCJK@q #1\relax
+
+  \ifnum\xCJK@q < \z@
+    \multiply\xCJK@q \m@ne
+    \xCJK@minus
+    \xCJKkern
+  \fi
+
+  \xCJK@previous@false
+  \xCJK@zero@false
+
+  \ifnum\xCJK@q = \z@
+    \xCJK@zero
+  \else
+    \xCJK@splitnumber{\xCJK@q}
+
+    \ifx\xCJK@yi \@empty
+    \else
+      \xCJK@processnumber{\xCJK@yi}
+      \xCJK@hundredmillion
+    \fi
+
+    \ifx\xCJK@high \@empty
+    \else
+      \xCJK@processnumber{\xCJK@high}
+      \xCJK@tenthousand
+    \fi
+
+    \ifx\xCJK@low \@empty
+    \else
+      \ifx\xCJK@yi \@empty
+      \else
+        \ifx\xCJK@high \@empty
+          \xCJK@zero                 % this catches 100002345
+        \fi
+      \fi
+      \xCJK@processnumber{\xCJK@low}
+    \fi
+  \fi}
+
+
+% this command simply converts the given string into CJK digits.
+
+\DeclareRobustCommand\xCJKdigits[1]{
+  {\xCJK@null@true
+   \edef\xCJK@tempa{}
+   \edef\xCJK@tempb{#1}
+   \ifx\xCJK@tempb \@empty
+   \else
+     \loop
+       \expandafter\xCJK@getDigit\xCJK@tempb\xCJK@stop
+       \xCJK@digit\xCJK@tempa
+       \ifx\xCJK@tempb \@empty
+       \else
+     \repeat
+   \fi}}
+
+\def\xCJK@getDigit#1#2\xCJK@stop{
+  \edef\xCJK@tempa{#1}
+  \edef\xCJK@tempb{#2}}
+
+
+% reset endline character.
+
+\endlinechar `\^^M
+
+\endinput
