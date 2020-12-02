@@ -1,17 +1,20 @@
 [0] Config.pm:304> INFO - This is Biber 2.14
-[0] Config.pm:307> INFO - Logfile is 'scutthesis.blg'
-[130] biber-MSWIN32:322> INFO - === 
-[167] Biber.pm:415> INFO - Reading 'scutthesis.bcf'
-[418] Biber.pm:943> INFO - Found 8 citekeys in bib section 0
-[450] Biber.pm:4256> INFO - Processing section 0
-[451] Utils.pm:75> INFO - Globbing data source 'MyLibrary.bib'
-[471] Utils.pm:91> INFO - Globbed data source 'MyLibrary.bib' to MyLibrary.bib
-[497] Biber.pm:4455> INFO - Looking for bibtex format file 'MyLibrary.bib' for section 0
-[533] bibtex.pm:1653> INFO - LaTeX decoding ...
-[1640] bibtex.pm:1471> INFO - Found BibTeX data source 'MyLibrary.bib'
-[1829] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1829] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1830] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[1830] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
-[1849] bbl.pm:652> INFO - Writing 'scutthesis.bbl' with encoding 'UTF-8'
-[1853] bbl.pm:755> INFO - Output to scutthesis.bbl
+[1] Config.pm:307> INFO - Logfile is 'scutthesis.blg'
+[104] biber-MSWIN32:322> INFO - === 
+[140] Biber.pm:415> INFO - Reading 'scutthesis.bcf'
+[323] Biber.pm:943> INFO - Found 10 citekeys in bib section 0
+[345] Biber.pm:4256> INFO - Processing section 0
+[346] Utils.pm:75> INFO - Globbing data source 'MyLibrary.bib'
+[357] Utils.pm:91> INFO - Globbed data source 'MyLibrary.bib' to MyLibrary.bib
+[373] Biber.pm:4455> INFO - Looking for bibtex format file 'MyLibrary.bib' for section 0
+[408] bibtex.pm:1653> INFO - LaTeX decoding ...
+[1226] bibtex.pm:1471> INFO - Found BibTeX data source 'MyLibrary.bib'
+[1345] Utils.pm:304> WARN - I didn't find a database entry for '_b' (section 0)
+[1346] Utils.pm:304> WARN - I didn't find a database entry for '_f' (section 0)
+[1358] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1358] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1358] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[1358] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[1371] bbl.pm:652> INFO - Writing 'scutthesis.bbl' with encoding 'UTF-8'
+[1375] bbl.pm:755> INFO - Output to scutthesis.bbl
+[1387] Biber.pm:128> INFO - WARNINGS: 2
