@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.9.27)  2 DEC 2020 14:15
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.9.27)  2 DEC 2020 14:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1743,11 +1743,11 @@ Package logreq Info: Writing requests to 'scutthesis.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  32948 strings out of 479418
- 612412 string characters out of 5888105
- 1513669 words of memory out of 5000000
+ 612415 string characters out of 5888105
+ 1513671 words of memory out of 5000000
  49904 multiletter control sequences out of 15000+600000
  543624 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,16n,86p,1155b,5046s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,16n,86p,1155b,5032s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on scutthesis.pdf (39 pages).
