@@ -234,47 +234,56 @@
       \range{pages}{21}
       \keyw{Renduchintala_2019}
     \endentry
-    \entry{Dai_2020}{online}{}
-      \name{author}{1}{}{%
-        {{hash=4c35278ef35e38bc8a810c6420184f56}{%
-           family={戴刘伟},
-           familyi={戴\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {燕山大学}%
+    \entry{Meng_2020}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6f3b8633c25711343c452735457929be}{%
+           family={蒙超恒},
+           familyi={蒙\bibinitperiod}}}%
+        {{hash=8a919cf115e29f46a3f9b5ba0f510dc7}{%
+           family={裴海龙},
+           familyi={裴\bibinitperiod}}}%
+        {{hash=57e689cea7d7507c01cdcb73620b3c23}{%
+           family={程子欢},
+           familyi={程\bibinitperiod}}}%
       }
       \list{language}{1}{%
         {chinese}%
       }
-      \strng{namehash}{4c35278ef35e38bc8a810c6420184f56}
-      \strng{fullhash}{4c35278ef35e38bc8a810c6420184f56}
-      \strng{bibnamehash}{4c35278ef35e38bc8a810c6420184f56}
-      \strng{authorbibnamehash}{4c35278ef35e38bc8a810c6420184f56}
-      \strng{authornamehash}{4c35278ef35e38bc8a810c6420184f56}
-      \strng{authorfullhash}{4c35278ef35e38bc8a810c6420184f56}
+      \strng{namehash}{d359ea426fe515c9b3170a86b7ec2608}
+      \strng{fullhash}{34bcf01dda9960b56d3e5eb2279fdf5c}
+      \strng{bibnamehash}{34bcf01dda9960b56d3e5eb2279fdf5c}
+      \strng{authorbibnamehash}{34bcf01dda9960b56d3e5eb2279fdf5c}
+      \strng{authornamehash}{d359ea426fe515c9b3170a86b7ec2608}
+      \strng{authorfullhash}{34bcf01dda9960b56d3e5eb2279fdf5c}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{issn}{1000-6893}
+      \field{journaltitle}{航空学报}
       \field{langid}{中文;}
       \field{lansortorder}{1}
-      \field{title}{四旋翼飞行器的姿态平台设计及其控制}
+      \field{number}{10}
+      \field{title}{涵道风扇式无人机的优先级控制分配}
       \field{urlday}{2}
       \field{urlmonth}{12}
       \field{urlyear}{2020}
-      \field{usera}{D}
+      \field{usera}{J}
       \field{userd}{chinese}
       \field{userf}{chinese}
+      \field{volume}{41}
       \field{year}{2020}
       \field{dateera}{ce}
       \field{urldateera}{ce}
+      \field{pages}{327\bibrangedash 338}
+      \range{pages}{12}
       \verb{urlraw}
-      \verb https://kns.cnki.net/KNS8/Detail?sfield=fn&QueryID=0&CurRec=1&recid=&FileName=1020342583.nh&DbName=CMFDTEMP&DbCode=CMFD&yx=&pr=&URLID=
+      \verb https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2020&filename=HKXB202010026&v=H33nFWoKPiMVe8lDuZG26q9EEFHrc40qK0CS6t2FdhaWKR8ppb9it6SMeovM2l8e
       \endverb
       \verb{url}
-      \verb https://kns.cnki.net/KNS8/Detail?sfield=fn&QueryID=0&CurRec=1&recid=&FileName=1020342583.nh&DbName=CMFDTEMP&DbCode=CMFD&yx=&pr=&URLID=
+      \verb https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2020&filename=HKXB202010026&v=H33nFWoKPiMVe8lDuZG26q9EEFHrc40qK0CS6t2FdhaWKR8ppb9it6SMeovM2l8e
       \endverb
-      \keyw{Dai_2020}
+      \keyw{Meng_2020}
     \endentry
   \enddatalist
   \missing{_b}
