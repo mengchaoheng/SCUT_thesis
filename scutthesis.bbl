@@ -20,13 +20,18 @@
 \refsection{0}
   \datalist[entry]{none/global//global/global}
     \entry{_}{online}{}
+      \list{institution}{1}{%
+        {GitHub}%
+      }
       \list{language}{1}{%
         {english}%
+      }
+      \list{organization}{1}{%
+        {GitHub}%
       }
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{GitHub}
       \field{langid}{english}
       \field{lansortorder}{4}
       \field{title}{Alwintsui - {{Overview}}}
@@ -45,13 +50,18 @@
       \keyw{_}
     \endentry
     \entry{_a}{online}{}
+      \list{institution}{1}{%
+        {GitHub}%
+      }
       \list{language}{1}{%
         {english}%
+      }
+      \list{organization}{1}{%
+        {GitHub}%
       }
       \field{sortinit}{2}
       \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{GitHub}
       \field{langid}{english}
       \field{lansortorder}{4}
       \field{title}{Yecfly - {{Overview}}}
@@ -69,14 +79,19 @@
       \endverb
       \keyw{_a}
     \endentry
-    \entry{_b}{online}{}
+    \entry{_c}{online}{}
+      \list{institution}{1}{%
+        {始终}%
+      }
       \list{language}{1}{%
         {chinese}%
       }
-      \field{sortinit}{3}
-      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \list{organization}{1}{%
+        {始终}%
+      }
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{始终}
       \field{langid}{pinyin}
       \field{lansortorder}{1}
       \field{title}{一份其实很短的 LaTeX 入门文档}
@@ -92,110 +107,38 @@
       \verb{url}
       \verb https://liam.page/2014/09/08/latex-introduction/index.html
       \endverb
-      \keyw{_b}
-    \endentry
-    \entry{_c}{online}{}
-      \list{language}{1}{%
-        {english}%
-      }
-      \field{sortinit}{4}
-      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
-      \field{labeltitlesource}{title}
-      \field{langid}{english}
-      \field{lansortorder}{4}
-      \field{title}{{{CTAN}}: {{Package}} Lshort-Zh-Cn}
-      \field{urlday}{18}
-      \field{urlmonth}{6}
-      \field{urlyear}{2020}
-      \field{usera}{EB}
-      \field{userd}{english}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://ctan.org/pkg/lshort-zh-cn
-      \endverb
-      \verb{url}
-      \verb https://ctan.org/pkg/lshort-zh-cn
-      \endverb
       \keyw{_c}
-    \endentry
-    \entry{_f}{online}{}
-      \list{language}{1}{%
-        {english}%
-      }
-      \field{sortinit}{5}
-      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
-      \field{labeltitlesource}{title}
-      \field{langid}{english}
-      \field{lansortorder}{4}
-      \field{title}{Zotero | {{Downloads}}}
-      \field{urlday}{18}
-      \field{urlmonth}{6}
-      \field{urlyear}{2020}
-      \field{usera}{EB}
-      \field{userd}{english}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.zotero.org/download/
-      \endverb
-      \verb{url}
-      \verb https://www.zotero.org/download/
-      \endverb
-      \keyw{_f}
     \endentry
     \entry{_e}{online}{}
       \list{language}{1}{%
-        {japanese}%
+        {chinese}%
       }
       \field{sortinit}{6}
       \field{sortinithash}{7851c86048328b027313775d8fbd2131}
       \field{labeltitlesource}{title}
       \field{langid}{english}
-      \field{lansortorder}{2}
-      \field{title}{Struggle\_with\_me的个人空间 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯\textasciitilde{} {{Bilibili}}}
-      \field{urlday}{18}
+      \field{lansortorder}{1}
+      \field{title}{[转载]{{LaTeX技巧心得246}}：latex目录标题常用宏包说明与示例\_天外天\_新浪博客}
+      \field{urlday}{20}
       \field{urlmonth}{6}
       \field{urlyear}{2020}
       \field{usera}{EB}
-      \field{userd}{japanese}
+      \field{userd}{chinese}
       \field{urldateera}{ce}
       \verb{urlraw}
-      \verb https://space.bilibili.com/452736484?from=search&seid=12208069428001748893
+      \verb http://blog.sina.com.cn/s/blog_46e9834e0100hzio.html
       \endverb
       \verb{url}
-      \verb https://space.bilibili.com/452736484?from=search&seid=12208069428001748893
+      \verb http://blog.sina.com.cn/s/blog_46e9834e0100hzio.html
       \endverb
       \keyw{_e}
     \endentry
     \entry{_d}{online}{}
       \list{language}{1}{%
-        {english}%
+        {chinese}%
       }
       \field{sortinit}{7}
       \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
-      \field{labeltitlesource}{title}
-      \field{langid}{english}
-      \field{lansortorder}{4}
-      \field{title}{Mathpix {{Snip}}}
-      \field{urlday}{18}
-      \field{urlmonth}{6}
-      \field{urlyear}{2020}
-      \field{usera}{EB}
-      \field{userd}{english}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://mathpix.com/
-      \endverb
-      \verb{url}
-      \verb https://mathpix.com/
-      \endverb
-      \keyw{_d}
-    \endentry
-    \entry{_i}{online}{}
-      \list{language}{1}{%
-        {chinese}%
-      }
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labeltitlesource}{title}
       \field{langid}{english}
       \field{lansortorder}{1}
@@ -212,9 +155,130 @@
       \verb{url}
       \verb https://www.latexstudio.net/archives/4800.html
       \endverb
+      \keyw{_d}
+    \endentry
+    \entry{_i}{online}{}
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labeltitlesource}{title}
+      \field{langid}{pinyin}
+      \field{lansortorder}{1}
+      \field{title}{Overleaf, 在线LaTeX编辑器}
+      \field{urlday}{21}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{usera}{EB}
+      \field{userd}{chinese}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.overleaf.com
+      \endverb
+      \verb{url}
+      \verb https://www.overleaf.com
+      \endverb
       \keyw{_i}
     \endentry
+    \entry{Renduchintala_2019}{article}{}
+      \name{author}{4}{}{%
+        {{hash=c34d4d5c239afd79bdb802e69c1908e6}{%
+           family={Renduchintala},
+           familyi={R\bibinitperiod},
+           given={Ankit},
+           giveni={A\bibinitperiod}}}%
+        {{hash=06f4f6e69e6d9a8fc12628aa4b6b6f2b}{%
+           family={Jahan},
+           familyi={J\bibinitperiod},
+           given={Farha},
+           giveni={F\bibinitperiod}}}%
+        {{hash=5c278b6a9f60b26731f891f6dbb5c3bd}{%
+           family={Khanna},
+           familyi={K\bibinitperiod},
+           given={Raghav},
+           giveni={R\bibinitperiod}}}%
+        {{hash=3fe1e2489a99c26f9efd321599859f49}{%
+           family={Javaid},
+           familyi={J\bibinitperiod},
+           given={Ahmad\bibnamedelima Y.},
+           giveni={A\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{56f67436246206eb81bc0cc3d5181734}
+      \strng{fullhash}{a89e9e8fd071e4068e5e61a4d9d9dd92}
+      \strng{bibnamehash}{94154cb56226e57a6c5f0ce5432e619c}
+      \strng{authorbibnamehash}{94154cb56226e57a6c5f0ce5432e619c}
+      \strng{authornamehash}{56f67436246206eb81bc0cc3d5181734}
+      \strng{authorfullhash}{a89e9e8fd071e4068e5e61a4d9d9dd92}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Digital Investigation}
+      \field{langid}{english}
+      \field{lansortorder}{4}
+      \field{title}{A Comprehensive Micro Unmanned Aerial Vehicle ({{UAV}}/{{Drone}}) Forensic Framework}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{30}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{pages}{52\bibrangedash 72}
+      \range{pages}{21}
+      \keyw{Renduchintala_2019}
+    \endentry
+    \entry{Dai_2020}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4c35278ef35e38bc8a810c6420184f56}{%
+           family={戴刘伟},
+           familyi={戴\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {燕山大学}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{4c35278ef35e38bc8a810c6420184f56}
+      \strng{fullhash}{4c35278ef35e38bc8a810c6420184f56}
+      \strng{bibnamehash}{4c35278ef35e38bc8a810c6420184f56}
+      \strng{authorbibnamehash}{4c35278ef35e38bc8a810c6420184f56}
+      \strng{authornamehash}{4c35278ef35e38bc8a810c6420184f56}
+      \strng{authorfullhash}{4c35278ef35e38bc8a810c6420184f56}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{中文;}
+      \field{lansortorder}{1}
+      \field{title}{四旋翼飞行器的姿态平台设计及其控制}
+      \field{urlday}{2}
+      \field{urlmonth}{12}
+      \field{urlyear}{2020}
+      \field{usera}{D}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://kns.cnki.net/KNS8/Detail?sfield=fn&QueryID=0&CurRec=1&recid=&FileName=1020342583.nh&DbName=CMFDTEMP&DbCode=CMFD&yx=&pr=&URLID=
+      \endverb
+      \verb{url}
+      \verb https://kns.cnki.net/KNS8/Detail?sfield=fn&QueryID=0&CurRec=1&recid=&FileName=1020342583.nh&DbName=CMFDTEMP&DbCode=CMFD&yx=&pr=&URLID=
+      \endverb
+      \keyw{Dai_2020}
+    \endentry
   \enddatalist
+  \missing{_b}
+  \missing{_f}
 \endrefsection
 \endinput
 

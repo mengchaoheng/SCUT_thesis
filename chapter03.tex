@@ -241,9 +241,18 @@ A= \begin{bmatrix}
 
 定理环境的编号可自定义，但通常不需要再进行设置，因为模板文件scutthesis.cls文件已经定义好。
 \section{参考文献}
+
+\begin{lstlisting}
+关于参考文献这块，很多同学有疑问。只有记住一点：不管用什么参考文献管理工具，最终目的是生成一个bib文件给TeXstudio使用，bib文件里是特定格式的文献信息。bib文件可以使用一个叫notepad++的软件打开。
+\end{lstlisting}
+
 通常学位论文参考文献是基于BibTeX进行的，本模板最大的改进就是引入BibLaTeX。关于这部分知识可参考文献\cite{_c}的第六章，6.1节参考文献和BIBTEX工具。
 
-参考文献引用和著录是基于ZOTERO这个软件进行的。视频教程见\parencite{_e}。此外，为了符合毕业论文撰写规范，需设置参数。按照视频教程安装完必要的插件（如Better BibTeX）后，在编辑->首选项进行设置。图\ref{op1}到图\ref{op11}所示的是我的zotero软件设置。
+参考文献引用和著录是基于ZOTERO这个软件进行的。视频教程见\parencite{_e}。此外，为了符合毕业论文撰写规范，需设置参数。按照视频教程安装完必要的插件（如Better BibTeX）后，在编辑->首选项进行设置。附录图\ref{op1}到图\ref{op11}所示的是我的zotero软件设置。其中最重要的是\ref{op10}的设置，month,abstract,note,extra,file,keywords,type,doi是要排除的选项，多余的显示会让审稿人反感，按照论文撰写规范进行即可。
+
+\begin{lstlisting}
+使用zotero，科学上网很重要，通常我们使用谷歌学术搜索文献并利用chrome的zotero插件直接捕获文献著录信息。但我使用蓝灯，代理服务器均遇到过被谷歌学术封锁的情况。只能不断换科学上网方法。这里我现在用的chrome插件：谷歌上网助手，它可以轻松捕获谷歌学术的著录信息，注册一个账号即可使用。谷歌上网助手有可能和某些代理冲突。这些都是科学上网的问题，已经超出了本项目的范围，听说百度一下 v2ray 可发现新大陆，可惜我试了Vultr的服务器依然被谷歌封。知网捕获中文参考文献著录信息的话不需要考虑这个问题，直接在知网首页搜索文献然后点击插件既可以选想捕获的著录了。
+\end{lstlisting}
 
 在zotero软件点击文件->导出文献库，如图\ref{output}所示，再在导出对话框图\ref{output_format}选择导出格式为Better BibLaTeX，同时勾选Keep updated选项保持自动更新，再点击ok，在弹出的对话框图\ref{output_name}确定保存路径和文件名，例如我的是MyLibrary.bib，这也是我整个读书生涯的文献库bib文件。如果写小论文的话通常导出格式是BibTeX或者Better BibTeX（这里按照期刊的要求来即可，文献管理软件的好处就是快速自动生成一个文件库）。关于BibTeX和BibLaTeX的区别这里不做展开。
 
@@ -251,79 +260,18 @@ A= \begin{bmatrix}
 
 值得注意的是，在毕业论文撰写时，在编辑->首选项->Better BibLTeX->Fields中，Fields to omit from export填month,abstract,note,extra,file,keywords,type,url,doi，就是在参考文献著录中排除这些多余的项，避免过于复杂。而在写本模板使用说明时，没有排除url，因为很多参考资料是网页。
 
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.8]{Fig/zotero1.png}
-	\caption{\label{op1}常规}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.8]{Fig/zotero2.png}
-	\caption{\label{op2}同步1}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.8]{Fig/zotero3.png}
-	\caption{\label{op3}同步2}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.8]{Fig/zotero4.png}
-	\caption{\label{op4}搜索}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.8]{Fig/zotero5.png}
-	\caption{\label{op5}导出}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.8]{Fig/zotero6.png}
-	\caption{\label{op6}引用}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.8]{Fig/zotero7.png}
-	\caption{\label{op7}高级1}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.8]{Fig/zotero8.png}
-	\caption{\label{op8}高级2}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.8]{Fig/zotero9.png}
-	\caption{\label{op9}Better BibTeX1}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.8]{Fig/zotero10.png}
-	\caption{\label{op10}Better BibTeX2}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.8]{Fig/zotero11.png}
-	\caption{\label{op11}Better BibTeX3}
-\end{figure}
+---------------------------------------------------------------------------------
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.42]{Fig/zotero12.png}
-	\caption{\label{output}导出文献库}
-\end{figure}
+2020年12月2日测试：
+下载最新zotero，从知网和谷歌捕获文献（刚打开网页最好稍等一会再点击插件，谷歌可能需要现人机验证），对文献\parencite{Renduchintala_2019}、\parencite{Dai_2020}进行引用。
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.42]{Fig/zotero13.png}
-	\caption{\label{output_format}导出格式}
-\end{figure}
+---------------------------------------------------------------------------------
+\begin{lstlisting}
+另外有同学反映，换了电脑后重新导出的bib文件Citation Key值不同，记得设置好Better BibTeX之后，在著录条目界面全选著录（或仅选想更新的著录）然后右键选Better BibTeX更新refresh一下。然后在Automatic export选项点击Export now立即更新bib文件（按理说勾选了自动更新选项他会自动更新，但为了确保万无一失还是点一下）。
+\end{lstlisting}
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.42]{Fig/zotero14.png}
-	\caption{\label{output_name}导出文件名}
-\end{figure}
+
+
 
 
 
