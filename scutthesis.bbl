@@ -79,6 +79,30 @@
       \endverb
       \keyw{_a}
     \endentry
+    \entry{_g}{online}{}
+      \list{language}{1}{%
+        {english}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{lansortorder}{4}
+      \field{title}{{{CTAN}}: {{Package}} Lshort-Zh-Cn}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{usera}{EB}
+      \field{userd}{english}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://ctan.org/pkg/lshort-zh-cn
+      \endverb
+      \verb{url}
+      \verb https://ctan.org/pkg/lshort-zh-cn
+      \endverb
+      \keyw{_g}
+    \endentry
     \entry{_c}{online}{}
       \list{institution}{1}{%
         {始终}%
@@ -109,36 +133,84 @@
       \endverb
       \keyw{_c}
     \endentry
-    \entry{_e}{online}{}
+    \entry{_m}{online}{}
       \list{language}{1}{%
-        {chinese}%
+        {english}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Zotero | {{Downloads}}}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{usera}{EB}
+      \field{userd}{english}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.zotero.org/download/
+      \endverb
+      \verb{url}
+      \verb https://www.zotero.org/download/
+      \endverb
+      \keyw{_m}
+    \endentry
+    \entry{_k}{online}{}
+      \list{language}{1}{%
+        {japanese}%
       }
       \field{sortinit}{6}
       \field{sortinithash}{7851c86048328b027313775d8fbd2131}
       \field{labeltitlesource}{title}
       \field{langid}{english}
-      \field{lansortorder}{1}
-      \field{title}{[转载]{{LaTeX技巧心得246}}：latex目录标题常用宏包说明与示例\_天外天\_新浪博客}
-      \field{urlday}{20}
+      \field{lansortorder}{2}
+      \field{title}{Struggle\_with\_me的个人空间 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯\textasciitilde{} {{Bilibili}}}
+      \field{urlday}{18}
       \field{urlmonth}{6}
       \field{urlyear}{2020}
       \field{usera}{EB}
-      \field{userd}{chinese}
+      \field{userd}{japanese}
       \field{urldateera}{ce}
       \verb{urlraw}
-      \verb http://blog.sina.com.cn/s/blog_46e9834e0100hzio.html
+      \verb https://space.bilibili.com/452736484?from=search&seid=12208069428001748893
       \endverb
       \verb{url}
-      \verb http://blog.sina.com.cn/s/blog_46e9834e0100hzio.html
+      \verb https://space.bilibili.com/452736484?from=search&seid=12208069428001748893
       \endverb
-      \keyw{_e}
+      \keyw{_k}
+    \endentry
+    \entry{_h}{online}{}
+      \list{language}{1}{%
+        {english}%
+      }
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Mathpix {{Snip}}}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{usera}{EB}
+      \field{userd}{english}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://mathpix.com/
+      \endverb
+      \verb{url}
+      \verb https://mathpix.com/
+      \endverb
+      \keyw{_h}
     \endentry
     \entry{_d}{online}{}
       \list{language}{1}{%
         {chinese}%
       }
-      \field{sortinit}{7}
-      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labeltitlesource}{title}
       \field{langid}{english}
       \field{lansortorder}{1}
@@ -156,30 +228,6 @@
       \verb https://www.latexstudio.net/archives/4800.html
       \endverb
       \keyw{_d}
-    \endentry
-    \entry{_i}{online}{}
-      \list{language}{1}{%
-        {chinese}%
-      }
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
-      \field{labeltitlesource}{title}
-      \field{langid}{pinyin}
-      \field{lansortorder}{1}
-      \field{title}{Overleaf, 在线LaTeX编辑器}
-      \field{urlday}{21}
-      \field{urlmonth}{6}
-      \field{urlyear}{2020}
-      \field{usera}{EB}
-      \field{userd}{chinese}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.overleaf.com
-      \endverb
-      \verb{url}
-      \verb https://www.overleaf.com
-      \endverb
-      \keyw{_i}
     \endentry
     \entry{Renduchintala_2019}{article}{}
       \name{author}{4}{}{%
@@ -286,8 +334,6 @@
       \keyw{Meng_2020}
     \endentry
   \enddatalist
-  \missing{_b}
-  \missing{_f}
 \endrefsection
 \endinput
 
