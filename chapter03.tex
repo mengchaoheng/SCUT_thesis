@@ -192,9 +192,10 @@ split 环境和aligned 环境用法类似，也用于和equation 环境套用，
 分段函数通常用amsmath 宏包提供的cases 环境，可参考文献\parencite{_c}
 
 amsmath 宏包还直接提供了多种排版矩阵的环境，包括不带定界符的matrix，以及带各种定界符的矩阵pmatrix、bmatrix、Bmatrix、vmatrix、Vmatrix。
-其中中括号版的bmatrix最常用。这些矩阵环境需要在公式中使用，比如 align 环境。
+其中中括号版的bmatrix最常用。这些矩阵环境需要在公式中使用，比如 gather 环境。
 \begin{lstlisting}
-A= \begin{bmatrix}
+\begin{gather}
+	A= \begin{bmatrix}
 		x_{11} & x_{12} & \ldots & x_{1n} \\
 		x_{21} & x_{22} & \ldots & x_{2n} \\
 		\vdots & \vdots & \ddots & \vdots \\
