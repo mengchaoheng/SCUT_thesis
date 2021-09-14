@@ -7,6 +7,7 @@
 %参考文献设置
 \usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase]{biblatex}
 \addbibresource[location=local]{MyLibrary.bib} % 如果在其他盘，改为相对路径。比如F盘，改为：F/MyLibrary.bib
+\addbibresource[location=local]{mybibfile2.bib} % 实测从endnote导出的bib文件也可以使用此模板
 %页眉页脚设置
 \usepackage{fancyhdr}
 \usepackage{listings}
@@ -88,7 +89,12 @@
 	\addcontentsline{toc}{chapter}{参考文献}	%目录中添加参考文献
 	\printbibliography	% 参考文献著录
  	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\include{appendix} %附录
+ 	% 只有一个附录
+% 	\include{appendix}
+ 	% 有多个附录
+	\include{appendix1} %附录1
+	\include{appendix2} %附录2
+ 	%%%%%%%%%%%%%%%%%%%
 	\include{pub} %成果
 	\include{ack} %致谢
 \end{document}
