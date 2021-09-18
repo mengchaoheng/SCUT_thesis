@@ -205,52 +205,6 @@
       \endverb
       \keyw{_h}
     \endentry
-    \entry{RN39}{inbook}{}
-      \name{author}{2}{}{%
-        {{hash=062227064112b1d2f766429b8d08086a}{%
-           family={Johnson},
-           familyi={J\bibinitperiod},
-           given={Eric},
-           giveni={E\bibinitperiod}}}%
-        {{hash=a64c217db71264577afb5d5e15a00223}{%
-           family={Turbe},
-           familyi={T\bibinitperiod},
-           given={Michael},
-           giveni={M\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \list{publisher}{2}{%
-        {American Institute of Aeronautics}%
-        {Astronautics}%
-      }
-      \strng{namehash}{89a43cbec72031f3a7c6a9cf86424d46}
-      \strng{fullhash}{3045f6212e3a4c9cbcfe451da64a562b}
-      \strng{bibnamehash}{3045f6212e3a4c9cbcfe451da64a562b}
-      \strng{authorbibnamehash}{3045f6212e3a4c9cbcfe451da64a562b}
-      \strng{authornamehash}{89a43cbec72031f3a7c6a9cf86424d46}
-      \strng{authorfullhash}{3045f6212e3a4c9cbcfe451da64a562b}
-      \field{sortinit}{9}
-      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{AIAA Guidance, Navigation, and Control Conference and Exhibit}
-      \field{langid}{english}
-      \field{lansortorder}{4}
-      \field{series}{Guidance, Navigation, and Control and Co-located Conferences}
-      \field{title}{Modeling, Control, and Flight Testing of a Small Ducted Fan Aircraft}
-      \field{type}{Book Section}
-      \field{usera}{M}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{year}{2005}
-      \field{dateera}{ce}
-      \verb{doi}
-      \verb 10.2514/6.2005-6281
-      \endverb
-      \keyw{RN39}
-    \endentry
     \entry{_d}{online}{}
       \list{language}{1}{%
         {chinese}%
