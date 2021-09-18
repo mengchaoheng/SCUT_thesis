@@ -12,7 +12,7 @@
 	\centering	
 	% 包含当前路径下的Fig文件夹的图片文件DFUAV_f31.png
 	\includegraphics[scale=1]{Fig/DFUAV_f31.png} 
-	% 添加标签one_DFUAV以及图标题“涵道风扇式无人机”，标题编号是自动生成的
+	% 添加标签one_DFUAV以及图标题“涵道风扇式无人机”，引用某图时使用\ref{xxx}，其中xxx就是标签，图编号是自动生成的。
 	\caption{\label{one_DFUAV}涵道风扇式无人机} 
 \end{figure}
 \end{lstlisting}
@@ -72,6 +72,57 @@
 		\caption{\label{GTSpy}GTSpy}
 	\end{minipage}
 \end{figure}
+
+
+通常一个figure内含有其他小的figure,可以使用一些宏包，但最初本着简单的原则，本模板并没有使用这些子图包。后来应同学们要求在，把子图的功能加上，主要是修改了模板文件（scutthesis.cls文件）的功能包参数。注意，很多网上拿到的代码不一定可以精确的调子图标题字体字号，因为此模板的子图标题字体字号是利用subfig宏包的选项进行设置的（在scutthesis.cls文件的“图表环境”中），而有些教程使用subcaption进行同样的设置，还需进一步验证可行性。另外图的排版方法很多，有些宏包已经被弃用，所以尽量使用本文给出的案例的格式进行排版图片。
+
+常见的子图包有subfigure和subfig。subfigure是比较老的了，这里使用subfig包。两个包在使用的时候用法不同，千万不要混淆了，不然可能会报错。subfig包的命令是\textbackslash{}subfloat。这里给出一种使用subfig包的常用排版，如图\ref{Fig:1}的子图\subref{Fig:1:b}，其中\subref*{Fig:1:a}的试验并不好（这里测试了交叉引用\textbackslash{}subref\{xxx\}和\textbackslash{}subref*\{xxx\}）。必要时也可以排版多行多列的图、调整图之间的间距，具体可百度。
+
+\begin{lstlisting}
+\begin{figure}[!h]
+	\centering
+	\subfloat[不合理的轨迹]{\includegraphics[width=6cm,height=6cm]{Fig/Figure_1.png}%
+		\label{Fig:1:a}}
+	\subfloat[优化的轨迹]{\includegraphics[width=6cm,height=6cm]{Fig/Figure_2.png}
+		\label{Fig:1:b}}
+	\\ % 用 \\ 换行，也可以此处空一行进行换行，只有两个图的话下面就不需要了。
+	\subfloat[不合理的轨迹]{\includegraphics[width=6cm,height=6cm]{Fig/Figure_1.png}%
+		\label{Fig:1:c}}
+	\subfloat[优化的轨迹]{\includegraphics[width=6cm,height=6cm]{Fig/Figure_2.png}%
+		\label{Fig:1:d}}
+	\caption{子图包使用测试}\label{Fig:1}
+\end{figure}
+----------------------------------------------------------
+% 引用某子图时使用\subref{xxx}，其中xxx就是标签Fig:1:a
+子图的引用比较特殊，命令有：\subref{xxx}和\subref*{xxx}
+注：在subfig包使用说明中，\subref{xxx}和\subref*{xxx}分别由参数listofformat和subrefformat控制，
+并由如下定义，根据撰写规范需要定义为：
+\DeclareSubrefFormat{empty}{}
+\DeclareSubrefFormat{simple}{#1#2}
+\DeclareSubrefFormat{parens}{#1 #2)}
+\DeclareSubrefFormat{subsimple}{#2}
+\DeclareSubrefFormat{subparens}{ #2)}
+和
+\DeclareCaptionListOfFormat{empty}{}
+\DeclareCaptionListOfFormat{simple}{#1#2}
+\DeclareCaptionListOfFormat{parens}{#1 #2)}
+\DeclareCaptionListOfFormat{subsimple}{#2}
+\DeclareCaptionListOfFormat{subparens}{ #2)}
+\end{lstlisting}
+\begin{figure}[!h]
+	\centering
+	\subfloat[不合理的轨迹]{\includegraphics[width=6cm,height=6cm]{Fig/Figure_1.png}%
+		\label{Fig:1:a}}
+	\subfloat[优化的轨迹]{\includegraphics[width=6cm,height=6cm]{Fig/Figure_2.png}
+ 		\label{Fig:1:b}}
+	\\ % 用 \\ 换行，也可以此处空一行进行换行
+	\subfloat[不合理的轨迹]{\includegraphics[width=6cm,height=6cm]{Fig/Figure_1.png}%
+		\label{Fig:1:c}}
+	\subfloat[优化的轨迹]{\includegraphics[width=6cm,height=6cm]{Fig/Figure_2.png}%
+		\label{Fig:1:d}}
+	\caption{子图包使用测试}\label{Fig:1}
+\end{figure}
+
 \section{表}
 本节仅展示使用常见的三线表
 \begin{lstlisting}
@@ -257,7 +308,7 @@ amsmath 宏包还直接提供了多种排版矩阵的环境，包括不带定界
 
 在zotero软件点击文件->导出文献库，如图\ref{output}所示，再在导出对话框图\ref{output_format}选择导出格式为Better BibLaTeX，同时勾选Keep updated选项保持自动更新，再点击ok，在弹出的对话框图\ref{output_name}确定保存路径和文件名，例如我的是MyLibrary.bib，这也是我整个读书生涯的文献库bib文件。如果写小论文的话通常导出格式是BibTeX或者Better BibTeX（这里按照期刊的要求来即可，文献管理软件的好处就是快速自动生成一个文件库）。关于BibTeX和BibLaTeX的区别这里不做展开。
 
-得到文献库后，在scutthesis.tex文件第九行使用\textbackslash{}addbibresource命令，添加文献库。引用某文献时秩序在zotero选中某文献条目，然后按Ctrl+Shift+C，复制引用关键字（Citation Key）到剪切板（快捷键可自定义）。然后在tex文件编辑界面直接粘贴，默认的时上标形式，若需要非上标形式，可以改为\textbackslash{}parencite{XXXX}，其中XXXX是Citation Key。这里的操作和认为设置的首选项参数有关，需要在编辑->首选项->导出界面的默认格式一栏选中相应的项，同时在编辑->首选项->高级->快捷键设置为默认值。
+得到文献库后，在scutthesis.tex文件第九行使用\textbackslash{}addbibresource命令，添加文献库。引用某文献时秩序在zotero选中某文献条目，然后按Ctrl+Shift+C，复制引用关键字（Citation Key）到剪切板（快捷键可自定义）。然后在tex文件编辑界面直接粘贴，默认的时上标形式，若需要非上标形式，可以改为\textbackslash{}parencite\{xxx\}，其中xxx是Citation Key。这里的操作和认为设置的首选项参数有关，需要在编辑->首选项->导出界面的默认格式一栏选中相应的项，同时在编辑->首选项->高级->快捷键设置为默认值。
 
 ---------------------------------------------------------------------------------
 
@@ -265,6 +316,14 @@ amsmath 宏包还直接提供了多种排版矩阵的环境，包括不带定界
 下载最新zotero，从知网和谷歌捕获文献（刚打开网页最好稍等一会再点击插件，谷歌可能需要现人机验证），对文献\parencite{Renduchintala_2019}、\parencite{Meng_2020}进行引用。
 
 ---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+
+2021年9月14日测试：
+使用endnote的用户也可以利用导出的bib文件生成参考文献著录信息，导出选项是bibTeX，貌似没有更多导出设置选项。导出设置没有zotero那么灵活丰富，得到bib文件后要引用某论文需要自行查找标签（label，也有软件叫引用关键字Citation Key）\{xxx\}然后手打\textbackslash{}cite\{xxx\}。欢迎熟悉endnote的同学来信告诉我更好的办法。
+
+---------------------------------------------------------------------------------
+
 \begin{lstlisting}
 另外有同学反映，换了电脑后重新导出的bib文件Citation Key值不同，记得设置好Better BibTeX之后，在著录条目界面全选著录（或仅选想更新的著录）然后右键选Better BibTeX更新refresh一下。然后在Automatic export选项点击Export now立即更新bib文件（按理说勾选了自动更新选项他会自动更新，但为了确保万无一失还是点一下）。
 \end{lstlisting}

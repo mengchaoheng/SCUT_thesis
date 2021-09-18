@@ -177,34 +177,43 @@
 \RequirePackage{subfig} % config兼容subfigure命令
 \RequirePackage{float} % 可以使用［H］命令
 \RequirePackage{caption} % 定义图的标题格式：居中. 使用caption3.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 根据子图引用显示，重定义部分参数 ——by mch
+\DeclareSubrefFormat{parens}{#1 #2)}
+\DeclareSubrefFormat{subparens}{#2)}
+\DeclareCaptionListOfFormat{parens}{#1 #2)}
+\DeclareCaptionListOfFormat{subparens}{#2)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DeclareCaptionFont{capFont}{\ftcaptionfont} % 表格名及图名
 \DeclareCaptionLabelSeparator{twospace}{~~}
-\captionsetup{ labelsep=twospace,% 去掉图标签后的冒号
+\captionsetup{ labelsep=space,% 去掉图标签后的冒号 % 原模板labelsep=twospace，而论文撰写规范要求是space
   belowskip=0bp,aboveskip=0bp,
   font={capFont}, figurename=图,tablename=表,listfigurename=插图目录,listtablename=表格目录}
 \captionsetup[figure]{position=bottom}
-\captionsetup[subfloat]{captionskip=6bp,nearskip=0bp,farskip=0bp,topadjust=0bp,justification=centering}
+\captionsetup[subfloat]{captionskip=6bp,nearskip=0bp,farskip=0bp,topadjust=0bp,
+  justification=centering,labelformat=brace,labelsep=space,subrefformat=subparens,listofformat=parens}%要使分图题和图题一样字号，选项加上 font={capFont}
+
 %%%%%%%%%%定义双标题命令
-\newcommand{\FigureBicaption}[2]{
-  \renewcommand{\figurename}{图}
-  \vspace{8pt}
-  \caption{#1}
-  \addtocounter{figure}{-1}
-  \renewcommand{\figurename}{Fig.}
-  \captionsetup{list=false}
-  \vspace{6pt}
-  \caption{#2}
-  \captionsetup{list=true}
-  \renewcommand{\figurename}{图}
-}
-\newcommand{\SubfloatCaption}[4]  % Two Parameters, the first one is the width of the subfigure,
-{
-  \subfloat[#2]{
-    \label{#3}
-    \addtocounter{subfigure}{-1}
-    \subfloat[\vspace{-5pt}#1]{#4}
-  }%
-}
+% 注释掉双语标题 ——by mch
+%\newcommand{\FigureBicaption}[2]{
+%  \renewcommand{\figurename}{图}
+%  \vspace{8pt}
+%  \caption{#1}
+%  \addtocounter{figure}{-1}
+%  \renewcommand{\figurename}{Fig.}
+%  \captionsetup{list=false}
+%  \vspace{6pt}
+%  \caption{#2}
+%  \captionsetup{list=true}
+%  \renewcommand{\figurename}{图}
+%}
+%\newcommand{\SubfloatCaption}[4]  % Two Parameters, the first one is the width of the subfigure,
+%{
+%  \subfloat[#2]{
+%    \label{#3}
+%    \addtocounter{subfigure}{-1}
+%    \subfloat[\vspace{-5pt}#1]{#4}
+%  }%
+%}
 
 %% 表格
 \RequirePackage{array} % 扩展了 array 和 tabular 环境功能
