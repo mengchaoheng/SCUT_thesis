@@ -1,5 +1,5 @@
-\documentclass[unicode,master]{scutthesis} % 草稿封面，硕士则添加选项master，博士则去掉
-%\documentclass[unicode,master,pdfcover]{scutthesis} %   % 论文封面，pdfcover为可选项，终稿再添加
+%\documentclass[unicode,master]{scutthesis} % 草稿封面，硕士则添加选项master，博士则去掉。使用正式封面时注释该行
+\documentclass[unicode,master,pdfcover]{scutthesis} %   % 论文正式封面，pdfcover为可选项，终稿再添加，使用草稿封面时注释该行
 \usepackage{fontspec,color,array,longtable,graphicx} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%——by MCH
 %编译范围
@@ -7,7 +7,7 @@
 %参考文献设置
 \usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase]{biblatex}
 \addbibresource[location=local]{MyLibrary.bib} % 如果在其他盘，改为相对路径。比如F盘，改为：F/MyLibrary.bib
-\addbibresource[location=local]{mybibfile2.bib} % 实测从endnote导出的bib文件也可以使用此模板
+\addbibresource[location=local]{mybibfile2.bib} % 无论什么来源的bib文件，只要由参考文献的BibTeX组成，都可以使用此模板。参考文献的BibTeX获取方法可百度
 %页眉页脚设置
 \usepackage{fancyhdr}
 \usepackage{listings}
@@ -44,7 +44,7 @@
 \providecommand{\tabularnewline}{\\}
 \makeatother
 \begin{document}
-	%%%%%%%%%%%%%草稿封面设置%%%%%%%%%%%%%	
+	%%%%%%%%%%%%%草稿封面设置%%%%%%%%%%%%%使用“正式封面”时不需要理会这部分
 	\title{LaTeX模板使用说明}	
 	\author{蒙超恒}	
 	\supervisor{指导教师：裴海龙\ 教授}	
