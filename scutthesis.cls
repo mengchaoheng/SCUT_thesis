@@ -145,7 +145,7 @@
 \newcommand{\tocsectionfont}{\normalsize}         % 目录上X.Y节的字体
 \newcommand{\tocsubsectionfont}{\normalsize}      % 目录上X.Y.Z小节的字体
 \newcommand{\tocsubsubsectionfont}{\normalsize}      % 目录上X.Y.Z小节的字体
-\newcommand{\textchapterfont}{\centering\heiti\xiaoerhao} % 正文上第X章的字体 
+\newcommand{\textchapterfont}{\centering\heiti\xiaoerhao} % 正文上第X章的字体
 \newcommand{\textsectionfont}{\heiti\xiaosanhao}            % 正文上X.Y节的字体
 \newcommand{\textsubsectionfont}{\heiti\sihao}     % 正文上X.Y.Z小节的字体
 \newcommand{\textsubsubsectionfont}{\heiti\xiaosihao}     % 正文上X.Y.Z.K小节的字体
@@ -311,11 +311,14 @@
 }
 \renewcommand{\lstlistingname}{代码} %% 重命名Listings标题头 added by Guan
 
-%参考文献bib style
-%\RequirePackage[nottoc]{tocbibind} % 将参考文献、索引、表格目录和图形
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-by MCH
-\RequirePackage{tocbibind} % 将参考文献、索引、表格目录和图形
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%--by MCH--%%%%%%%%%%%%%%%%%%%%%%%%%%%%2022-2-26更新
+%---ref: https://blog.csdn.net/youyagaozitai/article/details/70210297?%3E
+% 增加目录的项目——tocbibind
+%正文区写 \tableofcontents %输出目录命令，输出内容是正文中/section等的内容。 
+%若在目录中显示其他条目，使用：  
+\RequirePackage[nottoc]{tocbibind} %增加目录项目，tocbibind宏包会自动加入目录项本身、参考文献、索引等项目。[nottoc]取消了对自身的显示
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\bibname}{参考文献}
 
 % 设置目录
