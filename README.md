@@ -26,7 +26,7 @@ https://github.com/yecfly/scut-thesis
 
 有两种方法：
 
-1.使用编译脚本all.bat，记得关掉生成的pdf文档再双击all.bat。
+1.使用编译脚本all.bat，记得关掉生成的pdf文档再双击all.bat。（双击clean.bat删除临时文件）
 
 2.使用TeXstudio，首次编译建议从主文件scutthesis.tex开始编译，首先在TeXstudio的Options->Configure TeXstudio->build中，编译器(Dufault Compiler)选择XeLaTeX，默认文献工具(Default Bibliography Tool)选Biber，构建并查看（build & view） 按照scutthesis.pdf中的图2-1进行设置（点击右侧扳手符号进行设置，分别选择recompile-bibliography、Defualt compiler、Defualt Viewer并点add到右侧栏中），也可以使用默认的Compile & View（只不过此时不会自动更新参考文献著录）。本文模板编译后生成的scutthesis.pdf即为模板使用说明，首次使用最好直接阅读该说明并结合《一份（不太）简短的LATEX 2ε 介绍》学习。
 
