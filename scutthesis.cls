@@ -87,6 +87,17 @@
 \setCJKfamilyfont{hei}{SimHei}
 \setCJKfamilyfont{kai}{KaiTi_GB2312}
 \setCJKfamilyfont{fang}{FangSong_GB2312}
+%------------for mac----------------
+%\setCJKmainfont{STSong}%衬线字体 
+%\setCJKsansfont{STHeitiSC-Light}%serif是有衬线字体sans serif无衬线字体。
+%\setCJKmonofont{STFangsong}%中文等宽字体
+%
+%
+%\setCJKfamilyfont{song}{STSong}
+%\setCJKfamilyfont{hei}{STHeitiSC-Light}
+%\setCJKfamilyfont{kai}{STKaitiSC-Regular}
+%\setCJKfamilyfont{fang}{STFangsong}
+%---------------------------------------------
 
 \newcommand{\songti}{\CJKfamily{song}}
 \newcommand{\heiti}{\CJKfamily{hei}}
