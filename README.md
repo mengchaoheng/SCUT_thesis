@@ -10,7 +10,7 @@
 
 本模板不再利用Lyx，直接使用TeXstudio或者vscode进行编辑，这类似IDE。使用vscode的支持目前只是初步的，并没有做太多深入扩展，可以参考其他教程进行设置，这里仅仅给出配置文件。
 
-使用之前可有选择性地阅读《一份（不太）简短的LATEX 2ε 介绍》，地址：https://github.com/CTeX-org/lshort-zh-cn.git ，以及阅读本模板的使用说明scutthesis.pdf文件。使用案例为本人的勘误后的学位论文（原文有部分笔误）：https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git
+使用之前可有选择性地阅读[《一份（不太）简短的LATEX 2ε 介绍》](https://github.com/CTeX-org/lshort-zh-cn.git) ，以及阅读本模板的使用说明scutthesis.pdf文件。使用案例为本人的勘误后的[学位论文](https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git)（原文有部分笔误）。
 
 快速使用：
 
