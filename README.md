@@ -8,7 +8,7 @@
 
 本模板最主要的改动是参考文献使用biblatex（biber），而不是原来的BibTeX，因此不再需要.bst文件。在这项改动之后，参考文献部分的格式符合国标，当然要注意进行适当的设置，因为学校的论文撰写规范里有的信息不需要显示。
 
-本模板不再利用Lyx，直接使用TeXstudio或者vscode进行编辑，这类似IDE。使用vscode的支持目前只是初步的，并没有做太多深入扩展，可以参考其他教程进行设置(百度vscode latex)，这里仅仅给出配置文件SCUT_thesis/settings_files/settings.json。或者移步[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions/6).
+本模板不再利用Lyx，直接使用TeXstudio或者vscode进行编辑，这类似IDE。使用vscode的支持目前只是初步的，并没有做太多深入扩展，可以参考其他教程进行设置(百度vscode latex)，这里仅仅给出配置文件SCUT_thesis/settings_files/settings.json。或者移步[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)的[vscode配置](https://github.com/mengchaoheng/SCUT_thesis/discussions/6). 有什么问题都可以在讨论区交流。
 
 使用之前可有选择性地阅读[《一份（不太）简短的LATEX 2ε 介绍》](https://github.com/CTeX-org/lshort-zh-cn.git) ，以及阅读本模板的使用说明scutthesis.pdf文件。使用案例为本人的勘误后的[学位论文](https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git)（原文有部分笔误）。
 
