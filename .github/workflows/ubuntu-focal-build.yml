@@ -32,6 +32,7 @@ jobs:
             mkdir -p ~/.fonts
             mv settings_files/MacOS/simhei.ttf ~/.fonts
             mv settings_files/MacOS/simsun.ttc ~/.fonts
+            mv settings_files/Linux/Times-New-Roman.ttf ~/.fonts
             fc-cache -vf
             xelatex -no-pdf -interaction=nonstopmode scutthesis
             biber scutthesis
