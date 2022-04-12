@@ -20,4 +20,4 @@
 *.bcf 
 *.run.xml
 *.synctex.gz
-*/.DS_Store
+.DS_Store
