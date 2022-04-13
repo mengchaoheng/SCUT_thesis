@@ -104,6 +104,9 @@
 \newcommand{\kaiti}{\CJKfamily{kai}}
 \newcommand{\fangsong}{\CJKfamily{fang}}
 
+% 很多字体字号并没有使用。第一个参数指定字号，第二个参数为baselineskip默认=1.2倍字号(pt). 结合\linespread可以实现控制行距。
+% 但这里的设置暂时不清楚为什么，也暂时找不到其他方法。
+% ToDo：使用更好的字体字号行距控制方法。例如用\usepackage{setspace}，然后\onehalfspacing实现单倍行距。但具体细节待考证。
 %% Font size
 \newcommand{\chuhao}{\fontsize{42pt}{46pt}\selectfont}
 \newcommand{\xiaochuhao}{\fontsize{36pt}{40pt}\selectfont}
@@ -116,7 +119,7 @@
 \newcommand{\xiaosanhao}{\fontsize{15pt}{22.5pt}\selectfont}%1.5
 \newcommand{\sihao}{\fontsize{14pt}{16pt}\selectfont}
 \newcommand{\xiaosihao}{\fontsize{12pt}{14pt}\selectfont}
-\newcommand{\wuhao}{\fontsize{10.95pt}{13pt}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{13pt}\selectfont} % change 10.95pt to 10.5pt --by mch, 真正的五号字应该是10.5。10.95是通常所说的11pt，在英文排版中使用。
 \newcommand{\xiaowuhao}{\fontsize{9pt}{11pt}\selectfont}
 \newcommand{\liuhao}{\fontsize{7.5pt}{9pt}\selectfont}
 \newcommand{\xiaoliuhao}{\fontsize{6.5pt}{7.5pt}\selectfont}
@@ -165,6 +168,7 @@
 
 \newcommand{\reftitlefont}{\heiti\xiaoerhao}      % “参考文献”字样的字体
 \newcommand{\refbodyfont}{\songti\wuhao\normalfont}          % 参考文献字体
+\newcommand{\pubfont}{\songti\wuhao\normalfont}          % 《攻读博士/硕士学位期间取得的研究成果》字体，2022年更新。
 
 \newcommand{\thanktitlefont}{\heiti\sanhao}    % “致谢”字样的字体
 \newcommand{\appendixtitlefont}{\heiti\sanhao} % “附录”字样的字体
@@ -382,7 +386,7 @@
 \AtBeginDocument{\CJKindent{}%
     \makeindex%
     \normalsize%正文字体格式
-    \linespacing{1.682}% 主行距～1.5倍
+    \linespacing{1.682}% 主行距～1.5倍  % 手调参数，利用1比1的打印效果看行距是否和word的1.5倍行距一样。latex行距控制水太深了。见109行ToDo。--by mch
   }
 \AtEndDocument{}
 
