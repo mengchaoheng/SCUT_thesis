@@ -234,7 +234,7 @@
 \RequirePackage{array} % 扩展了 array 和 tabular 环境功能
 \RequirePackage{booktabs} % 增加对三线表格的支持 % \toprule，\midrule，\bottomrule
 \RequirePackage{longtable} % 长表格支持，截断跨页
-\RequirePackage{ctable, threeparttable} % 支持表格注释,复杂表格，一般用不上
+%\RequirePackage{ctable, threeparttable} % 支持表格注释,复杂表格，一般用不上
 %\RequirePackage{tabularx}
 \captionsetup[table]{position=top}
 %定义双标题命令
