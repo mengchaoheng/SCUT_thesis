@@ -6,7 +6,7 @@
 
 
 
-本模板最主要的改动是参考文献使用biblatex（biber），而不是原来的BibTeX，因此不再需要.bst文件。在这项改动之后，参考文献部分的格式符合国标，当然要注意进行适当的设置，因为根据学校的论文撰写规范，有的信息是不需要显示在参考文献著录里的。
+本模板最主要的改动是参考文献使用biblatex（biber），而不是原来的BibTeX，因此不再需要.bst文件。在这项改动之后，参考文献部分的格式符合国标，当然要注意进行适当的设置，因为根据学校的论文撰写规范，有的信息是不需要显示在参考文献著录里的。可以查看biblatex包的使用说明[biblatex-gb7714-2015.pdf](https://github.com/mengchaoheng/SCUT_thesis/tree/master/settings_files/package_Documentation/biblatex-gb7714-2015.pdf），[package_Documentation](https://github.com/mengchaoheng/SCUT_thesis/tree/master/settings_files/package_Documentation）文件夹还有其他包的使用说明。
 
 本模板不再利用Lyx，直接使用TeXstudio或者vscode进行编辑，这类似IDE。使用vscode的支持目前只是初步的，并没有做太多深入扩展，可以参考其他教程进行设置(百度vscode latex)，这里仅仅给出配置文件SCUT_thesis/settings_files/settings.json。或者移步[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)的[vscode配置](https://github.com/mengchaoheng/SCUT_thesis/discussions/6). 有什么问题都可以在讨论区交流。
 
