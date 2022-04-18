@@ -10,6 +10,7 @@
 
 2.使用TeXstudio，首次编译建议从主文件scutthesis.tex开始编译，首先在TeXstudio的Options->Configure TeXstudio->build中，编译器(Dufault Compiler)选择XeLaTeX，默认文献工具(Default Bibliography Tool)选Biber，构建并查看（build & view） 按照scutthesis.pdf中的图2-1进行设置（点击右侧扳手符号进行设置，分别选择recompile-bibliography、Defualt compiler、Defualt Viewer并点add到右侧栏中），也可以使用默认的Compile & View（只不过此时不会自动更新参考文献著录）。本文模板编译后生成的scutthesis.pdf即为模板使用说明，首次使用最好直接阅读该说明并结合《一份（不太）简短的LATEX 2ε 介绍》学习。
 
+3.使用VSCode, 安装LaTeX Workshop插件，在settings.json中修改相关字段为`settings_files/settings.json`中的值，使用xelatexmk进行编译。
 
 另外参考文献管理软件推荐使用开源的zotero，这是生成本模板的bib文件的软件（最新实测其他文献管理软件如endnote也可以使用本模板，重点是导出bib文件）。当然，也可以手动新建一个后缀名为.bib的文件，然后直接在文献页面（或谷歌、百度学术页面）复制BibTeX数据到该.bib文件，最后在scutthesis.tex文件里使用就行。zotero不仅有强大的PC端（支持mac、win、linux），可以使用chrome等浏览器搜索到论文后利用插件一键捕获文献信息到zotero。然后对zotero收集好的文献，选中想要引用的论文然后按快捷键复制（需要适当自定义设置），再到撰写论文的tex文件粘贴即可（word也可以使用zotero，也很方便，本项目我们仅仅讨论latex模板）。zotero还有移动端（安卓、ios），所有文献信息都是同步的，文献的pdf文件可以使用第三方存储工具同步。总之多端同步，开源免费，方便随时随地看论文，省去管理文献的麻烦，相见恨晚！在写毕业论文的各位可以推荐给研一的师弟师妹，早用早享受，方便后期写论文。
 
