@@ -1,22 +1,20 @@
 # 华南理工大学硕/博士学位论文LaTeX模板
 
-本模板由[alwintsui](https://github.com/alwintsui/scutthesis)以及[yecfly](https://github.com/yecfly/scut-thesis)的模板修改而来，可用于撰写华南理工大学硕/博士学位论文。本项目是本人在撰写毕业论文时开启的，始于2020年，实测可以通过所有格式审核。“祖传代码”是前辈们的心血，在此向他们致以崇高的敬意！本模板在修改“祖传代码”过程中仅对修改部分进行更新，其余部分仍保留源代码。
-
-本文模板编译后生成的scutthesis.pdf即为模板使用说明，首次使用最好直接阅读该说明并结合《一份（不太）简短的LATEX 2ε 介绍》学习。
+本项目始于2020年，可用于撰写华南理工大学硕/博士学位论文。模板由[alwintsui](https://github.com/alwintsui/scutthesis)以及[yecfly](https://github.com/yecfly/scut-thesis)的模板修改而来，实测可以通过所有格式审核，在此向alwintsui、yecfly致以崇高的敬意！
 
 ## 快速使用：
 
-使用之前可有选择性地阅读[《一份（不太）简短的LATEX 2ε 介绍》](https://github.com/CTeX-org/lshort-zh-cn.git) ，以及阅读本模板的使用说明scutthesis.pdf文件，另外还有[tutorial](https://github.com/mengchaoheng/SCUT_thesis/tree/master/tutorial)里的scutthesis说明.pdf文件，这是旧模版的文件，可以参考旧模版的东西。使用案例为本人的勘误后的[学位论文](https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git)（原文有部分笔误）。
+使用之前可先阅读本文模板编译后生成的使用说明scutthesis.pdf文件、并有选择性地阅读[《一份（不太）简短的LATEX 2ε 介绍》](https://github.com/CTeX-org/lshort-zh-cn.git) 入门。还可以阅读[tutorial](https://github.com/mengchaoheng/SCUT_thesis/tree/master/tutorial)里的scutthesis说明.pdf文件，这是旧模版的文件，可以参考旧模版的东西。使用案例为本人的勘误后的[学位论文](https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git)（原文有部分笔误）。
 
 编译有三种方法：
 
-1.使用VSCode, 安装LaTeX Workshop插件，在settings.json中修改相关字段为`settings_files/settings.json`中的值，使用xelatexmk进行编译。详情参考[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)。（当前推荐的方法-2022.04.20）
+1.使用VSCode, 安装LaTeX Workshop插件，在settings.json中修改相关字段为`settings_files/settings.json`中的值，使用xelatexmk进行编译。详情参考[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)。（2022年起推荐的方法）
 
 2.使用编译脚本all.bat，记得关掉生成的pdf文档再双击all.bat。双击clean.bat删除临时文件。（此方法仅支持win）
 
-3.使用TeXstudio，首次编译建议从主文件scutthesis.tex开始编译，首先在TeXstudio的Options->Configure TeXstudio->build中，编译器(Dufault Compiler)选择XeLaTeX，默认文献工具(Default Bibliography Tool)选Biber，构建并查看（build & view） 按照scutthesis.pdf中的图2-1进行设置（点击右侧扳手符号进行设置，分别选择recompile-bibliography、Defualt compiler、Defualt Viewer并点add到右侧栏中），也可以使用默认的Compile & View（只不过此时不会自动更新参考文献著录）。(过去两年主要的使用方法)
+3.使用TeXstudio，首次编译建议从主文件scutthesis.tex开始编译，首先在TeXstudio的Options->Configure TeXstudio->build中，编译器(Dufault Compiler)选择XeLaTeX，默认文献工具(Default Bibliography Tool)选Biber，构建并查看（build & view） 按照scutthesis.pdf中的图2-1进行设置（点击右侧扳手符号进行设置，分别选择recompile-bibliography、Defualt compiler、Defualt Viewer并点add到右侧栏中），也可以使用默认的Compile & View（只不过此时不会自动更新参考文献著录）。(20年-21年期间主要的使用方法)
 
-> **Note** 本模板不再利用Lyx，直接使用TeXstudio或者vscode进行编辑，这类似IDE。使用vscode的支持目前只是初步的，并没有做太多深入扩展，可以参考其他教程进行设置(百度vscode latex)，这里仅仅给出配置文件SCUT_thesis/settings_files/settings.json。或者移步[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)的[vscode配置](https://github.com/mengchaoheng/SCUT_thesis/discussions/6). 有什么问题都可以在讨论区交流。
+> **Note** 本模板不再利用Lyx，直接使用TeXstudio或者vscode进行编辑，这类似IDE。vscode的一些使用技巧以及快捷键可参考其他教程(百度vscode latex)，这里仅仅给出配置文件`settings_files/settings.json`。详情移步[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)的[vscode配置](https://github.com/mengchaoheng/SCUT_thesis/discussions/6)。有什么问题都可以在讨论区交流。
 
 ## 参考文献管理
 
