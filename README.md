@@ -30,7 +30,7 @@
 
 1.语法错误，这种借助百度、谷歌很容易解决，按照latex的规范去写就好。
 
-2.和参考文献有关的错误，记住一定检查好bib文件，而bib文件来源于参考文献管理软件如本文推荐的zotero，又或者来源于自己手动建立的文件。一定要设置好导出选项以及格式，同时TeXstudio要设置好编译选项。
+2.和参考文献有关的错误，记住一定检查好bib文件，而bib文件来源于参考文献管理软件如本文推荐的zotero，又或者来源于自己手动建立的文件。一定要设置好导出选项以及格式，同时要设置好编译选项。
 
 3.编译器问题，和第二条一样，一定要在TeXstudio的Options->Configure TeXstudio->build中设置好，使用vscode的话，记得按照[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)设置好编译的配置文件。
 
