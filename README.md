@@ -34,7 +34,7 @@
 
 3.编译器问题，和第二条一样，使用TeXstudio的话，一定要在Options->Configure TeXstudio->build中设置好；使用vscode的话，记得按照[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)设置好vscode编译的配置文件`settings.json`。
 
-4.其他问题，清除所有中间文件再编译一次看看。如win系统双击`clean.bat`文件。或使用TeXstudio的话，点击Tools->Clean Auxiliary files。
+4.其他问题，关掉生成的PDF，清除所有中间文件再编译一次看看。如win系统双击`clean.bat`文件。或使用TeXstudio的话，点击Tools->Clean Auxiliary files。
 
 确保以上几方面没问题的话，基本就可以愉快的写论文了。
 
