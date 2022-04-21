@@ -30,11 +30,13 @@
 
 1.语法错误，这种借助百度、谷歌很容易解决，按照latex的规范去写就好。
 
-2.和参考文献有关的错误，记住一定检查好bib文件，而bib文件来源于参考文献管理软件如本文推荐的zotero，又或者来源于自己手动建立的文件。一定要设置好导出选项以及格式，同时要设置好编译选项。
+2.和参考文献有关的错误，记住一定检查好bib文件，而bib文件来源于参考文献管理软件如本文推荐的zotero，又或者来源于自己手动建立的文件。一定要设置好导出选项以及格式，同时要设置好编译选项biber(区别于常见的bibtex)。
 
-3.编译器问题，和第二条一样，一定要在TeXstudio的Options->Configure TeXstudio->build中设置好，使用vscode的话，记得按照[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)设置好编译的配置文件。
+3.编译器问题，和第二条一样，使用TeXstudio的话，一定要在Options->Configure TeXstudio->build中设置好；使用vscode的话，记得按照[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)设置好vscode编译的配置文件`settings.json`。
 
-确保以上三方面没问题的话，基本就可以愉快的写论文了。
+4.其他问题，清除所有中间文件再编译一次看看。如win系统双击`clean.bat`文件。或使用TeXstudio的话，点击Tools->Clean Auxiliary files。
+
+确保以上几方面没问题的话，基本就可以愉快的写论文了。
 
 ## 贡献者
 
