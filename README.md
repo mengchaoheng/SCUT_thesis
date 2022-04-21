@@ -4,7 +4,7 @@
 
 ## 快速使用：
 
-使用之前可先阅读本文模板编译后生成的使用说明scutthesis.pdf文件、并有选择性地阅读[《一份（不太）简短的LATEX 2ε 介绍》](https://github.com/CTeX-org/lshort-zh-cn.git) 入门。还可以阅读[tutorial](https://github.com/mengchaoheng/SCUT_thesis/tree/master/tutorial)里的scutthesis说明.pdf文件，这是旧模版的文件，可以参考旧模版的东西。使用案例为本人的勘误后的[学位论文](https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git)（原文有部分笔误）。
+使用之前可先阅读本文模板编译后生成的使用说明scutthesis.pdf文件、并有选择性地阅读[《一份（不太）简短的LATEX 2ε 介绍》](https://github.com/CTeX-org/lshort-zh-cn.git) 入门。还可以阅读[tutorial](https://github.com/mengchaoheng/SCUT_thesis/tree/master/tutorial)里的scutthesis说明.pdf文件，这是旧模版的文件，可以参考旧模版的东西。使用案例为[本人的学位论文](https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git)。
 
 编译有三种方法：
 
