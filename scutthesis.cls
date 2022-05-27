@@ -285,9 +285,9 @@
 % \setenumerate{itemindent=38pt,leftmargin=0pt,itemsep=0ex,listparindent=26pt,partopsep=0pt,parsep=\parskip,topsep=-0.25ex}
 % \setdescription{itemindent=38pt,leftmargin=0pt,itemsep=0ex,listparindent=26pt,partopsep=0pt,parsep=\parskip,topsep=-0.25ex}
 
-\RequirePackage{paralist}% 修改列表格式
-\setdefaultenum{1)}{a)}{i.}{A.}% 设置列表模式,for \enumerate
-\setdefaultleftmargin{4ex}{}{}{}{}{}%standard \itemize :• – ∗ ·
+% \RequirePackage{paralist}% 修改列表格式
+% \setdefaultenum{1)}{a)}{i.}{A.}% 设置列表模式,for \enumerate
+% \setdefaultleftmargin{4ex}{}{}{}{}{}%standard \itemize :• – ∗ ·
 
 %\RequirePackage[numbers,super,square,sort&compress]{natbib}  %改biblatex
 % 用natbib代替下面的一些设置

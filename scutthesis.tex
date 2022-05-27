@@ -2,9 +2,10 @@
 %\documentclass[unicode,master,pdfcover]{scutthesis} %   % 论文正式封面，pdfcover为可选项，终稿再添加，使用草稿封面时注释该行
 \usepackage{fontspec,color,array,longtable,graphicx} 
 \usepackage{anyfontsize} %消除字体警告
+\usepackage{enumitem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%——by MCH
 %编译范围
-%\includeonly{chapter03}
+% \includeonly{chapter04}
 %参考文献设置
 \usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase]{biblatex}
 \addbibresource[location=local]{MyLibrary.bib} % 如果在其他盘，改为相对路径。比如F盘，改为：F/MyLibrary.bib
@@ -77,6 +78,7 @@
 	\include{chapter01}%第一章
 	\include{chapter02}%第二章
 	\include{chapter03}%第三章
+	\include{chapter04}
 	% 自行根据需要添加章节。
 
 	\backmatter %章节不编号但页码继续
