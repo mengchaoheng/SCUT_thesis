@@ -275,6 +275,31 @@
 \renewcommand{\floatpagefraction}{0.85}
 
 %% 列表
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 删除 itemize和 enumerate环境中 列表项之间的间隔，默认列表项之间的间距非常宽（超过1.5倍行距）
+\def\@listi{%
+  \leftmargin\leftmargini
+  \parsep 0pt%
+  \topsep \parsep
+  \itemsep \parsep}
+\let\@listI\@listi
+\@listi
+\def\@listii{%
+  \leftmargin\leftmarginii
+  \labelwidth\leftmarginii
+  \advance\labelwidth-\labelsep
+  \parsep 0pt%
+  \topsep \parsep
+  \itemsep \parsep}
+\def\@listiii{%
+  \leftmargin\leftmarginiii
+  \labelwidth\leftmarginiii
+  \advance\labelwidth-\labelsep
+  \parsep 0pt%
+  \topsep \parsep
+  \itemsep \parsep
+  \partopsep \p@ \@plus\z@ \@minus\p@}
+
 %\RequirePackage{enumitem}
 %\setlist{noitemsep,nolistsep,topsep=0pt,itemindent=1em}
 %\setenumerate[1]{label=\arabic*), ref=\arabic*}
