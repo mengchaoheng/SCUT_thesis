@@ -595,6 +595,7 @@
 \allowdisplaybreaks[4]
 %\setlength\jot{1pt} %公式之间的距离,TODO
 
+
 \newtheoremstyle{definition}% name
   {0pt}%      Space above, empty = `usual value'
   {0pt}%      Space below
@@ -609,6 +610,17 @@
 \newtheorem{example}{例~}[chapter]
 \newtheorem{remark}{说明~}[chapter]
 \newtheorem{assumption}{假设~}[chapter]	% by mch
+% ------改为definition，by mch
+\newtheorem{proposition}{命题~}[chapter]
+\newtheorem{lemma}{引理~}[chapter]
+\newtheorem{theorem}{定理~}[chapter]
+\newtheorem{axiom}{公理~}[chapter]
+\newtheorem{corollary}{ 推论~}[chapter]
+\newtheorem{case}{情形~}[chapter]
+\newtheorem{conjecture}{猜想~}[chapter]
+\newtheorem{property}{性质~}[chapter]
+% ----------
+
 %% 可继续用\newtheorem命令添加需要的环境
 
 \newtheoremstyle{plain}% name
@@ -621,21 +633,27 @@
   {0.5em}% Space after thm head: \newline = linebreak
   {}%         Thm head spec
 \theoremstyle{plain}
-\newtheorem{proposition}{命题~}[chapter]
-\newtheorem{lemma}{引理~}[chapter]
-\newtheorem{theorem}{定理~}[chapter]
-\newtheorem{axiom}{公理~}[chapter]
-\newtheorem{corollary}{ 推论~}[chapter]
-\newtheorem{case}{情形~}[chapter]
-\newtheorem{conjecture}{猜想~}[chapter]
-\newtheorem{property}{性质~}[chapter]
+% -------------------根据2022年博士论文送审反馈意见，下面部分改为正体，故移到definition--------by mch
+% \newtheorem{proposition}{命题~}[chapter]
+% \newtheorem{lemma}{引理~}[chapter]
+% \newtheorem{theorem}{定理~}[chapter]
+% \newtheorem{axiom}{公理~}[chapter]
+% \newtheorem{corollary}{ 推论~}[chapter]
+% \newtheorem{case}{情形~}[chapter]
+% \newtheorem{conjecture}{猜想~}[chapter]
+% \newtheorem{property}{性质~}[chapter]
 %% 可继续用\newtheorem命令添加需要的环境
+% ------------
 
-\renewenvironment{proof}{\vskip 1pt\indent \itshape 证明:~\normalfont}{\hfill$\square$\vskip 0.01\baselineskip} %$\blacksquare$
+\renewenvironment{proof}{\vskip 1pt\indent  证明:~\normalfont}{\hfill$\square$\vskip 0.01\baselineskip} %$\blacksquare$ -----去掉\itshape 该命令用于设置斜体
+
+
 %\renewcommand{\proofname}{\hskip 2em 证明:~} %
 %%%%%%%%%%%%%%%%%   end of 定理环境
-\setlength\abovedisplayskip{4pt}
-\setlength\belowdisplayskip{4pt}
+\abovedisplayshortskip=10pt
+\belowdisplayshortskip=10pt
+\abovedisplayskip=10pt
+\belowdisplayskip=10pt
 
 \endinput
 %% End of file `scutthesis.cls'.
