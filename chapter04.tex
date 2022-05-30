@@ -11,9 +11,44 @@
 	\caption{\label{enumitem}enumitem包对各种间距的定义}
 \end{figure}
 
+现先总结出所推荐的间距设置，无编号的：
+\begin{lstlisting}
+\begin{itemize}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=36pt, itemindent=0pt, labelsep=6pt, listparindent=24pt]
+	\item 第一项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+
+	\item 第二项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	
+\end{itemize}
+\end{lstlisting}
+效果：
+\begin{itemize}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=36pt, itemindent=0pt, labelsep=6pt, listparindent=24pt]
+	\item 第一项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+
+	\item 第二项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	
+\end{itemize}
+
+有编号的：
+\begin{lstlisting}
+\begin{enumerate}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=44pt, itemindent=0pt, labelsep=6pt, label=(\arabic*)]
+	\item 第一项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+
+	\item 第二项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	
+\end{enumerate}
+\end{lstlisting}
+效果：
+\begin{enumerate}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=44pt, itemindent=0pt, labelsep=6pt, label=(\arabic*)]
+	\item 第一项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+
+	\item 第二项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	
+\end{enumerate}
+
+下面两节分别讨论参数设置规则。
 \subsection{垂直间距}
-此时水平间距设为默认值，不一定对
-\begin{itemize}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt]
+摘抄宏包说明：
+\begin{itemize}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=36pt, itemindent=0pt, labelsep=6pt, listparindent=24pt]
 	\item topsep控制列表环境与上文之间的距离。第一项和前一段之间的空间。
 
 	\item itemsep 条目之间的距离
@@ -27,33 +62,21 @@
 \begin{lstlisting}
 	\begin{itemize}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt]
 		\item 第一项。
-    
-		第一项的第二段。
 		\item 第二项
-		
-		第二项的第二段。
 		\item 第三项。
-		
-		第三项的第二段。
 	\end{itemize}
 \end{lstlisting}
 效果为：
 \begin{itemize}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt]
 	\item 第一项。
-
-	第一项的第二段。
 	\item 第二项
-	
-	第二项的第二段。
 	\item 第三项。
-	
-	第三项的第二段。
 \end{itemize}
 
 
 \subsection{水平间距}
 % 正文12pt
-正文正文正文正文正文正文正文正文
+水平间距调整比较复杂，对照宏包说明给出的图，下面内容参考了宏包原文和网络资料：
 \begin{itemize}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=36pt, itemindent=0pt, labelsep=6pt, listparindent=24pt]
 	\item 为页面的左边距）和该列表的左边距之间的空间。 必须是非负数。 它的值取决于表，则为页面的左边距）和该列表的左边距之间的空间。 必须是非负数。 它的值取决于列表级别。
 	\item rightmargin       列表环境右边的空白长度。类似于 \textbackslash{}leftmargin 但用于右边距。 它的值通常是 0pt。
@@ -66,52 +89,57 @@
 无编号的水平间距，给出两张方案
  
 第一种：
-\begin{itemize}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=0pt, itemindent=36pt, labelsep=6pt, listparindent=24pt]
-	\item 第一项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-
-	第一项的第二段。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-	\item 第二项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-	
-\end{itemize}
-
-第二种：
 \begin{itemize}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=36pt, itemindent=0pt, labelsep=6pt, listparindent=24pt]
 	\item 第一项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
 
-	第一项的第二段。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	% 第一项的第二段。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
 	\item 第二项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
 	
 \end{itemize}
+
+
+第二种：
+\begin{itemize}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=0pt, itemindent=36pt, labelsep=6pt, listparindent=24pt]
+	\item 第一项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+
+	% 第一项的第二段。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	\item 第二项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	
+\end{itemize}
+
+推荐第一种。
 
 有编号的水平间距，下面给出三种方案：
 注：labelsep是某一项文字和编号框的距离，一般就设为一个空格6pt，要使编号左侧缩进两格，itemindent-labelsep要等于编号长度。注意编号是右对齐，向左扩展的。
 
-第一种方案是和论文撰写规范的格式一样，注意不是论文撰写规范规定的格式，规范里没有规定这些格式。如：
-\begin{enumerate}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=0pt, itemindent=44pt, labelsep=6pt, listparindent=24pt, label=(\arabic*)]
-	\item 第一项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-
-	第一项的第二段。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-	\item 第二项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-	
-\end{enumerate}
-
-第二种方案是整体右移两格，文字距离编号一个空格，然后换行后文字再一次右移两格：
+第一种方案是整体右移两格，文字距离编号一个空格，然后第二行文字和第一行对齐：
 \begin{enumerate}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=44pt, itemindent=0pt, labelsep=6pt, label=(\arabic*)]
 	\item 第一项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
 
-	第一项的第二段。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	% 第一项的第二段。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
 	\item 第二项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
 	
 \end{enumerate}
 
-第三种方案是整体右移两格，文字距离编号一个空格，换行后文字不再进一步右移两格：
+第二种方案是和论文撰写规范的格式一样，注意不是论文撰写规范规定的格式，规范里没有规定这些格式。如：
+\begin{enumerate}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=0pt, itemindent=44pt, labelsep=6pt, listparindent=24pt, label=(\arabic*)]
+	\item 第一项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+
+	% 第一项的第二段。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	\item 第二项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	
+\end{enumerate}
+
+第三种方案是整体右移两格，文字距离编号一个空格，第二行文字不再右移：
 \begin{enumerate}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=24pt, itemindent=20pt, labelsep=6pt, listparindent=20pt, label=(\arabic*)]
 	\item 第一项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
 
-	第一项的第二段。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	% 第一项的第二段。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
 	\item 第二项。内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
 	
 \end{enumerate}
+
+推荐第一种。
 
 \section{enumerate标签样式}
 除上述小括号数字的编号方法外，还有斜体字母等。在使用enumerate的时候，label的问题就是使用计数的字符，是阿拉伯数字、罗马、中文、还是希腊字符的问题。
@@ -121,13 +149,13 @@
 \begin{enumerate}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=0pt, itemindent=44pt, labelsep=6pt, listparindent=24pt, label=\arabic*)]
 	\item 第一项。
 
-	第一项的第二段。
+	% 第一项的第二段。
 	\item 第二项
 	
-	第二项的第二段。
+	% 第二项的第二段。
 	\item 第三项。
 	
-	第三项的第二段。
+	% 第三项的第二段。
 \end{enumerate}
 
 
@@ -137,13 +165,13 @@
 \begin{enumerate}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=0pt, itemindent=44pt, labelsep=6pt, listparindent=24pt, label=\emph{\alph*}.]
 	\item 第一项。
 
-	第一项的第二段。
+	% 第一项的第二段。
 	\item 第二项
 	
-	第二项的第二段。
+	% 第二项的第二段。
 	\item 第三项。
 	
-	第三项的第二段。
+	% 第三项的第二段。
 \end{enumerate}
 
 \subsection{大写罗马字母}
@@ -151,11 +179,11 @@
 \begin{enumerate}[topsep = 0 pt, itemsep= 0 pt, parsep=0pt, partopsep=0pt, leftmargin=0pt, itemindent=44pt, labelsep=6pt, listparindent=24pt, label=(\Roman*)]
 	\item 第一项。
 
-	第一项的第二段。
+	% 第一项的第二段。
 	\item 第二项
 	
-	第二项的第二段。
+	% 第二项的第二段。
 	\item 第三项。
 	
-	第三项的第二段。
+	% 第三项的第二段。
 \end{enumerate}

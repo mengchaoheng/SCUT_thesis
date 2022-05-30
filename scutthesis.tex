@@ -61,8 +61,20 @@
 	%\cleardoublepage % pdfbookmark可能需要这一条才能正常工作
 	\pdfbookmark{\contentsname}{toc} %为目录添加pdf文件书签
 	\tableofcontents	%目录
-	\listoftables	%表格目录（可选）
-	\listoffigures	%插图目录（可选）
+	% \listoffigures	%插图目录（可选）
+	% \listoftables	%表格目录（可选）
+	
+	\begingroup
+		\renewcommand*{\addvspace}[1]{}
+		\newcommand{\loflabel}{图} 
+		\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}	
+		\listoffigures
+		
+		\newcommand{\lotlabel}{表}
+		\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
+		\listoftables
+	\endgroup
+
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\include{symbols}	% 符号对照表(可选)
 	\include{abbreviation} 	% 缩略词	
