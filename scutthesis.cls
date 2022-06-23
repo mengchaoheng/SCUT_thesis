@@ -650,6 +650,8 @@
 
 %\renewcommand{\proofname}{\hskip 2em 证明:~} %
 %%%%%%%%%%%%%%%%%   end of 定理环境
+
+% 公式和正文的间距由4pt改为10pt，更美观
 \abovedisplayshortskip=10pt
 \belowdisplayshortskip=10pt
 \abovedisplayskip=10pt
