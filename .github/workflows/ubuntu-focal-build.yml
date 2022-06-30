@@ -31,6 +31,21 @@ jobs:
       - name: Build PDF
         run: |
             latexmk -synctex=1 -file-line-error -interaction=nonstopmode -xelatex scutthesis
+  build-on-texlive-2021:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:TL2021-historic
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install fonts
+        run: |
+            mkdir -p ~/.fonts
+            mv settings_files/MacOS/simhei.ttf ~/.fonts
+            mv settings_files/MacOS/simsun.ttc ~/.fonts
+            mv settings_files/Linux/Times-New-Roman.ttf ~/.fonts
+            fc-cache -vf
+      - name: Build PDF
+        run: |
+            latexmk -synctex=1 -file-line-error -interaction=nonstopmode -xelatex scutthesis
   build-on-texlive-2020:
     runs-on: ubuntu-latest
     container: texlive/texlive:TL2020-historic
