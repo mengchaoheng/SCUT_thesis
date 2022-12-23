@@ -9,6 +9,8 @@
 
 使用之前可先阅读本文模板编译后生成的使用说明scutthesis.pdf文件、并有选择性地阅读[《一份（不太）简短的LATEX 2ε 介绍》](https://github.com/CTeX-org/lshort-zh-cn.git) 入门。还可以阅读[tutorial](https://github.com/mengchaoheng/SCUT_thesis/tree/master/tutorial)里的scutthesis说明.pdf文件，这是旧模版的文件，可以参考旧模版的东西。使用案例为[本人的学位论文](https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git)。
 
+编译之前首先安装[texlive](https://www.tug.org/texlive/)，找到对应系统（Linux，win，macOS）的版本。注意macOS是MacTeX。
+
 编译有三种方法：
 
 1.使用VSCode, 安装LaTeX Workshop插件，在settings.json中修改相关字段为`settings_files/settings.json`中的值，使用xelatexmk进行编译。详情参考[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)。（2022年起推荐的方法）
