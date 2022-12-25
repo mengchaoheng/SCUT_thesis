@@ -13,7 +13,7 @@
 
 编译有三种方法：
 
-1.使用VSCode, 安装LaTeX Workshop插件，在`settings.json`中修改相关字段为`settings_files/settings.json`中的值（以前就有在使用vscode的同学需要把该`settings.json`文件的部分内容添加到自己的.json文件。第一次使用vscode的同学直接覆盖就行），使用xelatexmk进行编译。详情参考[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)。（2022年起推荐的方法，希望更多同学参与完善并把更新推送给我，现在的.json文件还可以进一步改进）
+1.使用VSCode, 安装LaTeX Workshop插件，在`settings.json`中修改相关字段为`settings_files/settings.json`中的值。以前就有在使用vscode的同学需要把该`settings.json`文件的部分内容添加到自己的.json文件。第一次使用vscode的同学直接覆盖就行。在vscode配置使用xelatexmk进行编译。详情参考[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)。（2022年起推荐的方法，希望更多同学参与完善并把更新推送给我，现在的.json文件还可以进一步改进）
 
 2.使用编译脚本`all.bat`，记得关掉生成的pdf文档再双击`all.bat`。双击`clean.bat`删除临时文件。（此方法仅支持win）
 
