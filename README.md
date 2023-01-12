@@ -4,7 +4,7 @@
 
 2022更新：
 
-根据2021届、2022届硕博士毕业生的大量反馈意见，本项目已经持续更新两年。希望后续同学在使用过程中遇到问题积极反馈，若能推送更新参与维护更好！
+根据2021届、2022届硕、博士毕业生的大量反馈意见，本项目已经持续更新两年。本人已于2022年回校读博，会一直维护这个项目，希望后续同学在使用过程中遇到问题积极反馈，若能推送更新参与维护更好！
 ## 快速使用：
 
 使用之前可先阅读本文模板编译后生成的使用说明[scutthesis.pdf](https://github.com/mengchaoheng/SCUT_thesis/blob/master/scutthesis.pdf)文件、并有选择性地阅读[《一份（不太）简短的LATEX 2ε 介绍》](https://github.com/CTeX-org/lshort-zh-cn.git) 入门。还可以阅读[tutorial](https://github.com/mengchaoheng/SCUT_thesis/tree/master/tutorial)里的`scutthesis说明.pdf`文件，这是旧模版的文件，可以参考旧模版的东西。使用案例为[本人的学位论文](https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git)(注意该论文是基于初代模版，而现在的模版已经不断更新)。
