@@ -23,3 +23,4 @@
 *.fdb_latexmk
 *.fls
 .DS_Store
+*.tar.gz

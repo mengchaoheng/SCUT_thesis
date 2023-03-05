@@ -78,15 +78,15 @@
 \XeTeXlinebreaklocale "zh" %采用中文断行方式
 \XeTeXlinebreakskip = 0pt plus 1pt %字元间可加入0pt~1pt 的弹性间距，这样才能排出左右对齐的段落。
 
-\setCJKmainfont{SimSun}
+\setCJKmainfont{SimSun.ttc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-by MCH
-\setCJKsansfont{SimSun}	%设置默认字体，防止报警
-\setCJKmonofont{SimSun} %设置默认字体，防止报警
+\setCJKsansfont{SimSun.ttc}	%设置默认字体，防止报警
+\setCJKmonofont{SimSun.ttc} %设置默认字体，防止报警
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setCJKfamilyfont{song}{SimSun}
-\setCJKfamilyfont{hei}{SimHei}
-\setCJKfamilyfont{kai}{KaiTi_GB2312}
-\setCJKfamilyfont{fang}{FangSong_GB2312}
+\setCJKfamilyfont{song}{SimSun.ttc}
+\setCJKfamilyfont{hei}{SimHei.ttf}
+\setCJKfamilyfont{kai}{KaiTi_GB2312.ttf}
+\setCJKfamilyfont{fang}{FangSong_GB2312.ttf}
 %------------for mac----------------
 %\setCJKmainfont{STSong}%衬线字体 
 %\setCJKsansfont{STHeitiSC-Light}%serif是有衬线字体sans serif无衬线字体。
