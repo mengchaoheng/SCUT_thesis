@@ -23,7 +23,7 @@
 
 1)在终端 `git clone https://github.com/mengchaoheng/SCUT_thesis.git` 得到本项目后切换到 `overleaf` 分支。将文件导入到overleaf，如果文件太大就删除.git文件等隐藏文件。只需要在overleaf网页设置为XeLaTeX的编译方式即可。
 
-2)当然也可以直接在overleaf网页导入，模版地址在[SCUT_overleaf]()，更多使用说明参考[overleaf文档](https://www.overleaf.com/learn)。
+2)当然也可以直接在overleaf网页导入，模版地址在[SCUT_overleaf](https://www.overleaf.com/latex/templates/scut-thesis/bgybznvkjdfx)，更多使用说明参考[overleaf文档](https://www.overleaf.com/learn)。
 
 3)在本页面将master branch改为选择overleaf分支后在download本项目等.zip文件，然后上传overleaf。
 
