@@ -325,7 +325,7 @@ proof的大更多用法见参考文献\cite{_g}。scutthesis.cls文件的最后�
 	关于参考文献这块，很多同学有疑问。只有记住一点：不管用什么参考文献管理工具，最终目的是生成一个bib文件，bib文件里是特定格式的文献信息。bib文件当作文本打开，里面就是文献的元数据。
 \end{lstlisting}
 
-通常学位论文参考文献是基于BibTeX进行的，本模板最大的改进就是引入BibLaTeX。关于这部分知识可参考文献\parencite{_c,_g}的第六章，6.1节参考文献和BIBTEX工具。
+通常学位论文参考文献是基于BibTeX进行的，本模板使用的是BibLaTeX，或者叫Biber。关于这部分知识可参考文献\parencite{_c,_g}的第六章，6.1节参考文献和BIBTEX工具。所以使用TeXstudio或者vscode的时候需要注意调整正确的参数进行编译。
 
 参考文献引用和著录是基于ZOTERO这个软件进行的。视频教程见\parencite{_k}。此外，为了符合毕业论文撰写规范，需设置参数。按照视频教程安装完必要的插件（如Better BibTeX）后，在编辑->首选项进行设置。图\ref{op1}到图\ref{op11}所示的是我的zotero软件设置。其中最重要的是\ref{op10}的设置要排除的选项，多余的显示会让审稿人反感，按照论文撰写规范进行即可。在毕业论文撰写时，在编辑->首选项->Better BibLTeX->Fields中，Fields to omit from export填month,abstract,note,extra,file,keywords,type,url,doi，就是在参考文献著录中排除这些多余的项，避免过于复杂。而在写本模板使用说明时，没有排除url，因为很多参考资料是网页。
 
@@ -350,6 +350,8 @@ proof的大更多用法见参考文献\cite{_g}。scutthesis.cls文件的最后�
 使用endnote的用户也可以利用导出的bib文件生成参考文献著录信息，导出选项是bibTeX，貌似没有更多导出设置选项。导出设置没有zotero那么灵活丰富，得到bib文件后要引用某论文需要自行查找标签（label，也有软件叫引用关键字Citation Key）\{xxx\}然后手打\textbackslash{}cite\{xxx\}。欢迎熟悉endnote的同学来信告诉我更好的办法。
 
 ---------------------------------------------------------------------------------
+
+2023年3月8日测试：参考文献管理软件经常更新，但还是那句话，无论什么工具，最终得到bib文件即可，在期刊的文章页或者谷歌学术搜索页，只需要复制/下载bibtex的内容。得到这些元数据后甚至自己往bib文件里加都可以。
 
 \begin{lstlisting}
     另外有同学反映，换了电脑后重新导出的bib文件Citation Key值不同，记得设置好Better BibTeX之后，在著录条目界面全选著录（或仅选想更新的著录）然后右键选Better BibTeX更新refresh一下。然后在Automatic export选项点击Export now立即更新bib文件（按理说勾选了自动更新选项他会自动更新，但为了确保万无一失还是点一下）。
