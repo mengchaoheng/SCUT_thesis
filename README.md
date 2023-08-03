@@ -12,11 +12,11 @@
 
 1.使用VSCode, 安装LaTeX Workshop插件，在`settings.json`中修改相关字段为`settings_files/settings.json`中的值。以前就有在使用vscode的同学需要把该`settings.json`文件的部分内容添加到自己的.json文件。第一次使用vscode的同学直接覆盖就行。在vscode配置使用xelatexmk进行编译。详情参考[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)。（2022年起添加的方法，有编程基础的同学建议使用，无编程基础使用TeXstudio）
 
-2.使用编译脚本`all.bat`，记得关掉生成的pdf文档再双击`all.bat`。双击`clean.bat`删除临时文件。（此方法仅支持win）
+2.使用编译脚本`all.bat`，记得关掉生成的pdf文档再双击`all.bat`。双击`clean.bat`删除临时文件。（此方法仅支持win，且多年未维护）
 
 3.使用TeXstudio，首次编译建议从主文件`scutthesis.tex`开始编译，首先在`TeXstudio的Options->Configure TeXstudio->build`中，编译器(Dufault Compiler)选择`XeLaTeX`，默认文献工具(Default Bibliography Tool)选`Biber`，构建并查看（build & view） 按照`scutthesis.pdf`中的图2-1进行设置（点击右侧扳手符号进行设置，分别选择`recompile-bibliography`、`Defualt compiler`、`Defualt Viewer`并点add到右侧栏中），也可以使用默认的Compile & View（只不过此时不会自动更新参考文献著录）。(模版最初使用的编辑器，建议平时较少倒腾电脑、很少编程的同学使用)
 
-4.使用overleaf：
+4.使用overleaf，推荐无编程基础且不喜欢GitHub的同学使用。又可以分为三种操作方法，选择你觉得最顺手的：
 
 1)在终端 `git clone https://github.com/mengchaoheng/SCUT_thesis.git` 得到本项目后切换到 `overleaf` 分支。将文件导入到overleaf，如果文件太大就删除.git文件等隐藏文件。只需要在overleaf网页设置为XeLaTeX的编译方式即可。
 
