@@ -2,12 +2,37 @@
 
 本模版可用于撰写华南理工大学硕/博士学位论文。模板由[alwintsui](https://github.com/alwintsui/scutthesis)以及[yecfly](https://github.com/yecfly/scut-thesis)的模板修改而来。
 
-## 快速使用：
-> **Note** 本模板不再利用Lyx，直接使用TeXstudio或者vscode进行编辑，这类似IDE。vscode的一些使用技巧以及快捷键可参考其他教程(百度vscode latex)，这里仅仅给出配置文件`settings_files/settings.json`。详情移步[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)的[vscode配置](https://github.com/mengchaoheng/SCUT_thesis/discussions/6)。有什么问题都可以在讨论区交流。
+本模版还衍生出了很多模版：
+
+1.[华南理工大学硕/博士课程论文LaTeX模板](https://github.com/mengchaoheng/SCUT_course)
+
+2.[华南理工大学Beamer模板](https://github.com/mengchaoheng/SCUT_beamer)
+
+3.[华南理工大学研究生学位（毕业）论文开题报告LaTeX模板](https://github.com/mengchaoheng/SCUT_Report_Latex)
+
+4.[华南理工大学研究生学位（毕业）论文文献综述LaTeX模板](https://github.com/mengchaoheng/SCUT_Review_Latex)
+
+鉴于大家快毕业了才会来本网站查看，所以开题有关的latex模版还需要大家帮忙传播出去给需要的同学。
+
+## 为什么需要此模板
+latex和office在写论文、写slides时只是不同的工具，就像是两把菜刀，谁更锋利不重要，谁更顺手才重要。这里就不列举latex的优点，仅仅从个人的角度阐述为什么需要latex模版做以上各种报告、各种论文。
+
+原因很简单，因为本人在使用word对公式、图表进行编号和交叉引用时遇到了很大的困难，我知道mathtype、也试过网上的各种域操作、各种教程。但无论如何都让我感到困难。参考文献由于有zotero的帮助一切倒还好。在把电脑换成MacBook之后，上述问题更甚了，macOS上的word是和win上的不一样，使用起来难度又加大了。mathtype在macOS上还没法破解。仅仅因为这点我把所有报告、论文、slides的东西全都改用latex。写完论文把内容复制到beamer模版就得到幻灯片了。一致性很好，不需要像office一样写完word文档再写ppt时还需要做额外的工作，当然也可能是我不会用，但anyway，我在office面前已经认输，非必要不敢使用。
+
+## 此模板的缺点
+写下这部分是希望同学们对latex模版熟悉的话可以帮忙改进。目前对缺点是显而易见的：因为是改自其他模版，难免有很多冗余代码。
+
+我一直想重新整理，从零开始写一个新的，代码简洁的模版。奈何时间不允许。希望遇到一位大神来一起合作！！！
+
+## 预备工作
+
+> **Note:** 本模板不再利用Lyx，直接使用TeXstudio或者vscode进行编辑，这类似IDE。vscode的一些使用技巧以及快捷键可参考其他教程(百度vscode latex)，这里仅仅给出配置文件`settings_files/settings.json`。详情移步[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)的[vscode配置](https://github.com/mengchaoheng/SCUT_thesis/discussions/6)。有什么问题都可以在讨论区交流。
 
 使用之前可先阅读本文模板编译后生成的使用说明[scutthesis.pdf](https://github.com/mengchaoheng/SCUT_thesis/blob/master/scutthesis.pdf)文件、并有选择性地阅读[《一份（不太）简短的LATEX 2ε 介绍》](https://github.com/CTeX-org/lshort-zh-cn.git) 入门。还可以阅读[tutorial](https://github.com/mengchaoheng/SCUT_thesis/tree/master/tutorial)里的`scutthesis说明.pdf`文件，这是旧模版的文件，可以参考旧模版的东西。使用案例为[本人的学位论文](https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git)(注意该论文是基于初代模版，而现在的模版已经不断更新)。
 
 编译之前首先安装[texlive](https://www.tug.org/texlive/)，找到对应系统（Linux，win，macOS）的版本。注意macOS是MacTeX。
+
+## 快速使用：
 
 编译有四种方法：
 
@@ -25,8 +50,7 @@
 
 3)在本页面将master branch改为选择overleaf分支后在download本项目等.zip文件，然后上传overleaf。
 
-
-
+> **Note:** 使用Mac的同学可以买texifier(也可tb，学生嘛哈哈)或者私信我要安装包。此软件可以理解为Mac上的IDE，像VSCode、TeXstudio之类，还是有不少同学喜欢用的。
 
 ## 参考文献管理
 
