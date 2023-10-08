@@ -6,7 +6,7 @@
 
 1.[华南理工大学硕/博士课程论文LaTeX模板](https://github.com/mengchaoheng/SCUT_course)
 
-2.[华南理工大学Beamer模板](https://github.com/mengchaoheng/SCUT_beamer)
+2.[华南理工大学Beamer模板](https://github.com/mengchaoheng/SCUT_beamer)：将用其他模板写好的latex源码整理出来，一键生成幻灯片。
 
 3.[华南理工大学研究生学位（毕业）论文开题报告LaTeX模板](https://github.com/mengchaoheng/SCUT_Report_Latex)
 
