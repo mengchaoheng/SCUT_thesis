@@ -22,4 +22,5 @@
 *.synctex.gz
 *.fdb_latexmk
 *.fls
+*.hd
 .DS_Store
