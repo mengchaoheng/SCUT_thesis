@@ -1,8 +1,8 @@
 # 华南理工大学硕/博士学位论文LaTeX模板
 
-本模版可用于撰写华南理工大学硕/博士学位论文。模板由[alwintsui](https://github.com/alwintsui/scutthesis)以及[yecfly](https://github.com/yecfly/scut-thesis)的模板修改而来。
+本模板可用于撰写华南理工大学硕/博士学位论文。模板由[alwintsui](https://github.com/alwintsui/scutthesis)以及[yecfly](https://github.com/yecfly/scut-thesis)的模板修改而来。
 
-本模版还衍生出了很多模版：
+本模板还衍生出了很多模板：
 
 1.[华南理工大学硕/博士课程论文LaTeX模板](https://github.com/mengchaoheng/SCUT_course)
 
@@ -12,23 +12,23 @@
 
 4.[华南理工大学研究生学位（毕业）论文文献综述LaTeX模板](https://github.com/mengchaoheng/SCUT_Review_Latex)
 
-鉴于大家快毕业了才会来本网站查看，所以开题有关的latex模版还需要大家帮忙传播出去给需要的同学。
+鉴于大家快毕业了才会来本网站查看，所以开题有关的latex模板还需要大家帮忙传播出去给需要的同学。
 
 ## 为什么需要此模板
-latex和office在写论文、写slides时只是不同的工具，就像是两把菜刀，谁更锋利不重要，谁更顺手才重要。这里就不列举latex的优点，仅仅从个人的角度阐述为什么需要latex模版做以上各种报告、各种论文。
+latex和office在写论文、写slides时只是不同的工具，就像是两把菜刀，谁更锋利不重要，谁更顺手才重要。这里就不列举latex的优点，仅仅从个人的角度阐述为什么需要latex模板做以上各种报告、各种论文。
 
-原因很简单，因为本人在使用word对公式、图表进行编号和交叉引用时遇到了很大的困难，我知道mathtype、也试过网上的各种域操作、各种教程。但无论如何都让我感到困难。参考文献由于有zotero的帮助一切倒还好。在把电脑换成MacBook之后，上述问题更甚了，macOS上的word是和win上的不一样，使用起来难度又加大了。mathtype在macOS上还没法破解。仅仅因为这点我把所有报告、论文、slides的东西全都改用latex。写完论文把内容复制到beamer模版就得到幻灯片了。一致性很好，不需要像office一样写完word文档再写ppt时还需要做额外的工作，当然也可能是我不会用，但anyway，我在office面前已经认输，非必要不敢使用。
+原因很简单，因为本人在使用word对公式、图表进行编号和交叉引用时遇到了很大的困难，我知道mathtype、也试过网上的各种域操作、各种教程。但无论如何都让我感到困难。参考文献由于有zotero的帮助一切倒还好。在把电脑换成MacBook之后，上述问题更甚了，macOS上的word是和win上的不一样，使用起来难度又加大了。mathtype在macOS上还没法破解。仅仅因为这点我把所有报告、论文、slides的东西全都改用latex。写完论文把内容复制到beamer模板就得到幻灯片了。一致性很好，不需要像office一样写完word文档再写ppt时还需要做额外的工作，当然也可能是我不会用，但anyway，我在office面前已经认输，非必要不敢使用。
 
 ## 此模板的缺点
-写下这部分是希望同学们对latex模版熟悉的话可以帮忙改进。目前对缺点是显而易见的：因为是改自其他模版，难免有很多冗余代码。
+写下这部分是希望同学们对latex模板熟悉的话可以帮忙改进。目前对缺点是显而易见的：因为是改自其他模板，难免有很多冗余代码。（但不影响使用，已经连续多届同学证明了它的有效性）
 
-我一直想重新整理，从零开始写一个新的，代码简洁的模版。奈何时间不允许。希望遇到一位大神来一起合作！！！
+我一直想重新整理，从零开始写一个新的，代码简洁的模板。奈何时间不允许。希望遇到一位大神来一起合作！！！
 
 ## 预备工作
 
 > **Note:** 本模板不再利用Lyx，直接使用TeXstudio或者vscode进行编辑，这类似IDE。vscode的一些使用技巧以及快捷键可参考其他教程(百度vscode latex)，这里仅仅给出配置文件`settings_files/settings.json`。详情移步[讨论区](https://github.com/mengchaoheng/SCUT_thesis/discussions)的[vscode配置](https://github.com/mengchaoheng/SCUT_thesis/discussions/6)。有什么问题都可以在讨论区交流。
 
-使用之前可先阅读本文模板编译后生成的使用说明[scutthesis.pdf](https://github.com/mengchaoheng/SCUT_thesis/blob/master/scutthesis.pdf)文件、并有选择性地阅读[《一份（不太）简短的LATEX 2ε 介绍》](https://github.com/CTeX-org/lshort-zh-cn.git) 入门。还可以阅读[tutorial](https://github.com/mengchaoheng/SCUT_thesis/tree/master/tutorial)里的`scutthesis说明.pdf`文件，这是旧模版的文件，可以参考旧模版的东西。使用案例为[本人的学位论文](https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git)(注意该论文是基于初代模版，而现在的模版已经不断更新)。
+使用之前可先阅读本文模板编译后生成的使用说明[scutthesis.pdf](https://github.com/mengchaoheng/SCUT_thesis/blob/master/scutthesis.pdf)文件、并有选择性地阅读[《一份（不太）简短的LATEX 2ε 介绍》](https://github.com/CTeX-org/lshort-zh-cn.git) 入门。还可以阅读[tutorial](https://github.com/mengchaoheng/SCUT_thesis/tree/master/tutorial)里的`scutthesis说明.pdf`文件，这是旧模板的文件，可以参考旧模板的东西。使用案例为[本人的学位论文](https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git)(注意该论文是基于初代模板，而现在的模板已经不断更新)。
 
 编译之前首先安装[texlive](https://www.tug.org/texlive/)，找到对应系统（Linux，win，macOS）的版本。注意macOS是MacTeX。
 
@@ -40,13 +40,13 @@ latex和office在写论文、写slides时只是不同的工具，就像是两把
 
 2.使用编译脚本`all.bat`，记得关掉生成的pdf文档再双击`all.bat`。双击`clean.bat`删除临时文件。（此方法仅支持win，且多年未维护）
 
-3.使用TeXstudio，首次编译建议从主文件`scutthesis.tex`开始编译，首先在`TeXstudio的Options->Configure TeXstudio->build`中，编译器(Dufault Compiler)选择`XeLaTeX`，默认文献工具(Default Bibliography Tool)选`Biber`，构建并查看（build & view） 按照`scutthesis.pdf`中的图2-1进行设置（点击右侧扳手符号进行设置，分别选择`recompile-bibliography`、`Defualt compiler`、`Defualt Viewer`并点add到右侧栏中），也可以使用默认的Compile & View（只不过此时不会自动更新参考文献著录）。(模版最初使用的编辑器，建议平时较少倒腾电脑、很少编程的同学使用)
+3.使用TeXstudio，首次编译建议从主文件`scutthesis.tex`开始编译，首先在`TeXstudio的Options->Configure TeXstudio->build`中，编译器(Dufault Compiler)选择`XeLaTeX`，默认文献工具(Default Bibliography Tool)选`Biber`，构建并查看（build & view） 按照`scutthesis.pdf`中的图2-1进行设置（点击右侧扳手符号进行设置，分别选择`recompile-bibliography`、`Defualt compiler`、`Defualt Viewer`并点add到右侧栏中），也可以使用默认的Compile & View（只不过此时不会自动更新参考文献著录）。(模板最初使用的编辑器，建议平时较少倒腾电脑、很少编程的同学使用)
 
 4.使用overleaf，只需要在overleaf网页设置为XeLaTeX的编译方式即可。推荐无编程基础且不喜欢GitHub的同学使用。又可以分为三种操作方法，选择你觉得最顺手的：
 
 1)在终端 `git clone https://github.com/mengchaoheng/SCUT_thesis.git` 得到本项目后切换到 `overleaf` 分支。将文件导入到overleaf，如果文件太大就删除.git文件等隐藏文件。
 
-2)当然也可以直接在overleaf网页导入，模版地址在[SCUT_overleaf](https://www.overleaf.com/latex/templates/scut-thesis/bgybznvkjdfx)，更多使用说明参考[overleaf文档](https://www.overleaf.com/learn)。
+2)当然也可以直接在overleaf网页导入，模板地址在[SCUT_overleaf](https://www.overleaf.com/latex/templates/scut-thesis/bgybznvkjdfx)，更多使用说明参考[overleaf文档](https://www.overleaf.com/learn)。
 
 3)在本页面将master branch改为选择overleaf分支后在download本项目等.zip文件，然后上传overleaf。
 
