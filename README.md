@@ -50,6 +50,8 @@ latex和office在写论文、写slides时只是不同的工具，就像是两把
 
 > **Note:** 使用Mac的同学可以用texifier，此软件可以理解为Mac上的IDE，像VSCode、TeXstudio之类。
 
+> **Note:** 如果有更新版本的封面，可自行替换。建议每届毕业生都到官网下载最新封面，替换`cover_file`中的内容，防止学校改建校年份引起校徽的变化。建校年份还能改这点我是非常意外的。
+
 ## 参考文献管理
 
 本模板最主要的改动是参考文献使用biblatex（biber），而不是原来的BibTeX，因此不再需要.bst文件。在这项改动之后，参考文献部分的格式符合国标，当然要注意进行适当的设置，因为根据学校的论文撰写规范，有的信息是不需要显示在参考文献著录里的。每年都有同学提问为什么参考文献的显示和学校发布的撰写规范有一点点不同，详情到issue和讨论区查看，但简而言之，目前的默认设置是可以用的，已经连续用了那么多届都没问题。感兴趣的同学可以查看biblatex包的[使用说明](https://github.com/mengchaoheng/SCUT_thesis/blob/master/settings_files/package_Documentation/biblatex-gb7714-2015.pdf)，[package_Documentation](https://github.com/mengchaoheng/SCUT_thesis/tree/master/settings_files/package_Documentation)文件夹还有其他包的使用说明。而大部分同学不需要关心这些。
