@@ -56,9 +56,12 @@ latex和office在写论文、写slides时只是不同的工具，就像是两把
 
 本模板最主要的改动是参考文献使用biblatex（biber），而不是原来的BibTeX，因此不再需要.bst文件。在这项改动之后，参考文献部分的格式符合国标，当然要注意进行适当的设置，因为根据学校的论文撰写规范，有的信息是不需要显示在参考文献著录里的。每年都有同学提问为什么参考文献的显示和学校发布的撰写规范有一点点不同，详情到issue和讨论区查看，但简而言之，目前的默认设置是可以用的，已经连续用了那么多届都没问题。感兴趣的同学可以查看biblatex包的[使用说明](https://github.com/mengchaoheng/SCUT_thesis/blob/master/settings_files/package_Documentation/biblatex-gb7714-2015.pdf)，[package_Documentation](https://github.com/mengchaoheng/SCUT_thesis/tree/master/settings_files/package_Documentation)文件夹还有其他包的使用说明。而大部分同学不需要关心这些。
 
-另外参考文献管理软件推荐使用开源的zotero，这是生成本模板的bib文件的软件（使用其他文献管理软件如endnote当然也可以，重点是导出bib文件）。当然，也可以手动新建一个后缀名为.bib的文件，然后直接在文献页面（或谷歌、百度学术页面）复制BibTeX数据到该.bib文件，最后在`scutthesis.tex`文件里使用就行。zotero不仅有强大的PC端（支持mac、win、linux），还有移动端（安卓、ios），所有文献信息都是同步的，文献的pdf文件可以使用第三方存储工具（坚果云）同步。zotero的浏览器插件，可以使用chrome等浏览器搜索到论文后一键捕获文献信息到zotero。对zotero收集好的文献，选中想要引用的论文然后按快捷键复制（需要适当自定义设置），再到撰写论文的tex文件粘贴即可（word也可以使用zotero，也很方便，本项目我们仅仅讨论latex模板）。zotero还有翻译插件，scihub插件等等，功能非常强大。注意避免使用付费插件，这有悖于此软件的开源精神，部分公众号不敢恭维。总之多端同步，开源免费，插件丰富，方便随时随地看论文，省去管理文献的麻烦，相见恨晚！在2020年时个人比较推荐的zotero教程是b站up主`Struggle_with_me`做的，当然最近出现了很多新功能新教程，但最本质的东西应该还没有变，并且花里胡哨的东西（插件）其实并不实用。在写毕业论文的各位可以推荐给研一的师弟师妹，早用早享受，方便后期写论文。
+另外参考文献管理软件推荐使用开源的zotero，使用其他文献管理软件如endnote当然也可以，重点是导出bib文件。还可以手动创建一个后缀名为.bib的文件，然后直接在文献页面（或谷歌、百度学术页面）复制BibTeX数据到该.bib文件，手动维护该文件，最后在`scutthesis.tex`文件里使用即可。
+> **Note:** 由于有一些数据信息是不需要在参考文献列表中显示，所以复制或从文献管理软件导出文献的元数据时，记得只选择必要的数据而剔除冗余的数据。虽然多出的信息有时候更好看，送审和学校审核也可能可以顺利通过，但为了避免麻烦，最好去除doi等多余信息。
 
-## 错误排除：
+> **Note:** zotero的强大不需要我做介绍，强烈建议同学们花点时间学习使用。
+
+## 常见报错解决思路：
 
 编译时如果提示缺乏字体，请安装[settings_files](https://github.com/mengchaoheng/SCUT_thesis/tree/master/settings_files)里面的字体（win右键安装即可；mac参考官方字体安装教程；linux下类似，需要自行百度）。此外，目前遇到的导致错误的原因大都是以下三种：
 
