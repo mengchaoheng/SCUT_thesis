@@ -20,7 +20,7 @@ latex和office在写论文、写slides时只是不同的工具，就像是两把
 ## 此模板的缺点
 写下这部分是希望同学们对latex模板熟悉的话可以帮忙改进。目前对缺点是显而易见的：因为是改自其他模板，难免有很多冗余代码。（但不影响使用，已经连续多届同学证明了它的有效性）
 
-我一直想重新整理，从零开始写一个新的，代码简洁的模板。奈何时间不允许。希望遇到一位大神来一起合作！！！
+我一直想重新整理，从零开始写一个新的，代码简洁的模板。奈何时间不允许。希望遇到有缘人一起合作！！！
 
 ## 预备工作
 
@@ -32,23 +32,23 @@ latex和office在写论文、写slides时只是不同的工具，就像是两把
 
 ## 快速使用：
 
-编译有四种方法：
+编译`scutthesis.tex`文件，生成论文pdf文件即`scutthesis.pdf`，共有四种方法，任选其一：
 
-1.使用VSCode, 安装LaTeX Workshop插件，在`settings.json`中修改相关字段为`settings_files/settings.json`中的值。以前就有在使用vscode的同学需要把该`settings.json`文件的部分内容添加到自己的.json文件。第一次使用vscode的同学直接覆盖就行。在vscode配置使用xelatexmk进行编译。详情参考[讨论区vscode配置](https://github.com/mengchaoheng/SCUT_thesis/discussions/6)。（2022年起添加的方法，有编程基础的同学建议使用，无编程基础使用TeXstudio）
+1.使用VSCode, 安装LaTeX Workshop插件，在`settings.json`中修改相关字段为`settings_files/settings.json`中的值。以前就有在使用vscode的同学需要把该`settings.json`文件的部分内容添加到自己的.json文件。第一次使用vscode的同学直接覆盖就行。在vscode配置使用xelatexmk进行编译。详情参考[讨论区vscode配置](https://github.com/mengchaoheng/SCUT_thesis/discussions/6)，也可以参考[zhuohoudeputao](https://github.com/zhuohoudeputao)做的[环境配置视频](hihihttps://www.bilibili.com/video/BV1jT4y1e7QT)。（2022年起添加的方法，建议有编程基础、追求效率的同学使用）
 
-2.使用编译脚本`all.bat`，记得关掉生成的pdf文档再双击`all.bat`。双击`clean.bat`删除临时文件。（此方法仅支持win，且多年未维护）
+2.使用TeXstudio，首次编译建议从主文件`scutthesis.tex`开始编译，首先在`TeXstudio的Options->Configure TeXstudio->build`中，编译器(Dufault Compiler)选择`XeLaTeX`，默认文献工具(Default Bibliography Tool)选`Biber`，构建并查看（build & view） 按照`scutthesis.pdf`中的图2-1进行设置（点击右侧扳手符号进行设置，分别选择`recompile-bibliography`、`Defualt compiler`、`Defualt Viewer`并点add到右侧栏中），也可以使用默认的Compile & View，只不过此时不会自动更新参考文献著录。(模板最初使用的编辑器，建议喜欢本地编辑、平时较少倒腾电脑、较少编程、追求稳定的同学使用)
 
-3.使用TeXstudio，首次编译建议从主文件`scutthesis.tex`开始编译，首先在`TeXstudio的Options->Configure TeXstudio->build`中，编译器(Dufault Compiler)选择`XeLaTeX`，默认文献工具(Default Bibliography Tool)选`Biber`，构建并查看（build & view） 按照`scutthesis.pdf`中的图2-1进行设置（点击右侧扳手符号进行设置，分别选择`recompile-bibliography`、`Defualt compiler`、`Defualt Viewer`并点add到右侧栏中），也可以使用默认的Compile & View（只不过此时不会自动更新参考文献著录）。(模板最初使用的编辑器，建议平时较少倒腾电脑、很少编程的同学使用)
+3.使用编译脚本`all.bat`，记得关掉生成的pdf文档再双击`all.bat`。双击`clean.bat`删除临时文件。（此方法仅支持win，且多年未维护，但维护起来应该很简单，记事本打开编辑一下命令即可，具体命令可百度）
 
-4.使用overleaf，只需要在overleaf网页设置为XeLaTeX的编译方式即可。推荐无编程基础且不喜欢GitHub的同学使用。又可以分为三种操作方法，选择你觉得最顺手的：
+4.使用overleaf，只需要在overleaf网页设置为XeLaTeX的编译方式即可。推荐无编程基础、不喜欢GitHub且能接受在线编辑的同学使用。又可以分为三种操作方法，选择你觉得最顺手的：
 
-1)在终端 `git clone https://github.com/mengchaoheng/SCUT_thesis.git` 得到本项目后切换到 `overleaf` 分支。将文件导入到overleaf，如果文件太大就删除.git文件等隐藏文件。
+1)直接在overleaf网页导入，模板地址在[SCUT_overleaf](https://www.overleaf.com/latex/templates/scut-thesis/bgybznvkjdfx)，更多使用说明参考[overleaf文档](https://www.overleaf.com/learn)。（显然对无编程基础的同学最友好）
 
-2)当然也可以直接在overleaf网页导入，模板地址在[SCUT_overleaf](https://www.overleaf.com/latex/templates/scut-thesis/bgybznvkjdfx)，更多使用说明参考[overleaf文档](https://www.overleaf.com/learn)。
+2)当然也可以在命令行窗口运行 `git clone https://github.com/mengchaoheng/SCUT_thesis.git` 得到本项目后切换到 `overleaf` 分支。将文件导入到overleaf，如果文件太大就删除.git文件等隐藏文件。（适合于希望参与开发、完善overleaf版本的同学）
 
-3)在本页面将master branch改为选择overleaf分支后在download本项目等.zip文件，然后上传overleaf。
+3)还可以在本页面将master branch改为选择overleaf分支后在download本项目等.zip文件，然后上传overleaf。
 
-> **Note:** 使用Mac的同学可以用texifier，此软件可以理解为Mac上的IDE，像VSCode、TeXstudio之类。
+> **Note:** 使用Mac的同学也可以用texifier，但亲测体验不怎么好，因人而异。
 
 > **Note:** 如果有更新版本的封面，可自行替换。建议每届毕业生都到官网下载最新封面，替换`cover_file`中的内容，防止学校改建校年份引起校徽的变化。建校年份还能改这点我是非常意外的。
 
