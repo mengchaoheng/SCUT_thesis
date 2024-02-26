@@ -53,10 +53,38 @@ latex和office在写论文、写slides时只是不同的工具，就像是两把
 > **Note:** 如果有更新版本的封面，可自行替换。建议每届毕业生都到官网下载最新封面，替换`cover_file`中的内容，防止学校改建校年份引起校徽的变化。建校年份还能改这点我是非常意外的。
 
 ## 参考文献管理
+两种方法：
 
-本模板最主要的改动是参考文献使用biblatex（biber），而不是原来的BibTeX，因此不再需要.bst文件。在这项改动之后，参考文献部分的格式符合国标，当然要注意进行适当的设置，因为根据学校的论文撰写规范，有的信息是不需要显示在参考文献著录里的。每年都有同学提问为什么参考文献的显示和学校发布的撰写规范有一点点不同，详情到issue和讨论区查看，但简而言之，目前的默认设置是可以用的，已经连续用了那么多届都没问题。感兴趣的同学可以查看biblatex包的[使用说明](https://github.com/mengchaoheng/SCUT_thesis/blob/master/settings_files/package_Documentation/biblatex-gb7714-2015.pdf)，[package_Documentation](https://github.com/mengchaoheng/SCUT_thesis/tree/master/settings_files/package_Documentation)文件夹还有其他包的使用说明。而大部分同学不需要关心这些。
+1.找到你想引用的文献，通常文献网页提供一个`引用`/`Cite`功能，点击后会得到一些常用的引用格式，但这些通常不符合我们的格式要求。很自然的想到把该文献的信息用统一的格式存储下来，BibTeX就是这样的东西。所以在网页找到包含该文献所有信息的BibTex格式文件，下载下来（一篇论文一个bib文件），统一保存到一个xxx.bib文件里，然后在论文中使用该xxx.bib文件（汇总了很多论文的bib文件）。例如模版文件夹里的`MyLibrary.bib`文件。保存有很多篇文章信息，其中一篇为：
+```
+@article{Vasile_2020,
+  title = {Reactive Sampling-Based Path Planning with Temporal Logic Specifications},
+  author = {Vasile, Cristian Ioan and Li, Xiao and Belta, Calin},
+  date = {2020-07-01},
+  journaltitle = {The International Journal of Robotics Research},
+  volume = {39},
+  number = {8},
+  pages = {1002--1028},
+  publisher = {{SAGE Publications Ltd STM}},
+  issn = {0278-3649},
+  url = {https://doi.org/10.1177/0278364920918919},
+  urldate = {2021-10-08},
+  langid = {english}
+}
+```
+这是一篇在[The International Journal of Robotics Research](https://doi.org/10.1177/0278364920918919)的文章，点击`More`->`Cite article`，它提供了两种，一种是现成的，格式通常不满足需求。另一种是`Download to reference manager`，提供了很多格式，在`Select your citation manager software:`选择`BibTeX`。下载好文件后，把里面的内容复制到一个xxx.bib文件里，每篇文章空行隔开。该xxx.bib文件里每篇文章第一项内容不能重复，可以理解为它的id，也是在论文中引用该文献的句柄。如上面`Vasile_2020`。目前我见过所有的论文都可以在文献网页、搜索网站等地方下载`BibTeX`。例如谷歌学术搜索结果页可以直接点击下载。注意到上面例子中下载的文件里包含了摘要的内容，有时属于冗余信息，可以删除。
 
-另外参考文献管理软件推荐使用开源的zotero，使用其他文献管理软件如endnote当然也可以，重点是导出bib文件。还可以手动创建一个后缀名为.bib的文件，然后直接在文献页面（或谷歌、百度学术页面）复制BibTeX数据到该.bib文件，手动维护该文件，最后在`scutthesis.tex`文件里使用即可。
+2.上面的方法较为原始，随着论文越来越多，手动维护一个bib文件过于复杂，并且很多文献bib文件很多冗余信息，每次手动删减很麻烦。所以催生了很多工具进行管理，即参考文献管理软件。常见如zotero，endnote等。可以自动导出bib文件，还可以方便地对文献进行引用、阅读、分类、共享、多端同步等等。
+
+参考文献管理软件推荐使用开源的zotero，使用其他文献管理软件如endnote当然也可以，重点是导出bib文件。觉得费时间就手动创建一个后缀名为.bib的文件，然后直接在文献页面复制BibTeX数据到该.bib文件，手动维护该文件，最后在`scutthesis.tex`文件里使用即可。
+
+> **Note:** 百度：BibTeX 是一种文件格式，也是一个制作这种文件的工具（软件）。这种文件用于描述和处理引用列表，通常情况下与LaTeX文档结合使用。它是一种专门的参考文献管理系统，允许用户通过编写.bib后缀名的文本文件来存储参考文献信息。这些文件可以包含引用的元数据，如作者、标题、期刊等信息，并且可以通过BibTeX命令行工具或集成在LaTeX编辑器中的插件来进行管理和更新。BibTeX的使用方式通常是创建一个.bib文件，然后将其导入到LaTeX文档中，这样LaTeX就可以自动生成相应的引用列表。
+
+> **Note:** 维基百科：BibTeX is both a bibliographic flat-file database file format and a software program for processing these files to produce lists of references (citations). The BibTeX file format is a widely used standard with broad support by reference management software.
+
+本模板最主要的改动是参考文献使用BibLaTeX（Biber）包，而不是原来的BibTeX（仍然使用这种格式，但不再使用这种软件/程序），因此不再需要.bst文件。具体词汇含义可查看百科词条[BibTeX](https://en.wikipedia.org/wiki/BibTeX)和[Biber](https://en.wikipedia.org/wiki/Biber_(LaTeX))。在这项改动之后，参考文献部分的格式符合国标gb7714-2015，当然要注意进行适当的设置，因为根据学校的论文撰写规范，有的信息是不需要显示在参考文献著录里的。每年都有同学提问为什么参考文献的显示和学校发布的撰写规范有一点点不同，详情到issue和讨论区查看，但简而言之，目前的默认设置是可以用的，已经连续用了那么多届都没问题。感兴趣的同学可以查看biblatex包的[使用说明](https://github.com/mengchaoheng/SCUT_thesis/blob/master/settings_files/package_Documentation/biblatex-gb7714-2015.pdf)，[package_Documentation](https://github.com/mengchaoheng/SCUT_thesis/tree/master/settings_files/package_Documentation)文件夹还有其他包的使用说明。而大部分同学不需要关心这些。
+
+
 > **Note:** 由于有一些数据信息是不需要在参考文献列表中显示，所以复制或从文献管理软件导出文献的元数据时，记得只选择必要的数据而剔除冗余的数据。虽然多出的信息有时候更好看，送审和学校审核也可能可以顺利通过，但为了避免麻烦，最好去除doi等多余信息。
 
 > **Note:** zotero的强大不需要我做介绍，强烈建议同学们花点时间学习使用。
