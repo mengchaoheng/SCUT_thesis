@@ -160,7 +160,7 @@
     // 由于 tex 文档编译有时需要用到辅助文件，比如编译目录和编译参考文献时，如果使用onBuilt命令，则会导致编译不出完整结果甚至编译失败；
     // 而有时候将 tex 文件修改后进行编译时，可能会导致 pdf 文件没有正常更新的情况，这个时候可能就是由于辅助文件没有进行及时更新的缘故，需要清除辅助文件了，而never命令做不到这一点；
     // 故使用onFailed，同时解决了上述两个问题。
-    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.autoClean.run": "onFailed",
     // 该命令的作用为设置 vscode 编译 tex 文档时的默认编译链。有两个变量： 1. first : 使用latex-workshop.latex.recipes中的第一条编译链，故而您可以根据自己的需要更改编译链顺序； 2. lastUsed : 使用最近一次编译所用的编译链。
     "latex-workshop.latex.recipe.default": "lastUsed",
     // 用于反向同步（即从编译出的 pdf 文件指定位置跳转到 tex 文件中相应代码所在位置）的内部查看器的快捷键绑定。变量有两种：
