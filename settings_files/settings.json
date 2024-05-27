@@ -2,7 +2,7 @@
     // 上面可以继续添加个人设置，注意要在上面最后一行末尾加英文逗号,
     
     // 和latex相关部分
-    // 参考：https://zhuanlan.zhihu.com/p/166523064
+    // 参考：https://zhuanlan.zhihu.com/p/166523064 和 chatGPT
 
     // 这些代码是定义在下文 recipes 编译链中被使用的编译命令，此处为默认配置，不需要进行更改。其中的name为这些命令的标签，用作下文 recipes 的引用；而command为在该拓展中的编译方式。
     "latex-workshop.latex.tools": [
@@ -45,7 +45,6 @@
                 "-interaction=nonstopmode",
                 "-file-line-error",
                 "-pdf",
-                "-outdir=%OUTDIR%",
                 "%DOC%"
             ]
         },
@@ -53,38 +52,50 @@
             "name": "bibtex",
             "command": "bibtex",
             "args": [
-                "%DOC%"
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
             ]
         }
 
 
     ],
     // 此串代码是对编译链进行定义，其中name是标签，也就是出现在工具栏中的链名称；tool是name标签所对应的编译顺序，其内部编译命令来自上文latex-workshop.latex.tools 中内容。定义完成后，能够在Build LaTex Project中能够看到的编译选项.
+
+    //使用 latexmk 的好处:
+    // 1. 自动处理依赖关系：latexmk 会自动检测文档中的依赖关系（如引用、索引、图片等），并根据需要多次调用 LaTeX 编译器和其他工具，直到所有引用和索引都得到正确解析。
+    // 2. 简化编译过程：使用 latexmk 可以避免手动运行多次 pdflatex 和 bibtex，简化编译过程。
+    // 3. 错误处理和日志记录：latexmk 会生成详细的日志文件，帮助用户查找和修复编译中的问题。
     "latex-workshop.latex.recipes": [
         {
-            "name": "xelatexmk",
+            "name": "xelatexmk", //推荐使用的，它不在需要类似xelatex -> biber -> xelatex*2的tools的内容
             "tools": [
                 "xelatexmk"
             ]
         },
         {
-            "name": "XeLaTeX",
+            "name": "XeLaTeX", // 通常一次xelatex不够，仅仅为灵活编译定义
             "tools": [
                 "xelatex"
             ]
         },
         {
-            "name": "PDFLaTeX",
+            "name": "PDFLaTeX", // 通常一次 pdflatex 不够，仅仅为灵活编译定义
             "tools": [
                 "pdflatex"
             ]
         },
-        {
-            "name": "BibTeX",
-            "tools": [
-                "bibtex"
-            ]
-        },
+        // {
+        //     "name": "BibTeX",  // 通常不这么使用，注释掉，也可以为灵活编译定义
+        //     "tools": [
+        //         "bibtex"
+        //     ]
+        // },
         {
             "name": "LaTeXmk",
             "tools": [
@@ -92,7 +103,16 @@
             ]
         },
         {
-            "name": "xelatex -> bibtex -> xelatex*2",
+            "name": "xelatex -> biber -> xelatex*2", //最初默认的
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        }, 
+        {
+            "name": "xelatex -> bibtex -> xelatex*2", //常见的
             "tools": [
                 "xelatex",
                 "bibtex",
@@ -101,16 +121,17 @@
             ]
         },
         {
-            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "name": "pdflatex -> bibtex -> pdflatex*2", //常见的
             "tools": [
                 "pdflatex",
                 "bibtex",
                 "pdflatex",
                 "pdflatex"
             ]
-        }
+        } //类似还可以写很多编译链。
     ],
     // 设置编译完成后要清除掉的辅助文件类型，若无特殊需求，无需进行更改。
+    //似乎clean up auxiliary files不能删除掉所有辅助文件，这点待改进
     "latex-workshop.latex.clean.fileTypes": [
         "*.aux",
         "*.bbl",
@@ -139,7 +160,7 @@
     // 由于 tex 文档编译有时需要用到辅助文件，比如编译目录和编译参考文献时，如果使用onBuilt命令，则会导致编译不出完整结果甚至编译失败；
     // 而有时候将 tex 文件修改后进行编译时，可能会导致 pdf 文件没有正常更新的情况，这个时候可能就是由于辅助文件没有进行及时更新的缘故，需要清除辅助文件了，而never命令做不到这一点；
     // 故使用onFailed，同时解决了上述两个问题。
-    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
     // 该命令的作用为设置 vscode 编译 tex 文档时的默认编译链。有两个变量： 1. first : 使用latex-workshop.latex.recipes中的第一条编译链，故而您可以根据自己的需要更改编译链顺序； 2. lastUsed : 使用最近一次编译所用的编译链。
     "latex-workshop.latex.recipe.default": "lastUsed",
     // 用于反向同步（即从编译出的 pdf 文件指定位置跳转到 tex 文件中相应代码所在位置）的内部查看器的快捷键绑定。变量有两种：
