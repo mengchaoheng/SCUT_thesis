@@ -90,12 +90,18 @@
                 "pdflatex"
             ]
         },
-        // {
-        //     "name": "BibTeX",  // 通常不这么使用，注释掉，也可以为灵活编译定义
-        //     "tools": [
-        //         "bibtex"
-        //     ]
-        // },
+        {
+            "name": "BibTeX",  // 通常不这么使用，也可以为灵活编译定义
+            "tools": [
+                "bibtex"
+            ]
+        },
+        {
+            "name": "BibLaTeX",  // 通常不这么使用，也可以为灵活编译定义
+            "tools": [
+                "biber"
+            ]
+        },
         {
             "name": "LaTeXmk",
             "tools": [
