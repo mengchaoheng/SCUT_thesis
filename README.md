@@ -48,6 +48,8 @@ latex和office在写论文、写slides时只是不同的工具，就像是两把
 
 3)还可以在本页面将master branch改为选择overleaf分支后在download本项目等.zip文件，然后上传overleaf。
 
+> **Note:** 封面需要用微软的word打开另存为pdf，不能使用wps（暂时不明原因报错）。
+
 > **Note:** 使用Mac的同学也可以用texifier，但亲测体验不怎么好，因人而异。
 
 > **Note:** 如果有更新版本的封面，可自行替换。建议每届毕业生都到官网下载最新封面，替换`cover_file`中的内容，防止学校改建校年份引起校徽的变化。建校年份还能改这点我是非常意外的。

@@ -608,7 +608,7 @@
 \theoremstyle{definition}
 \newtheorem{definition}{定义~}[chapter]
 \newtheorem{example}{例~}[chapter]
-\newtheorem{remark}{说明~}[chapter]
+\newtheorem{remark}{注~}[chapter]
 \newtheorem{assumption}{假设~}[chapter]	% by mch
 % ------改为definition，by mch
 \newtheorem{proposition}{命题~}[chapter]
