@@ -178,7 +178,7 @@
     // 1. onFileChange：在检测任何依赖项中的文件更改(甚至被其他应用程序修改)时构建项目，即当检测到代码被更改时就自动编译tex文件；
     // 2. onSave : 当代码被保存时自动编译文件；
     // 3. never: 从不自动编译，即需编写者手动编译文档
-    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.autoBuild.run": "onSave",
     // 设置是否将编译文档的选项出现在鼠标右键的菜单中。
     "latex-workshop.showContextMenu": true,
     // 设置为true，则该拓展能够从使用的宏包中自动提取命令和环境，从而补全正在编写的代码。
