@@ -79,6 +79,33 @@
             ]
         },
         {
+            "name": "xelatex -> biber -> xelatex*2", //最初默认的
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xelatex -> bibtex -> xelatex*2", //常见的
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2", //常见的
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }, //类似还可以写很多编译链。
+        {
             "name": "XeLaTeX", // 通常一次xelatex不够，仅仅为灵活编译定义
             "tools": [
                 "xelatex"
@@ -107,34 +134,7 @@
             "tools": [
                 "latexmk"
             ]
-        },
-        {
-            "name": "xelatex -> biber -> xelatex*2", //最初默认的
-            "tools": [
-                "xelatex",
-                "biber",
-                "xelatex",
-                "xelatex"
-            ]
-        }, 
-        {
-            "name": "xelatex -> bibtex -> xelatex*2", //常见的
-            "tools": [
-                "xelatex",
-                "bibtex",
-                "xelatex",
-                "xelatex"
-            ]
-        },
-        {
-            "name": "pdflatex -> bibtex -> pdflatex*2", //常见的
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
-            ]
-        } //类似还可以写很多编译链。
+        }
     ],
     // 设置编译完成后要清除掉的辅助文件类型，若无特殊需求，无需进行更改。
     "latex-workshop.latex.clean.fileTypes": [ "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot", "*.out", "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo", "*.gls", "*.fls", "*.log", "*.fdb_latexmk", "*.snm", "*.synctex(busy)", "*.synctex.gz(busy)", "*.nav" , "*.bcf", "*.ilg", "*.xdv", "*.hd"],
