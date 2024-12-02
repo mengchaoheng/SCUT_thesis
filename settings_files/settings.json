@@ -137,28 +137,12 @@
         } //类似还可以写很多编译链。
     ],
     // 设置编译完成后要清除掉的辅助文件类型，若无特殊需求，无需进行更改。
-    //似乎clean up auxiliary files不能删除掉所有辅助文件，这点待改进
-    "latex-workshop.latex.clean.fileTypes": [
-        "*.aux",
-        "*.bbl",
-        "*.blg",
-        "*.idx",
-        "*.ind",
-        "*.lof",
-        "*.lot",
-        "*.out",
-        "*.toc",
-        "*.acn",
-        "*.acr",
-        "*.alg",
-        "*.glg",
-        "*.glo",
-        "*.gls",
-        "*.ist",
-        "*.fls",
-        "*.log",
-        "*.fdb_latexmk"
-    ],
+    "latex-workshop.latex.clean.fileTypes": [ "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot", "*.out", "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo", "*.gls", "*.fls", "*.log", "*.fdb_latexmk", "*.snm", "*.synctex(busy)", "*.synctex.gz(busy)", "*.nav" , "*.bcf", "*.ilg", "*.xdv", "*.hd"],
+    //递归删除子目录里的配置文件
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    // "glob": Clean all the files located in latex-workshop.latex.outDir and matching the glob patterns listed in latex-workshop.latex.clean.fileTypes.
+    // "command": Run latex-workshop.latex.clean.command to clean temporary files.  (default value)
+    "latex-workshop.latex.clean.method": "glob",
     // 这条命令是设置什么时候对上文设置的辅助文件进行清除。其变量有：
     // 1. onBuilt : 无论是否编译成功，都选择清除辅助文件；
     // 2. onFailed : 当编译失败时，清除辅助文件；

@@ -5,11 +5,11 @@
 \usepackage{enumitem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%——by MCH
 %编译范围
-% \includeonly{chapter04}
+% \includeonly{subcontent/chapter04}
 %参考文献设置
 \usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase]{biblatex}
-\addbibresource[location=local]{MyLibrary.bib} % 如果在其他盘，改为相对路径。比如F盘，改为：F/MyLibrary.bib
-\addbibresource[location=local]{mybibfile2.bib} % 无论什么来源的bib文件，只要由参考文献的BibTeX组成，都可以使用此模板。参考文献的BibTeX获取方法可百度
+\addbibresource[location=local]{dependencies/MyLibrary.bib} % 如果在其他盘，改为相对路径。比如F盘，改为：F/MyLibrary.bib
+\addbibresource[location=local]{dependencies/mybibfile2.bib} % 无论什么来源的bib文件，只要由参考文献的BibTeX组成，都可以使用此模板。参考文献的BibTeX获取方法可百度
 %页眉页脚设置
 \usepackage{fancyhdr}
 \usepackage{listings}
@@ -55,7 +55,7 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\maketitle	
 	\frontmatter	%此后为罗马数字页码，页面类型为plain
-	\include{abstract} % 中英文摘要
+	\include{subcontent/abstract} % 中英文摘要
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% 目录、表格目录、插图目录这几个字本身的大纲级别是一级的，即和章名有相同的字号字体。目录表的内容通过titletoc宏包在。cls文件设置了。
 	%\cleardoublepage % pdfbookmark可能需要这一条才能正常工作
@@ -76,8 +76,8 @@
 	\endgroup
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\include{symbols}	% 符号对照表(可选)
-	\include{abbreviation} 	% 缩略词	
+	\include{subcontent/symbols}	% 符号对照表(可选)
+	\include{subcontent/abbreviation} 	% 缩略词	
 	
 	\mainmatter %此后为阿拉伯数字页码
 	
@@ -87,17 +87,17 @@
     }	% 每章的第一页会默认使用plain，没有页眉。通过重定义plain为fancy解决
     \pagestyle{fancy}	%设置页眉页脚为fancy
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%分章节，结合导言区的\includeonly命令可仅编译部分章节，编译时不用切换界面，直接在相应章节编译即可。
-	\include{chapter01}%第一章
-	\include{chapter02}%第二章
-	\include{chapter03}%第三章
-	\include{chapter04}
+	\include{subcontent/chapter01}%第一章
+	\include{subcontent/chapter02}%第二章
+	\include{subcontent/chapter03}%第三章
+	\include{subcontent/chapter04}
 	% 自行根据需要添加章节。
 
 	\backmatter %章节不编号但页码继续
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    微调，使得后续章节的页眉不带章号——by MCH
 	\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\include{conclusion} %结论
+	\include{subcontent/conclusion} %结论
 	 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% bibtex参考文献设置  （原版）
 %%	\bibliographystyle{scutthesis}
 %%	\bibliography{F:/MyLibrary}
@@ -109,11 +109,11 @@
 	\printbibliography	% 参考文献著录
  	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  	% 只有一个附录
-% 	\include{appendix}
+% 	\include{subcontent/appendix}
  	% 有多个附录
-	\include{appendix1} %附录1
-	\include{appendix2} %附录2
+	\include{subcontent/appendix1} %附录1
+	\include{subcontent/appendix2} %附录2
  	%%%%%%%%%%%%%%%%%%%
-	\include{pub} %成果
-	\include{ack} %致谢
+	\include{subcontent/pub} %成果
+	\include{subcontent/ack} %致谢
 \end{document}

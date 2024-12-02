@@ -46,7 +46,7 @@
 %% 加载几个常用的sty packages
 \RequirePackage{ifpdf}
 \RequirePackage{ifthen}
-\RequirePackage{doc}
+% \RequirePackage{doc} % delete for Package hypdoc Warning: hyperref has been loaded before with option 'hyperindex' enabled.
 \RequirePackage{keyval}
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{indentfirst}

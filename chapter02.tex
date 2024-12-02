@@ -24,7 +24,7 @@
 scutthesis.tex文件相当于主函数，调用各章的内容。\LaTeX{}源代码以一个\textbackslash{}documentclass 命令作为开头，它指定了文档使用的文档类。文档类规定了\LaTeX{}源代码所要生成的文档的性质——普通文章、书籍、演示文稿、个人简
 历等等。
 \begin{lstlisting}
-\documentclass[⟨options⟩]{⟨class-name⟩}
+\documentclass[<options>]{<class-name>}
 \end{lstlisting}
 其中class-name为文档类的名称，如\LaTeX{}提供的article, book, report，可在其基础上派
 生的一些文档类或者有其它功能的一些文档类。\LaTeX{}提供的基础文档类见文献\parencite{_c}。还可以自定义文档类，如华南理工大学硕博士论文文档类scutthesis，其实现保存在后缀名为.cls的文件中。可选参数options 为文档类指定选项。
