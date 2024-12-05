@@ -68,6 +68,10 @@
 
 %% document
 \begin{document}	
+	\maketitle	
+	\frontmatter	%此后为罗马数字页码，页面类型为plain
+	\include{subcontent/abstract} % 中英文摘要
+
 	% 目录、表格目录、插图目录这几个字本身的大纲级别是一级的，即和章名有相同的字号字体。目录表的内容通过titletoc宏包在。cls文件设置了。
 	%\cleardoublepage % pdfbookmark可能需要这一条才能正常工作
 	\pdfbookmark{\contentsname}{toc} %为目录添加pdf文件书签
