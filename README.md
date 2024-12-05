@@ -111,5 +111,6 @@ latex和office在写论文、写slides时只是不同的工具，就像是两把
   * [mengchaoheng](https://github.com/mengchaoheng)
   * [Komari-Koshigaya](https://github.com/Komari-Koshigaya)
   * [zhuohoudeputao](https://github.com/zhuohoudeputao)
+  * [PlexusChen](https://github.com/PlexusChen)
 
 欢迎大家加入维护团队！！！
