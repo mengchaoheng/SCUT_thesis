@@ -38,7 +38,7 @@ latex和office在写论文、写slides时只是不同的工具，就像是两把
 
 2.使用TeXstudio，首次编译建议从主文件`scutthesis.tex`开始编译，首先在`TeXstudio的Options->Configure TeXstudio->build`中，编译器(Dufault Compiler)选择`XeLaTeX`，默认文献工具(Default Bibliography Tool)选`Biber`，构建并查看（build & view） 按照`scutthesis.pdf`中的图2-1进行设置（点击右侧扳手符号进行设置，分别选择`recompile-bibliography`、`Defualt compiler`、`Defualt Viewer`并点add到右侧栏中），也可以使用默认的Compile & View，只不过此时不会自动更新参考文献著录。(模板最初使用的编辑器，建议喜欢本地编辑、平时较少倒腾电脑、较少编程、追求稳定的同学使用)
 
-3.使用编译脚本`all.bat`，记得关掉生成的pdf文档再双击`all.bat`。双击`clean.bat`删除临时文件。（此方法仅支持win，且多年未维护，但维护起来应该很简单，记事本打开`all.bat`编辑一下命令即可，具体命令可百度）
+3.在Windows平台，使用编译脚本`all.bat`，记得关掉生成的pdf文档再双击`all.bat`。双击`clean.bat`删除临时文件。在Linux平台，执行`bash all.bat`进行编译，`bash clean.bat`清理临时文件。（此方法多年未维护，但维护起来应该很简单，记事本打开`all.bat`编辑一下命令即可，具体命令可百度）
 
 4.使用overleaf，只需要在overleaf网页设置为XeLaTeX的编译方式即可。推荐无编程基础、不喜欢GitHub且能接受在线编辑的同学使用。又可以分为三种操作方法，选择你觉得最顺手的：
 
