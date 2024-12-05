@@ -327,7 +327,7 @@
 
 
 
-\RequirePackage{listings}
+\RequirePackage[final]{listings}
 \definecolor{mygray}{RGB}{245,245,245}
 \lstset{
   tabsize=4, %

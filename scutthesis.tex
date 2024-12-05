@@ -1,5 +1,10 @@
-\documentclass[unicode,master]{scutthesis} % 草稿封面，硕士则添加选项master，博士则去掉。使用正式封面时注释该行
-% \documentclass[unicode,master,pdfcover]{scutthesis} %   % 论文正式封面，pdfcover为可选项，终稿再添加，使用草稿封面时注释该行
+%% 文档类选项说明
+% master：硕士论文，去掉则为博士论文
+% draft：草稿模式，不生成图片，仅显示边框，方便快速编译
+% pdfcover：将thesis_cover.pdf作为封面，去掉则为草稿封面
+\documentclass[unicode,master,draft]{scutthesis} % 草稿
+% \documentclass[unicode,master,pdfcover]{scutthesis} % 正式
+
 \usepackage{fontspec,color,array,longtable,graphicx} 
 \usepackage{anyfontsize} %消除字体警告
 \usepackage{enumitem}
@@ -7,7 +12,7 @@
 %编译范围
 % \includeonly{subcontent/chapter04}
 %参考文献设置
-\usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase]{biblatex}
+\usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt=lowercase]{biblatex}
 \addbibresource[location=local]{dependencies/MyLibrary.bib} % 如果在其他盘，改为相对路径。比如F盘，改为：F/MyLibrary.bib
 \addbibresource[location=local]{dependencies/mybibfile2.bib} % 无论什么来源的bib文件，只要由参考文献的BibTeX组成，都可以使用此模板。参考文献的BibTeX获取方法可百度
 %页眉页脚设置
@@ -28,7 +33,7 @@
 \renewcommand{\headrulewidth}{1.5pt}
 \renewcommand{\footrulewidth}{0pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[unicode=true,bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]{hyperref}
+\usepackage[unicode=true,bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true,draft=false]{hyperref}
 \hypersetup{pdftitle={LaTeX模板使用说明},
 	pdfauthor={姓名},
 	pdfsubject={华南理工大学硕士学位论文},
