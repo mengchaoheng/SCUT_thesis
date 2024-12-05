@@ -74,6 +74,7 @@
 \RequirePackage{xCJKnumb} %中文编号如第一章的“一”，利用xCJKnumb设置
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\punctstyle{kaiming}
+\RequirePackage{mathptmx} % 加载公式的TIMES字体 -- by PlexusChen for Times New Roman fonts setting, draft option  PR #75
 \setmainfont[Mapping=tex-text]{Times New Roman}%\rmfamily 使用的字体,默认英文和数字的字体。
 \XeTeXlinebreaklocale "zh" %采用中文断行方式
 \XeTeXlinebreakskip = 0pt plus 1pt %字元间可加入0pt~1pt 的弹性间距，这样才能排出左右对齐的段落。
