@@ -1,55 +1,42 @@
-% 草稿不显示图片，显示图片则去掉draft选项，硕士添加选项master，博士则去掉。使用正式封面时注释该行
-\documentclass[unicode,master,draft]{dependencies/scutthesis} 	% 草稿
-% \documentclass[unicode,master,pdfcover]{dependencies/scutthesis} 	% 正式
-
-%% 加载各种宏包
-\usepackage{fontspec, color, array, longtable}
-\usepackage{anyfontsize} % 消除字体警告
-\usepackage{enumitem} % 加载枚举设置包
-
+\documentclass[unicode,master]{scutthesis} % 草稿封面，硕士则添加选项master，博士则去掉。使用正式封面时注释该行
+% \documentclass[unicode,master,pdfcover]{scutthesis} %   % 论文正式封面，pdfcover为可选项，终稿再添加，使用草稿封面时注释该行
+\usepackage{fontspec,color,array,longtable,graphicx} 
+\usepackage{anyfontsize} %消除字体警告
+\usepackage{enumitem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%——by MCH
 %编译范围
 % \includeonly{subcontent/chapter04}
-
-%% 设置Times New Roman字体
-% \rmfamily 使用的字体,默认英文和数字的字体。
-\usepackage{mathptmx} % 加载公式的TIMES字体
-\setmainfont[Mapping=tex-text]{Times New Roman} 
-% 如果系统缺少Times New Roman字体，解压dependencies目录下的TIMES.tar.gz，使用下面的命令
-% \setmainfont[Mapping=tex-text, Path=./dependencies/, BoldFont=TIMESBD.TTF, ItalicFont=TIMESI.TTF]{TIMES.TTF}
-
-%% 参考文献设置
-\usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt=lowercase]{biblatex} % 设置参考文献格式
-\addbibresource[location=local]{biblibrary/MyLibrary.bib} % 如果在其他盘，改为绝对路径。比如F盘，改为：F/MyLibrary.bib
-\addbibresource[location=local]{biblibrary/mybibfile2.bib} % 无论什么来源的bib文件，只要由参考文献的BibTeX组成，都可以使用此模板。参考文献的BibTeX获取方法可百度
-
-%% 页眉页脚设置
-\usepackage{fancyhdr} % 设置页眉和页脚的宏包
-\usepackage{listings} % 代码列表的宏包
-\usepackage{xunicode} % Unicode支持的宏包
+%参考文献设置
+\usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase]{biblatex}
+\addbibresource[location=local]{dependencies/MyLibrary.bib} % 如果在其他盘，改为相对路径。比如F盘，改为：F/MyLibrary.bib
+\addbibresource[location=local]{dependencies/mybibfile2.bib} % 无论什么来源的bib文件，只要由参考文献的BibTeX组成，都可以使用此模板。参考文献的BibTeX获取方法可百度
+%页眉页脚设置
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{xunicode}
 \renewcommand{\lstlistingname}{列表}
-\pagestyle{fancy} % 使用fancy风格的页眉页脚
-\fancyfoot[C]{\headfont\thepage} % 设置页脚中间部分显示页码
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ #1}{}} % 设置章标题标记
-\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}} % 设置节标题标记
-% 清空页眉左右侧的内容
-\fancyhead[RE]{} \fancyhead[RO]{} \fancyhead[LE]{} \fancyhead[LO]{}
-\fancyhead[CO]{\headfont{\leftmark}} % 页眉中间部分设置为左书签内容
-\fancyhead[CE]{\headfont{华南理工大学硕士学位论文}}% 页眉中间部分设置为固定字符串
-\renewcommand{\headrulewidth}{1.5pt} % 设置页眉下划线的宽度
-\renewcommand{\footrulewidth}{0pt} % 设置页脚上划线的宽度为0，即不显示
-
-%% 超链接设置
-\usepackage[unicode=true,bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true,draft=false]{hyperref}
+\pagestyle{fancy}
+\fancyfoot[C]{\headfont\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhead[RE]{}
+\fancyhead[RO]{}
+\fancyhead[LE]{}
+\fancyhead[LO]{}
+\fancyhead[CO]{\headfont{\leftmark}}
+\fancyhead[CE]{\headfont{华南理工大学硕士学位论文}}% 
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\footrulewidth}{0pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[unicode=true,bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]{hyperref}
 \hypersetup{pdftitle={LaTeX模板使用说明},
 	pdfauthor={姓名},
-	pdfsubject={华南理工大学硕士学位论文}, 
-	%%	pdfsubject={华南理工大学博士学位论文},
-	pdfkeywords={PDF关键字1;PDF关键字2}, 
+	pdfsubject={华南理工大学硕士学位论文},
+%%	pdfsubject={华南理工大学博士学位论文},
+	pdfkeywords={PDF关键字1;PDF关键字2},
 %%		linkcolor=black, anchorcolor=black, citecolor=black, filecolor=black, menucolor=black, urlcolor=black, pdfstartview=FitH}% 黑白，提交版
 	linkcolor=blue, anchorcolor=black, citecolor=red, filecolor=magenta, menucolor=red, urlcolor=magenta, pdfstartview=FitH}% 彩色
 
-%% 自定义宏
 \makeatletter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
 \providecommand{\LyX}{\texorpdfstring%
@@ -58,30 +45,34 @@
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
 \makeatother
-
-%% 草稿封面设置(使用“正式封面”时不需要理会这部分)
-\title{LaTeX模板使用说明} % 论文标题
-\author{作者姓名} % 作者姓名
-\supervisor{指导教师：xxx\ 教授} % 指导教师
-\institute{华南理工大学} % 所属研究机构
-\date{2020年5月20日} % 日期
-
-%% document
-\begin{document}	
+\begin{document}
+	%%%%%%%%%%%%%草稿封面设置%%%%%%%%%%%%%使用“正式封面”时不需要理会这部分
+	\title{LaTeX模板使用说明}	
+	\author{作者姓名}	
+	\supervisor{指导教师：xxx\ 教授}	
+	\institute{华南理工大学}	
+	\date{2020年5月20日}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\maketitle	
+	\frontmatter	%此后为罗马数字页码，页面类型为plain
+	\include{subcontent/abstract} % 中英文摘要
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% 目录、表格目录、插图目录这几个字本身的大纲级别是一级的，即和章名有相同的字号字体。目录表的内容通过titletoc宏包在。cls文件设置了。
 	%\cleardoublepage % pdfbookmark可能需要这一条才能正常工作
 	\pdfbookmark{\contentsname}{toc} %为目录添加pdf文件书签
 	\tableofcontents	%目录
-	\listoffigures	%插图目录（可选）
-	\listoftables	%表格目录（可选）
+	% \listoffigures	%插图目录（可选）
+	% \listoftables	%表格目录（可选）
 	
 	\begingroup
 		\renewcommand*{\addvspace}[1]{}
 		\newcommand{\loflabel}{图} 
 		\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}	
+		\listoffigures
 		
 		\newcommand{\lotlabel}{表}
 		\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
+		\listoftables
 	\endgroup
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

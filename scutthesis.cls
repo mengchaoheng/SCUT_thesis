@@ -18,7 +18,7 @@
 
 
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
-\ProvidesClass{dependencies/scutthesis}[2011/03/31 2.0.1 The LaTeX class for the thesis of South China University of Technology]
+\ProvidesClass{scutthesis}[2011/03/31 2.0.1 The LaTeX class for the thesis of South China University of Technology]
 
 %% import global options
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,7 +46,7 @@
 %% 加载几个常用的sty packages
 \RequirePackage{ifpdf}
 \RequirePackage{ifthen}
-\RequirePackage{doc}
+% \RequirePackage{doc} % delete for Package hypdoc Warning: hyperref has been loaded before with option 'hyperindex' enabled.
 \RequirePackage{keyval}
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{indentfirst}
@@ -59,8 +59,8 @@
 %% 设置页面布局
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[left=2.5cm,right=2.5cm,bottom=2.5cm,top=2.5cm,%设置页面上下左右各为25mm
-  headheight=1.5cm,%页眉所占高度
-  footskip=1cm %页脚所占高度
+ headheight=1.5cm,%页眉所占高度
+ footskip=1cm %页脚所占高度
 ]{geometry}
 
 %% 字体设置
@@ -71,10 +71,10 @@
 %\@ifpackagelater {xeCJK}  { 2008/12/29 }
 \RequirePackage{CJKnumb} % used in recent TEX distribution
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-by MCH
-\RequirePackage{dependencies/xCJKnumb} %中文编号如第一章的“一”，利用xCJKnumb设置
+\RequirePackage{xCJKnumb} %中文编号如第一章的“一”，利用xCJKnumb设置
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\punctstyle{kaiming}
-% \setmainfont[Mapping=tex-text]{Times New Roman}%\rmfamily 使用的字体,默认英文和数字的字体。
+\setmainfont[Mapping=tex-text]{Times New Roman}%\rmfamily 使用的字体,默认英文和数字的字体。
 \XeTeXlinebreaklocale "zh" %采用中文断行方式
 \XeTeXlinebreakskip = 0pt plus 1pt %字元间可加入0pt~1pt 的弹性间距，这样才能排出左右对齐的段落。
 
@@ -300,10 +300,6 @@
   \itemsep \parsep
   \partopsep \p@ \@plus\z@ \@minus\p@}
 
-\newenvironment{bracketedenum}
-  {\begin{enumerate}[topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=0pt, itemindent=44pt, labelsep=6pt, listparindent=24pt, label=(\arabic*)]}
-  {\end{enumerate}}
-
 %\RequirePackage{enumitem}
 %\setlist{noitemsep,nolistsep,topsep=0pt,itemindent=1em}
 %\setenumerate[1]{label=\arabic*), ref=\arabic*}
@@ -330,7 +326,7 @@
 
 
 
-\RequirePackage[final]{listings}
+\RequirePackage{listings}
 \definecolor{mygray}{RGB}{245,245,245}
 \lstset{
   tabsize=4, %
