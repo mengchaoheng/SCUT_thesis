@@ -112,14 +112,16 @@
 \begin{figure}[!h]
 	\centering
 	\subfloat[不合理的轨迹]{\includegraphics[width=6cm,height=6cm]{Fig/Figure_1.png}%
-		\label{Fig:1:a}}
+	\label{Fig:1:a}}
+	\hspace{12pt}
 	\subfloat[优化的轨迹]{\includegraphics[width=6cm,height=6cm]{Fig/Figure_2.png}
- 		\label{Fig:1:b}}
+ 	\label{Fig:1:b}}
 	\\ % 用 \\ 换行，也可以此处空一行进行换行
 	\subfloat[不合理的轨迹]{\includegraphics[width=6cm,height=6cm]{Fig/Figure_1.png}%
-		\label{Fig:1:c}}
+	\label{Fig:1:c}}
+	\hspace{12pt}
 	\subfloat[优化的轨迹]{\includegraphics[width=6cm,height=6cm]{Fig/Figure_2.png}%
-		\label{Fig:1:d}}
+	\label{Fig:1:d}}
 	\caption{子图包使用测试}\label{Fig:1}
 \end{figure}
 
@@ -130,29 +132,33 @@
 	\caption{\label{TDF_para}涵道模型参数}	%表题在上
 	\centering	% 表居中
 	\small	% 表内字体小一号（即设置成和表题字号一致）
-	\begin{tabular}{cccc}	% cccc表示4列并居中，若列之间需要分隔符则设置为|c|c|c|c|
-		\hline	% \hline表示横线。列之间的元素用&分隔，\tabularnewline表示换行
-		参数符号 & 数值 & 参数符号 & 数值 \tabularnewline 
-		\hline 
-		$I_x$ & $054593$ 		   & $I_y$ & $0.017045         $ \tabularnewline
-		$l_1$ & $0.0808\,\text{m}$ & $l_2$ & $0.175\,\text{m}  $ \tabularnewline 
-		$l_4$ & $0.2415\,\text{m}$ & $l_5$ & $0.1085\,\text{m} $ \tabularnewline
-		\hline 
+	% cccc表示4列并居中，若列之间需要分隔符则设置为|c|c|c|c|
+	\begin{tabular}{cccc} 
+		% \toprule、\midrule、\bottomrule分别表示表格的上中下横线
+		% 列之间的元素用&分隔，\\表示换行
+		\toprule 
+		参数符号 & 数值 & 参数符号 & 数值 \\
+		\midrule 
+		$I_x$ & $054593$ 		   & $I_y$ & $0.017045$ 		\\
+		$l_1$ & $0.0808\,\text{m}$ & $l_2$ & $0.175\,\text{m}$  \\
+		$l_4$ & $0.2415\,\text{m}$ & $l_5$ & $0.1085\,\text{m}$ \\
+		\bottomrule 
 	\end{tabular}
 \end{table}
 \end{lstlisting}
+
 \begin{table}
 	\caption{\label{TDF_para}涵道模型参数}
 	\centering
 	\small 
 	\begin{tabular}{cccc}
-		\hline 
-		参数符号 & 数值                & 参数符号 & 数值                 \tabularnewline
-		\hline 
-		$I_x$   & $054593$ 		     & $I_y$   & $0.017045         $ \tabularnewline
-		$l_1$   & $0.0808\,\text{m}$ & $l_2$   & $0.175\,\text{m}  $ \tabularnewline 
-		$l_4$   & $0.2415\,\text{m}$ & $l_5$   & $0.1085\,\text{m} $ \tabularnewline
-		\hline 
+		\toprule 
+		参数符号 & 数值 & 参数符号 & 数值 \\
+		\midrule 
+		$I_x$ & $054593$ 		   & $I_y$ & $0.017045$ 		\\
+		$l_1$ & $0.0808\,\text{m}$ & $l_2$ & $0.175\,\text{m}$  \\
+		$l_4$ & $0.2415\,\text{m}$ & $l_5$ & $0.1085\,\text{m}$ \\
+		\bottomrule 
 	\end{tabular}
 \end{table}
 
