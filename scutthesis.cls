@@ -54,6 +54,7 @@
 \RequirePackage{amssymb} %this package conflicts with xeCJK, place it before xeCJK to avoid the coflict.
 \RequirePackage[final]{pdfpages}
 \RequirePackage{color}
+\RequirePackage{fontspec}
 %\RequirePackage{prettyref} %不需要
 
 %% 设置页面布局
@@ -74,8 +75,7 @@
 \RequirePackage{xCJKnumb} %中文编号如第一章的“一”，利用xCJKnumb设置
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\punctstyle{kaiming}
-\RequirePackage{mathptmx} % 加载公式的TIMES字体 -- by PlexusChen for Times New Roman fonts setting, draft option  PR #75
-\setmainfont[Mapping=tex-text]{Times New Roman}%\rmfamily 使用的字体,默认英文和数字的字体。
+\setmainfont[Mapping=tex-text]{Times New Roman}%\rmfamily 使用的字体,默认英文和数字的字体。% setmainfont是 fontspec 宏包中的一个命令，用于设置 LaTeX 文档中的主字体（即英文部分的主要字体）。setmainfont 用于设置正文中的英文字体。它会影响所有非数学、非 CJK（中文、日文、韩文）字符的字体。
 \XeTeXlinebreaklocale "zh" %采用中文断行方式
 \XeTeXlinebreakskip = 0pt plus 1pt %字元间可加入0pt~1pt 的弹性间距，这样才能排出左右对齐的段落。
 
@@ -590,7 +590,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{bm} % 数学符号粗体
 %\RequirePackage[amsmath,thmmarks]{ntheorem}
-\RequirePackage{amsmath,amsthm,mathrsfs}
+\RequirePackage{amsmath,amsthm}
 %允许公式换页显示,否则大型推导公式都在一页内，
 %一页显示不下放到第二页，导致很大的空白空间，很不好看
 \allowdisplaybreaks[4]

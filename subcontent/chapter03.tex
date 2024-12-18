@@ -246,7 +246,7 @@ amsmath 宏包还直接提供了多种排版矩阵的环境，包括不带定界
 其中中括号版的bmatrix最常用。这些矩阵环境需要在公式中使用，比如 gather 环境。
 \begin{lstlisting}
 \begin{gather}
-	A= \begin{bmatrix}
+	\bm{A}= \begin{bmatrix}
 		x_{11} & x_{12} & \ldots & x_{1n} \\
 		x_{21} & x_{22} & \ldots & x_{2n} \\
 		\vdots & \vdots & \ddots & \vdots \\
@@ -327,6 +327,17 @@ proof的大更多用法见参考文献\cite{_g}。scutthesis.cls文件的最后�
 \end{lstlisting}
 
 通常学位论文参考文献是基于BibTeX进行的，本模板使用的是BibLaTeX，或者叫Biber。关于这部分知识可参考文献\parencite{_c,_g}的第六章，6.1节参考文献和BIBTEX工具。所以使用TeXstudio或者vscode的时候需要注意调整正确的参数进行编译。
+
+引用前手动加空格，如：
+
+引用前没有加空格\parencite{_c,_g}的第六章，引用后面有空格。
+
+引用前手动加空格 \parencite{_c,_g}的第六章，引用后面有空格。
+
+手写方括号 [6]。引用后面没空格。
+
+生成方括号 \parencite{_k}。引用后面没空格。
+
 
 参考文献引用和著录是基于ZOTERO这个软件进行的。视频教程见\parencite{_k}。此外，为了符合毕业论文撰写规范，需设置参数。按照视频教程安装完必要的插件（如Better BibTeX）后，在编辑->首选项进行设置。图\ref{op1}到图\ref{op11}所示的是我的zotero软件设置。其中最重要的是\ref{op10}的设置要排除的选项，多余的显示会让审稿人反感，按照论文撰写规范进行即可。在毕业论文撰写时，在编辑->首选项->Better BibLTeX->Fields中，Fields to omit from export填month,abstract,note,extra,file,keywords,type,url,doi，就是在参考文献著录中排除这些多余的项，避免过于复杂。而在写本模板使用说明时，没有排除url，因为很多参考资料是网页。
 
