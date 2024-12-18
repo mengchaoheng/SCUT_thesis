@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{xcolor}  
+\usepackage{enumitem}  
+\usepackage[no-math]{fontspec}        
+\usepackage{xeCJK}            
+\usepackage{booktabs}   
+\usepackage{amsmath}   
+\usepackage{latexsym}  
+\usepackage{yhmath}    
+\usepackage{amssymb}  
+\usepackage{eucal}   % \EuScript
+\usepackage{mathrsfs}    
+% 设置正文字体
+\setmainfont{Times New Roman} % 正文数字和字母使用 Times New Roman
+% 设置中文正文字体为 SimSun
+\setCJKmainfont{SimSun}       % 正文中文使用 SimSun
+%%%%%%%%%%%%下面的定义是lshort书中符号表所需要的定义%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definitions
+\def\lsym{$\mathsurround=0pt {}^\ell$}
+\def\LSYM    #1{$#1$     & \texttt{\string#1}\lsym}
+\def\SYM     #1{$#1$     & \texttt{\string#1}}
+\def\BIGSYM  #1{$#1$     & $\displaystyle #1$ & \texttt{\string#1}}
+\def\ACC   #1#2{$#1{#2}$ & \texttt{\string#1}*{#2}}
+\def\DEL     #1{$\big#1 \bigg#1$ & \texttt{\string#1}}
+\def\AMSSYM  #1{$#1$     & \texttt{\string#1}}
+% These symbols rely on `amsmath' package
+\def\AMSM    #1{$#1$     & \textcolor{blue}{\texttt{\string#1}}}
+\def\AMSACC#1#2{$#1{#2}$ & \textcolor{blue}{\texttt{\string#1}}*{#2}}
+\def\AMSBIG  #1{$#1$     & $\displaystyle #1$ & \textcolor{blue}{\texttt{\string#1}}}
+\def\SC      #1{#1       & \texttt{\string#1}}
+\newenvironment{symbols}[1]%
+  {\small\def\arraystretch{1.5
+  }
+  \begin{tabular}{@{}#1@{}}}%
+  {\end{tabular}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+这是正文部分，中文使用 SimSun 字体，英文使用 Times New Roman 字体。
+
+下表为lshort中文版中，表 4.2: 数学字母字体的内容，新增了一行测试mathcal命令。
+
+\begin{table}[htp]
+  \centering
+  \caption{数学字母字体} \label{tbl:math-fonts}
+  \begin{tabular}{*{3}{l}}
+  \hline
+  \textbf{示例}    & \textbf{命令} & \textbf{依赖的宏包}\\
+  \hline
+  $\mathnormal{ABCDE abcde 1234}$  & {mathnormal}\{\ldots\}&       \\
+  $\mathrm{ABCDE abcde 1234}$      & {mathrm}\{\ldots\}    &       \\
+  $\mathit{ABCDE abcde 1234}$      & {mathit}\{\ldots\}    &       \\
+  $\mathbf{ABCDE abcde 1234}$      & {mathbf}\{\ldots\}    &       \\
+  $\mathsf{ABCDE abcde 1234}$      & {mathsf}\{\ldots\}    &       \\
+  $\mathtt{ABCDE abcde 1234}$      & {mathtt}\{\ldots\}    &       \\
+  $\mathcal{ABCDE}$                  & {mathcal}\{\ldots\}   &     \\ 
+  $\CMcal{ABCDE}$                  & {CMcal}\{\ldots\}   & 仅提供大写字母 \\
+  \hline
+  $\EuScript{ABCDE}$               & {mathcal}\{\ldots\}   & {eucal} 仅提供大写字母 \\
+  $\mathscr{ABCDE}$                & {mathscr}\{\ldots\}   & {mathrsfs} 仅提供大写字母\\
+  $\mathfrak{ABCDE abcde 1234}$    & {mathfrak}\{\ldots\}  & {amssymb} 或 {eufrak}  \\
+  $\mathbb{ABCDE}$                 & {mathbb}\{\ldots\}    & {amssymb} 仅提供大写字母 \\
+  \hline
+  \end{tabular}
+\end{table}
+\end{document}
