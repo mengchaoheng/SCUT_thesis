@@ -78,9 +78,12 @@
 
 %lshort书中称“ unicode-math 宏包与传统数学字体、符号包并不兼容,但其本身已经提供了大量的符号和字体样式。”,经过实际摸索发现只要不使用bm包，兼容性问题可以忽略（目前只发现少部分命令不支持，类似https://github.com/latex3/unicode-math/issues/411）。简而言之大部分符号都有，若需要更多符号，可以再仔细研究差异，考虑改为默认Computer Modern字体（不再包含unicode-math包和不再使用\setmathfont命令）。否则不需要关心。
 \usepackage{unicode-math} % 会自动包含amsmath， 能使用大部分符号，若不包含amssymb，也能使用amssymb中一部分符号。使用\setmathfont 命令。若不使用该包，则默认Computer Modern 字体，这就是2024年以前的模板的字体。注意：unicode-math和加粗包bm冲突，使用\boldsymbol加粗。或者：The five new symbol font commands that behave in this way are: \symup, \symit, \symbf, \symsf, and \symtt. These commands switch to single-letter mathematical symbols (generally within the same OpenType font).
+% unicode-math包文档说明：https://ctan.org/pkg/unicode-math
+
 
 % 设置数学公式字体为 XITS Math。即Times风格。其实默认的公式字体
 \setmathfont{XITS Math} % If you do not load an OpenType maths font before \begin{document}, Latin Modern Math will be loaded automatically. 
+% XITS Math字体文件：https://github.com/aliftype/xits 或 https://fontlibrary.org/en/font/xits-math 双击安装即可。
 
 
 %%%%%%%%%%%%下面的定义是lshort书中符号表所需要的定义%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
