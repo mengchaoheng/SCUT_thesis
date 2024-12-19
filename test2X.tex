@@ -18,19 +18,6 @@
 % 设置中文正文字体为 SimSun
 \setCJKmainfont{SimSun}       % 正文中文使用 SimSun
 %%%%%%%%%%%%下面的定义是lshort书中符号表所需要的定义%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Definitions
-\def\lsym{$\mathsurround=0pt {}^\ell$}
-\def\LSYM    #1{$#1$     & \texttt{\string#1}\lsym}
-\def\SYM     #1{$#1$     & \texttt{\string#1}}
-\def\BIGSYM  #1{$#1$     & $\displaystyle #1$ & \texttt{\string#1}}
-\def\ACC   #1#2{$#1{#2}$ & \texttt{\string#1}*{#2}}
-\def\DEL     #1{$\big#1 \bigg#1$ & \texttt{\string#1}}
-\def\AMSSYM  #1{$#1$     & \texttt{\string#1}}
-% These symbols rely on `amsmath' package
-\def\AMSM    #1{$#1$     & \textcolor{blue}{\texttt{\string#1}}}
-\def\AMSACC#1#2{$#1{#2}$ & \textcolor{blue}{\texttt{\string#1}}*{#2}}
-\def\AMSBIG  #1{$#1$     & $\displaystyle #1$ & \textcolor{blue}{\texttt{\string#1}}}
-\def\SC      #1{#1       & \texttt{\string#1}}
 \newenvironment{symbols}[1]%
   {\small\def\arraystretch{1.5
   }
@@ -56,7 +43,7 @@
   $\symsf{ABCDE abcde 1234}$      & {symsf}\{\ldots\}    &       \\
   $\symtt{ABCDE abcde 1234}$      & {symtt}\{\ldots\}    &       \\
   $\symcal{ABCDE}$                  & {symcal}\{\ldots\}   &   \\
-%   $\CMcal{ABCDE}$                  & {CMcal}\{\ldots\}   & 仅提供大写字母 \\
+  $\CMcal{ABCDE}$                  & {CMcal}\{\ldots\}   & 仅提供大写字母unicode-math下显示不同 \\
  \hline
   $\EuScript{ABCDE}$               & {mathcal}\{\ldots\}   & {eucal} 仅提供大写字母 \\
   $\symscr{ABCDE}$                & {symscr}\{\ldots\}   & \\

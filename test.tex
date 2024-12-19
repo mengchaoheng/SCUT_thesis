@@ -64,7 +64,7 @@
 % \usepackage{mathrsfs}  % 
 \usepackage{latexsym}  
 \usepackage{yhmath}   % \wideparen
-\usepackage{eucal}   % \EuScript
+% \usepackage{eucal}   % \EuScript
 \usepackage{booktabs}  % \begin{table}
 \usepackage{amssymb} % \mathbb   {{AmS} 符号}一节中大量使用
 
@@ -116,7 +116,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 这是正文部分，中文使用 SimSun 字体，英文使用 Times New Roman 字体。
 
-这是正文部分，中文使用 SimSun 字体，英文使用 Times New Roman 字体。
 
 这是一个数学公式：
 \begin{equation}
@@ -214,9 +213,37 @@ abcdefghijklmnopqrstuvwxyz
 
 2.word中mathtype公式编辑器见word文件test。
 
+数学字母字体：
+
+在LaTeX中，下面这些命令用于改变数学公式的字体样式：
+
+‌mathtt‌：将数学符号或文本设置为等宽字体（typewriter font）。这种字体通常用于代码或需要等宽字符间距的场合。例如，$\mathtt{ABC123}$会产生等宽字体的ABC123。
+
+‌mathsf‌：将数学符号或文本设置为无衬线字体（sans-serif font）。这种字体通常看起来更现代、简洁。例如，$\mathsf{ABC123}$会产生无衬线字体的ABC123。
+
+‌mathbf‌：将数学符号或文本设置为加粗字体（bold font）。这种字体通常用于强调或突出显示。例如，$\mathbf{ABC123}$会产生加粗字体的ABC123。
+
+‌mathit‌：将数学符号或文本设置为斜体（italic font）。在数学排版中，斜体常用于表示变量。例如，$\mathit{ABC123}$会产生斜体字体的ABC123。
+
+‌mathrm‌：将数学符号或文本设置为罗马字体（roman font）。这种字体是数学排版中的默认字体，用于表示函数名、常量等。例如，$\mathrm{ABC123}$会产生罗马字体的ABC123。
+
+‌mathnormal‌：这个命令在LaTeX中实际上并不直接改变字体样式，而是用于恢复数学模式中的默认字体（通常是斜体）。然而，在某些情况下，它可能被用来确保数学符号或文本以正常（即非加粗、非等宽等）的样式显示。例如，$\mathnormal{ABC123}$通常会产生斜体（默认样式）的ABC123。
+
+‌mathbb、mathfrak、mathscr、mathcal都是LaTeX中用于数学公式的特殊字体命令‌。
+
+‌mathbb‌：表示黑板粗体（blackboard bold），常用于表示数学中的集合符号，如实数集R、自然数集N等。例如，$\mathbb{R}$会产生一个黑板粗体的R‌
+
+‌mathfrak‌：表示德文尖角体或哥特体（fraktur），这种字体在数学中不常用，但在某些特定领域或文献中可能会见到。例如，$\mathfrak{A}$会产生一个德文尖角体的A‌
+
+‌mathscr‌：表示花体（script），这种字体常用于表示数学中的某些特定符号或集合，如变换、空间等。例如，$\mathscr{X}$会产生一个花体的X‌。需要注意的是，mathscr字体可能需要额外的宏包支持，如mathrsfs‌
+
+
+‌mathcal‌：也表示一种花体（calligraphy），但与mathscr不同。mathcal字体常用于表示数学中的某些特定符号或函数，如损失函数L、时间复杂度O等。例如，$\mathcal{L}$会产生一个花体的L‌
+
 
 下表为lshort中文版中，表 4.2: 数学字母字体的内容：
-注：不使用unicode-math包和setmathfont{XITS Math} 时，包含eucal和mathrsfs包可以实现和原文一模一样的效果。
+
+不使用unicode-math包和setmathfont{XITS Math} 时，包含eucal和mathrsfs包可以实现和原文一模一样的效果。
 \begin{table}[htp]
   \centering
   \caption{数学字母字体} \label{tbl:math-fonts}
@@ -230,9 +257,10 @@ abcdefghijklmnopqrstuvwxyz
   $\mathbf{ABCDE abcde 1234}$      & {mathbf}\{\ldots\}    &       \\
   $\mathsf{ABCDE abcde 1234}$      & {mathsf}\{\ldots\}    &       \\
   $\mathtt{ABCDE abcde 1234}$      & {mathtt}\{\ldots\}    &       \\
-  $\CMcal{ABCDE}$                  & {mathcal}\{\ldots\}   & 仅提供大写字母 \\
+  $\mathcal{ABCDE}$                  & {mathcal}\{\ldots\}   &     \\ 
+  % $\CMcal{ABCDE}$                  & {mathcal}\{\ldots\}   & 仅提供大写字母，由eucal提供 \\
   \hline
-  $\EuScript{ABCDE}$               & {mathcal}\{\ldots\}   & {eucal} 仅提供大写字母 \\
+  % $\EuScript{ABCDE}$               & {mathcal}\{\ldots\}   & {eucal} 仅提供大写字母 \\
   $\mathscr{ABCDE}$                & {mathscr}\{\ldots\}   & {mathrsfs} 仅提供大写字母\\
   $\mathfrak{ABCDE abcde 1234}$    & {mathfrak}\{\ldots\}  & {amssymb} 或 {eufrak}  \\
   $\mathbb{ABCDE}$                 & {mathbb}\{\ldots\}    & {amssymb} 仅提供大写字母 \\
@@ -240,7 +268,7 @@ abcdefghijklmnopqrstuvwxyz
   \end{tabular}
 \end{table}
 
-利用setmathfont{XITS Math}，可以取消eucal和mathrsfs包，命令改为：
+但使用unicode-math包和setmathfont{XITS Math} 后，上表略有不同。不过新的设置下可以取消 eucal 和 mathrsfs 包，命令改为：
 \begin{table}[htp]
   \centering
   \caption{数学字母字体} \label{tbl:math-fonts}
@@ -256,7 +284,7 @@ abcdefghijklmnopqrstuvwxyz
   $\symtt{ABCDE abcde 1234}$      & {symtt}*{\ldots}    &       \\
   $\symcal{ABCDE}$                  & {symcal}*{\ldots}   &   \\
   \hline
-  $\EuScript{ABCDE}$               & {symcal}*{\ldots}   & {eucal} 仅提供大写字母 \\
+  % $\EuScript{ABCDE}$               & {symcal}*{\ldots}   & {eucal} 仅提供大写字母 \\
   $\symscr{ABCDE}$                & {symscr}*{\ldots}   & \\
   $\symfrak{ABCDE abcde 1234}$    & {symfrak}*{\ldots}  &   \\
   $\symbb{ABCDE}$                 & {symbb}*{\ldots}    &    \\
@@ -266,11 +294,34 @@ abcdefghijklmnopqrstuvwxyz
 注：效果有差异，但够用。
 
 
-其中常用花体
+其中常用：
+
+黑板粗体（blackboard bold）命令mathbb
 \begin{equation}
-\mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+  \mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+\end{equation}
+unicode-math包的黑板粗体命令symbb
+\begin{equation}
+  \symbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+\end{equation}
+花体（calligraphy） 命令mathcal
+\begin{equation}
+  \mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+\end{equation}
+unicode-math包的花体命令symcal
+\begin{equation}
+  \symcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
 \end{equation}
 
+
+另一种花体（script） 命令mathscr
+\begin{equation}
+  \mathscr{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+\end{equation}
+unicode-math包的花体命令symscr
+\begin{equation}
+  \symscr{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+\end{equation}
   
 
 \clearpage
@@ -279,7 +330,7 @@ abcdefghijklmnopqrstuvwxyz
     \item \textcolor{blue}{蓝色}的命令依赖 {amsmath} 宏包（非 {amssymb} 宏包）；
     \item 带有角标\lsym 的符号命令依赖 {latexsym} 宏包。
   \end{enumerate}
-
+注：对于unicode-math包设置XITS Math，只是unicode-math取消了{arrowvert}，{Arrowvert}，{bracevert} 的支持，其他符号和默认的Computer Modern字体时一样都支持。
 \subsection{\LaTeX{} 普通符号}
 \begin{table}[htp]
 \centering
