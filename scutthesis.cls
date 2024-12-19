@@ -51,10 +51,12 @@
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{indentfirst}
 \RequirePackage{makeidx} % 索引
+\RequirePackage{amsmath} 
+\RequirePackage{mathrsfs}
 \RequirePackage{amssymb} %this package conflicts with xeCJK, place it before xeCJK to avoid the coflict.
 \RequirePackage[final]{pdfpages}
 \RequirePackage{color}
-\RequirePackage{fontspec}
+\RequirePackage[no-math]{fontspec}
 %\RequirePackage{prettyref} %不需要
 
 %% 设置页面布局
@@ -76,6 +78,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\punctstyle{kaiming}
 \setmainfont[Mapping=tex-text]{Times New Roman}%\rmfamily 使用的字体,默认英文和数字的字体。% setmainfont是 fontspec 宏包中的一个命令，用于设置 LaTeX 文档中的主字体（即英文部分的主要字体）。setmainfont 用于设置正文中的英文字体。它会影响所有非数学、非 CJK（中文、日文、韩文）字符的字体。
+% 若对默认数学公式字体不满意，启用下面三条命令，否则注释掉（此时是采用久经验证可行的默认字体）。实际上就两条（引入unicode-math包并使用setmathfont命令设置字体）
+\usepackage{unicode-math} % 引入后一些符号仍需要amssymb和amsmath，但可以不需要mathrsfs。引入unicode-math后，很多符号，加粗的命令都变了，需要好好看包文档。
+\setmathfont{XITS Math} 
+% \setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1] %为解决花体问题引入。
+
 \XeTeXlinebreaklocale "zh" %采用中文断行方式
 \XeTeXlinebreakskip = 0pt plus 1pt %字元间可加入0pt~1pt 的弹性间距，这样才能排出左右对齐的段落。
 
@@ -588,9 +595,9 @@
 
 %%定理环境
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{bm} % 数学符号粗体
+% \RequirePackage{bm} % 数学符号粗体 % 引入unicode-math后不再需要。
 %\RequirePackage[amsmath,thmmarks]{ntheorem}
-\RequirePackage{amsmath,amsthm}
+\RequirePackage{amsthm}
 %允许公式换页显示,否则大型推导公式都在一页内，
 %一页显示不下放到第二页，导致很大的空白空间，很不好看
 \allowdisplaybreaks[4]

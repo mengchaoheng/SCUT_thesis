@@ -246,7 +246,7 @@ amsmath 宏包还直接提供了多种排版矩阵的环境，包括不带定界
 其中中括号版的bmatrix最常用。这些矩阵环境需要在公式中使用，比如 gather 环境。
 \begin{lstlisting}
 \begin{gather}
-	\bm{A}= \begin{bmatrix}
+	\boldsymbol{A}= \begin{bmatrix}
 		x_{11} & x_{12} & \ldots & x_{1n} \\
 		x_{21} & x_{22} & \ldots & x_{2n} \\
 		\vdots & \vdots & \ddots & \vdots \\
@@ -255,14 +255,14 @@ amsmath 宏包还直接提供了多种排版矩阵的环境，包括不带定界
 \end{gather}
 \end{lstlisting}
 \begin{gather}
-\bm{A}= \begin{bmatrix}
+\boldsymbol{A}= \begin{bmatrix}
 	x_{11} & x_{12} & \ldots & x_{1n} \\
 	x_{21} & x_{22} & \ldots & x_{2n} \\
 	\vdots & \vdots & \ddots & \vdots \\
 	x_{n1} & x_{n2} & \ldots & x_{nn}
    \end{bmatrix}
 \end{gather}	
-其中矩阵/向量加粗使用\textbackslash{}bm\{\}命令。另外还可以使用array环境排版矩阵，类似tabular环境，用$ \verb|\\|$ 和\& 用来分隔行和列，这里不再赘述。	
+其中矩阵/向量加粗使用\textbackslash{}boldsymbol\{\}命令，\textbackslash{}bm\{\}命令和unicode-math包有兼容性问题。另外还可以使用array环境排版矩阵，类似tabular环境，用$ \verb|\\|$ 和\& 用来分隔行和列，这里不再赘述。	
 \begin{lstlisting}
 \begin{array }[外部对齐tcb]{列对齐lcr}
 	行列内容
@@ -276,21 +276,21 @@ amsmath 宏包还直接提供了多种排版矩阵的环境，包括不带定界
 在scutthesis.cls文件的最后，已经用\textbackslash{}newtheorem命令定义了几种定理环境，包括：定义、假设、定理、结论、引理、公理、推论、性质等等，统称定理环境，关于\textbackslash{}newtheorem的用法，可参考\cite{_g,_c}或自行百度。要下面提供几个例子，在横线之间的深色区域是代码，效果在相应下方表示：
 \begin{lstlisting}
 \begin{assumption}
-	加权矩阵${{\bm{W}}_{1}}$和 ${{\bm{W}}_{2}}$ 是对称矩阵，且$ {{\bm{W}}_{2}}$非奇异。	\label{assum_dca1}
+	加权矩阵${{\boldsymbol{W}}_{1}}$和 ${{\boldsymbol{W}}_{2}}$ 是对称矩阵，且$ {{\boldsymbol{W}}_{2}}$非奇异。	\label{assum_dca1}
 \end{assumption}
 \end{lstlisting}
 \begin{assumption}
-	加权矩阵${{\bm{W}}_{1}}$和 ${{\bm{W}}_{2}}$ 是对称矩阵，且$ {{\bm{W}}_{2}}$非奇异。	\label{assum_dca1}
+	加权矩阵${{\boldsymbol{W}}_{1}}$和 ${{\boldsymbol{W}}_{2}}$ 是对称矩阵，且$ {{\boldsymbol{W}}_{2}}$非奇异。	\label{assum_dca1}
 \end{assumption}
 
 定理用法和假设类似：
 \begin{lstlisting}
 \begin{theorem}
-	如果假设\ref{assum_dca1}成立，$\bm{F}$满足式\eqref{eq_F}的定义，且${{\bm{W}}_{1}}$非奇异，则有$0\le e \left( \bm{F} \right) < 1$，其中$e \left( \bm{F} \right)$是 $\bm{F}$的特征值。	\label{the_dca2}
+	如果假设\ref{assum_dca1}成立，$\boldsymbol{F}$满足式\eqref{eq_F}的定义，且${{\boldsymbol{W}}_{1}}$非奇异，则有$0\le e \left( \boldsymbol{F} \right) < 1$，其中$e \left( \boldsymbol{F} \right)$是 $\boldsymbol{F}$的特征值。	\label{the_dca2}
 \end{theorem}
 \end{lstlisting}
 \begin{theorem}
-	如果假设\ref{assum_dca1}成立，$\bm{F}$满足上式的定义，且${{\bm{W}}_{1}}$非奇异，则有$0\le e \left( \bm{F} \right) < 1$，其中$e \left( \bm{F} \right)$是 $\bm{F}$的特征值。	\label{the_dca2}
+	如果假设\ref{assum_dca1}成立，$\boldsymbol{F}$满足上式的定义，且${{\boldsymbol{W}}_{1}}$非奇异，则有$0\le e \left( \boldsymbol{F} \right) < 1$，其中$e \left( \boldsymbol{F} \right)$是 $\boldsymbol{F}$的特征值。	\label{the_dca2}
 \end{theorem}
 \begin{remark}
 	定理环境的编号可自定义，但通常不需要再进行设置，因为模板文件scutthesis.cls文件已经定义好。
