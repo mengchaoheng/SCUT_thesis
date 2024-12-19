@@ -1,14 +1,286 @@
 \chapter{第五章}
-%
+公式字体测试
+
+\section{建模}
+\label{sec:1}
+\subsection{符号约定}
+涵道风扇无人机的机体系如图所示。 机体系的原点位于重心，正交的机体轴线表示为$\text{ }\!\!\{\!\!\text{ }{\boldsymbol{X}^{B}},{\boldsymbol{Y}^{B}},{\boldsymbol{Z}^{B}}\text{ }\!\!\}\!\!\text{ }$。 无人机沿机身轴线的角速度表示为${{\boldsymbol{\omega }}^{B}}=[p \quad q \quad r]^{T}$。风扇的转速记为$\Omega$。 每个控制舵的偏转角表示为 ${{\delta }_{i}}$，以矢量形式描述为$[{{\delta }_{1}} \quad {{\delta }_{2}} \quad {{\delta }_{3}} \quad {{\delta }_{4}}]^T$。
 
 
 
+惯性系中的速度、惯性系中的姿态和风速分别表示为${{\boldsymbol{V}}^{I}}$，$\boldsymbol{\eta }$ 和 ${{\boldsymbol{W}}^{I}}$。 虽然不涉及角度控制设计，但这里也使用了这些与惯性系相关的变量，因为它们对于指定 INDI 的有效性至关重要。
+
+由于涵道风扇无人机对所有机身轴对称，无人机的惯性矩阵可以简化为对角矩阵，表示为 $ \boldsymbol{I}=\text{diag}({{I}_{x} },{{I}_{y}},{{I}_{z}}) $。
+
+在机体坐标系中表示的合力矩表示为 $\boldsymbol M$ ，为以下几项的和：
+\begin{equation}
+	{\boldsymbol{M}} = {{\boldsymbol{M}}_{vane}} + {{\boldsymbol{M}}_{flap}} + {{\boldsymbol{M}}_{fan}} + {{\boldsymbol{M}}_{aero}}
+	\label{eq_1}
+\end{equation}
+其中 $ {{\boldsymbol{M}}_{vane}} $ 是从控制舵产生的控制力矩矢量。 $ {{\boldsymbol{M}}_{flap}} $ 是作用在固定气动襟翼上的反扭矩作用。 $ {{\boldsymbol{M}}_{fan}}$ 包括来自旋转的风扇的气动扭矩、角加速度力矩和陀螺效应。 $ {{\boldsymbol{M}}_{aero}} $ 是气动力矩。
+
+\subsection{控制力矩}
+在INDI设计中，只需要辨识控制力矩，控制力矩 ${{\boldsymbol{M}}_{vane}} $ 是涵道风扇无人机角速度子系统的控制输入，由控制舵产生。 一个偏转舵受到垂直于无人机 ${{\boldsymbol{Z}}^{B}}$ 轴的力，并同时受到两个相对于相应机体系轴的正交力矩。 四个控制舵的总控制力矩可以通过以下公式表示：
+\begin{equation}
+{{\boldsymbol{M}}_{vane}} = {k_{cv}}V_e^2\left[ {\begin{array}{*{20}{c}}
+	{{\rm{ - }}{l_1}}&0&{{l_1}}&0\\
+	0&{{\rm{ - }}{l_1}}&0&{{l_1}}\\
+	{{l_2}}&{{l_2}}&{{l_2}}&{{l_2}}
+	\end{array}} \right]{\boldsymbol{\delta }}
+\label{eq_2}
+\end{equation}
+其中 $ {{k}_{cv}} $ 是与舵形状相关的常数系数。 $ {{l}_{1}} $ 和 $ {{l}_{2}} $ 是图中所示的杠杆臂。 ${{V}_{e}}$ 表示涵道流出的速度，由下式给出：
+\begin{equation}
+	{V_e} = {k_v}\Omega 
+	\label{eq_3}
+\end{equation}
+其中 $ {{k}_{v}} $ 是与涵道的所有空气动力学特征相结合的常系数。 
+
+如果所有舵偏转角都保持在气动失速极限内，则式 \eqref{eq_2} 中的比例关系成立，表示为 $ {{\delta }_{m}} $。 这是 ${\boldsymbol \delta}$ 的基本约束：
+\begin{equation} 
+	- {\delta _m} \le {\delta _i} \le {\delta _m},   i = 1,2,3,4.
+	\label{eq_4}
+\end{equation}
+
+显然，式\eqref{eq_2} 将冗余舵偏转角映射到三维的控制力矩，表明无人机角速度子系统的过度驱动特性。 通过使用虚拟控制输入$ \boldsymbol{\nu }=[{\nu }_{x} \quad {\nu }_{y} \quad {\nu }_{z}]^{T}$，可以将控制力矩效应重构为模块化形式：
+\begin{equation}
+	\left\{ \begin{array}{l}
+	{{\boldsymbol{I}}^{ - 1}}{{\boldsymbol{M}}_{vane}} = {{\boldsymbol{H}}_1}{\boldsymbol{\nu }}{\Omega ^2}\\
+	{\boldsymbol{\nu }} = {\boldsymbol{B\delta }}
+	\end{array} \right.
+	\label{eq_5}
+	\end{equation}
+其中
+	\begin{equation}
+	\begin{array}{ccccc}
+	{{\boldsymbol{H}}_1} \buildrel \Delta \over =   {k_{cv}}k_v^2\left[ {\begin{array}{*{20}{c}}
+		{2I_x^{ - 1}{l_1}}&{}&{}\\
+		{}&{2I_y^{ - 1}{l_1}}&{}\\
+		{}&{}&{4I_z^{ - 1}{l_2}}
+		\end{array}} \right]     \quad
+	{\boldsymbol{B}} \buildrel \Delta \over =   \left[ {\begin{array}{*{20}{c}}
+		{ - 0.5}&0&{0.5}&0\\
+		0&{ - 0.5}&0&{0.5}\\
+		{0.25}&{0.25}&{0.25}&{0.25}
+		\end{array}} \right]
+	\end{array}
+	\label{eq_6}
+\end{equation}
+
+从式 \eqref{eq_5} 和式 \eqref{eq_6} 中，$\boldsymbol{B}$ 的定义表示虚拟输入的大小被标准化为 $[-1,1] \centerdot {{\delta }_{m }}$。 通过这种模块化，在式 \eqref{eq_2} 中从舵偏转角到控制力矩的直接映射被转换为从舵偏转角到虚拟输入的映射，而映射矩阵 $\boldsymbol{B}$ 不包含模型信息。
+
+
+\subsection{角速度环动力学}
+在无人机控制的意义上，旋转风扇通常被假设为一个圆盘，对飞行器施加稳定的推力和扭矩，因此无人机可以被视为刚体。 因此角速度动力学方程为：
+\begin{equation}
+	{{\boldsymbol{\dot \omega }}^B} = {{\boldsymbol{I}}^{ - 1}}\left( {{\boldsymbol{M + I}}{{\boldsymbol{\omega }}^B}{\boldsymbol{ \times }}{{\boldsymbol{\omega }}^B}} \right)
+	\label{eq_16}
+\end{equation}
+其中 $\boldsymbol M$ 由式 \eqref{eq_1} 预先定义，$\times$ 表示向量的叉积。
+
+通过将式 \eqref{eq_1}、\eqref{eq_5} 代入式 \eqref{eq_16}，可以将角速度动力学重写为：
+\begin{equation}
+	\left\{ \begin{array}{l}
+	{{{\boldsymbol{\dot \omega }}}^B} = {\boldsymbol{L}} + {{\boldsymbol{H}}_1}{\boldsymbol{\nu }}{\Omega ^2} + {{\boldsymbol{H}}_2}\Omega  + {{\boldsymbol{H}}_3}\dot \Omega \\
+	{\boldsymbol{\nu }} = {\boldsymbol{B\delta }}
+	\end{array} \right.
+	\label{eq_17}
+\end{equation}
+其中 ${\boldsymbol{L}} = {\boldsymbol{L}}({{\boldsymbol{V}}^I},{\boldsymbol{\eta}},{{\boldsymbol{W}}^I} ,{{\boldsymbol{\omega }}^B}) \buildrel \Delta \over = {{\boldsymbol{I}}^{ - 1}}({{\boldsymbol{M}}_{aero}} + {\boldsymbol{I}}{{\boldsymbol{\omega }}^B}{\boldsymbol{ \times }}{{\boldsymbol{\omega }}^B})$。 矩阵 ${{\boldsymbol{H}}_{1}}$由式 \eqref{eq_6}  定义。
+
+\section{控制器设计}
+
+\subsection{增量非线性动态逆}
+
+\begin{equation}
+	{{\boldsymbol{\dot \omega }}^B} = {\boldsymbol{L}}({{\boldsymbol{V}}^I},{\boldsymbol{\eta }},{{\boldsymbol{W}}^I},{{\boldsymbol{\omega }}^B}) + {{\boldsymbol{H}}_1}{\boldsymbol{\nu }}{\Omega ^2} + {{\boldsymbol{H}}_2}({{\boldsymbol{\omega }}^B})\Omega  + {{\boldsymbol{H}}_3}\dot \Omega
+	\label{eq_18}
+\end{equation}
+
+\begin{equation}
+	\begin{aligned}
+	   {{{\boldsymbol{\dot{\omega }}}}^{B}}= &\ \boldsymbol{L}({{\boldsymbol{V}}^{I}},\boldsymbol{\eta },{{\boldsymbol{W}}^{I}},{{\boldsymbol{\omega }}^{B}})+{{\boldsymbol{H}}_{1}}\boldsymbol{\nu }{{\Omega }^{2}}+{{\boldsymbol{H}}_{2}}({{\boldsymbol{\omega }}^{B}})\Omega +{{\boldsymbol{H}}_{3}}\dot{\Omega } \\ 
+	  = &\ {{\boldsymbol{L}}_{0}}+{{\boldsymbol{H}}_{1}}{{\boldsymbol{\nu }}_{0}}{{\Omega }_{0}}^{2}+{{\boldsymbol{H}}_{20}}{{\Omega }_{0}}+{{\boldsymbol{H}}_{3}}{{{\dot{\Omega }}}_{0}} \\ 
+	   &\ +[\frac{\partial \boldsymbol{L}}{\partial {{\boldsymbol{V}}^{I}}}({{\boldsymbol{V}}^{I}}-{{\boldsymbol{V}}_{0}}^{I})+\frac{\partial \boldsymbol{L}}{\partial \boldsymbol{\eta }}(\boldsymbol{\eta }-{{\boldsymbol{\eta }}_{0}})+\frac{\partial \boldsymbol{L}}{\partial {{\boldsymbol{\omega }}^{B}}}({{\boldsymbol{\omega }}^{B}}-{{\boldsymbol{\omega }}_{0}}^{B}) \\ 
+	   &\ +\frac{\partial \boldsymbol{L}}{\partial {{\boldsymbol{W}}^{I}}}({{\boldsymbol{W}}^{I}}-{{\boldsymbol{W}}_{0}}^{I}) \\ 
+	   &\ +\frac{\partial ({{\boldsymbol{H}}_{1}}\boldsymbol{\nu }{{\Omega }^{2}})}{\partial \boldsymbol{\nu }}(\boldsymbol{\nu }-{{\boldsymbol{\nu }}_{0}})+\frac{\partial ({{\boldsymbol{H}}_{1}}\boldsymbol{\nu }{{\Omega }^{2}})}{\partial \Omega }(\Omega -{{\Omega }_{0}}) \\ 
+	   &\ +\frac{\partial ({{\boldsymbol{H}}_{2}}\Omega )}{\partial {{\boldsymbol{\omega }}^{B}}}({{\boldsymbol{\omega }}^{B}}-{{\boldsymbol{\omega }}_{0}}^{B})+\frac{\partial ({{\boldsymbol{H}}_{2}}\Omega )}{\partial \Omega }(\Omega -{{\Omega }_{0}}) \\ 
+	   &\ +{{\left. \frac{\partial ({{\boldsymbol{H}}_{3}}\dot{\Omega })}{\partial \dot{\Omega }}(\dot{\Omega }-{{{\dot{\Omega }}}_{0}})] \right|}_{\begin{smallmatrix} 
+	 {{\boldsymbol{V}}^{I}}={{\boldsymbol{V}}_{0}}^{I},\boldsymbol{\eta }={{\boldsymbol{\eta }}_{0}},{{\boldsymbol{\omega }}^{B}}={{\boldsymbol{\omega }}_{0}}^{B},{{\boldsymbol{W}}^{I}}=\boldsymbol{W}_{0}^{I} \\ 
+	 \boldsymbol{\nu }={{\boldsymbol{\nu }}_{0}},\Omega ={{\Omega }_{0}},\dot{\Omega }={{{\dot{\Omega }}}_{0}} 
+	\end{smallmatrix}}}
+	\end{aligned}
+	\label{eq_19}
+\end{equation}
+
+\begin{equation}
+	\begin{array}{ccccc}
+	{\left. {\dfrac{{\partial ({{\boldsymbol{H}}_1}{\boldsymbol{\nu }}{\Omega ^2})}}{{\partial {\boldsymbol{\nu }}}}} \right|_{\Omega  = {\Omega _0}}} &  = {{\boldsymbol{H}}_1}{\Omega _0}^2  ,\quad{\left. {     \dfrac{{\partial ({{\boldsymbol{H}}_1}{\boldsymbol{\nu }}{\Omega ^2})}}{{\partial \Omega }}} \right|_{{\boldsymbol{\nu }} = {{\boldsymbol{\nu }}_0}}} =  & 2{{\boldsymbol{H}}_1}{{\boldsymbol{\nu }}_0}{\Omega _0}\\
+	{\left. {\dfrac{{\partial ({{\boldsymbol{H}}_2}\Omega )}}{{\partial \Omega }}} \right|_{\Omega  = {\Omega _0}}} &  = {{\boldsymbol{H}}_2}({{\boldsymbol{\omega }}_0}^B),\quad {\left. {      \dfrac{{\partial ({{\boldsymbol{H}}_3}\dot \Omega )}}{{\partial \dot \Omega }}} \right|_{\dot \Omega  = {{\dot \Omega }_0}}} =  & {{\boldsymbol{H}}_3}
+	\end{array}
+	\label{eq_20}
+\end{equation}
+
+最终，我们有：
+\begin{equation}
+	{{\boldsymbol{\dot \omega }}^B} = {{\boldsymbol{K}}_\omega }({\boldsymbol{\omega }}_d^B - {{\boldsymbol{\omega }}^B})
+	\label{eq_27}
+\end{equation}
+其中 ${{\boldsymbol{K}}_{\omega }}=\text{diag}({{K}_{\omega 1}}$, ${{K}_{\omega 2}}$, ${{K}_{\omega 3}})$ 是反馈增益矩阵，$\boldsymbol{\omega }_{d}^{B}$ 表示所需的角速度。
+
+
+\begin{equation}
+	\begin{array}{l}
+	{{\boldsymbol{\nu }}_d} = {{\boldsymbol{\tau }}_i} + {{\boldsymbol{\tau }}_f},\\
+	{{\boldsymbol{\tau }}_i} =  - {\left( {{{\boldsymbol{H}}_1}{\Omega _0}^2} \right)^{ - 1}}\left[ {{{{\boldsymbol{\dot \omega }}}_0}^B + {\boldsymbol{T}}({\Omega _d},{{\dot \Omega }_d})} \right] + {{\boldsymbol{\nu }}_0},\\
+	{{\boldsymbol{\tau }}_f} = {\left( {{{\boldsymbol{H}}_1}{\Omega _0}^2} \right)^{ - 1}}{{\boldsymbol{K}}_\omega }({\boldsymbol{\omega }}_d^B - {{\boldsymbol{\omega }}^B})
+	\end{array}
+	\label{eq_28}
+\end{equation}
+其中 ${{\boldsymbol{\tau }}_{i}}$ 定义为INDI 输入，${{\boldsymbol{\tau }}_{f}}$ 定义为反馈输入。
+
+\subsection{控制分配}
+在底层设计中，我们解决控制分配问题，即利用下式，对给定的 ${{\boldsymbol{\nu }}_{d}}$ 求解适当的舵偏转角 $\boldsymbol{\delta }$，
+\begin{equation}
+	{\boldsymbol {\nu}_d}={\boldsymbol{B\delta}}
+	\label{eq_29.5}
+\end{equation}
+上式的解表示为 $\boldsymbol{\delta }_d$。 具体可以描述为：对于给定的${{\boldsymbol{\nu }}_{d}}$，求${{\boldsymbol{\delta }}_{d}}\in \Delta $使得 ${{\boldsymbol{\nu }}_{d}}=\boldsymbol{B}{{\boldsymbol{\delta }}_{d}}$，或者最小化分配误差 ${{\boldsymbol{\ nu }}_{d}}-\boldsymbol{B}{{\boldsymbol{\delta }}_{d}}$，其中 $\Delta $ 是允许控制集，定义为：
+\begin{equation}
+	\Delta=\left\{\boldsymbol{\delta} \in \mathbb{R}^{4} \mid-\delta_{m} \leq \delta_{i} \leq \delta_{m}, i=1,2,3,4\right\}
+	\label{eq_30}
+\end{equation}
+如果 ${{\boldsymbol{\nu }}_{d}}$ 包含在可达集 (AS) 中，则称它是可达到的，可达集记为 $A$ 并定义为：
+\begin{equation}
+	A=\left\{\boldsymbol{\nu} \in \mathbb{R}^{3} \mid \boldsymbol{\nu}=\boldsymbol{B} \boldsymbol{\delta}, \boldsymbol{\delta} \in \Delta\right\}
+	\label{eq_31}
+\end{equation}
+
+为了达到控制分配的目的，一种广泛采用的方法是直接计算 $\boldsymbol{B}$ 的伪逆：
+\begin{equation}
+	{{\boldsymbol{\delta }}_d} = {{\boldsymbol{B}}^\dag }{{\boldsymbol{\nu }}_d},   \quad  {{\boldsymbol{B}}^\dag } = {{\boldsymbol{B}}^T}{\left( {{\boldsymbol{B}}{{\boldsymbol{B}}^T}} \right)^{ - 1}}
+	\label{eq_32}
+\end{equation}
+
+在伪逆法中，在某些极端情况下，即使 ${{\boldsymbol{\nu }}_{d}}$ 在其 AS 中，计算出的${{\boldsymbol{\delta }}_{d}}$ 可能会超出他们的约束，即 ${{\boldsymbol{\delta }}_{d}}\notin \Delta $，导致实际控制效果与预期不同的情况。 如果这种情况与结构设计式 \eqref{eq_29} 不匹配，则闭环系统可能不稳定。
+
+为了克服伪逆的缺点，所提出的 PCA 算法倾向于通过解决以下优化问题来实现结构设计 \eqref{eq_29}：
+\begin{equation}
+	\begin{aligned}
+	&\max _{\alpha, \boldsymbol{\delta}} \alpha\\
+	&\text { s.t. }\left\{\begin{array}{l}
+	\boldsymbol{\delta} \in \Delta \\
+	\boldsymbol{B} \boldsymbol{\delta}=\boldsymbol{\tau}_{i}+\alpha \boldsymbol{\tau}_{f} \\
+	0 \leq \alpha \leq 1
+	\end{array}\right.
+	\end{aligned}
+	\label{eq_pca}
+\end{equation}
+其中 $ \boldsymbol{B} $、$ \Delta $ 分别由式 \eqref{eq_6}、\eqref{eq_30} 定义。 $ \boldsymbol{\tau}_{i} $ 和 $ \boldsymbol{\tau}_{f} $ 在式 \eqref{eq_28} 中定义。
 
 
 
+\section{增量非线性动态逆控制理论}
 
+\subsection{有扰动情况下的局部坐标变换}
+考虑一个多输入多输出的非线性系统，其形式描述为
+\begin{equation}
+  \begin{aligned}
+    \dot{\boldsymbol{x}}&=\boldsymbol{f}(\boldsymbol{x})+\boldsymbol{G}(\boldsymbol{x})\boldsymbol{u} + \boldsymbol{d}(x)\\
+    \boldsymbol{y}&=\boldsymbol{h}(\boldsymbol{x})
+  \end{aligned}
+  \label{system}
+\end{equation}
 
+其中，$\boldsymbol{f}: \mathbb{R}^{n}\to\mathbb{R}^{n}$ 和 $\boldsymbol{h}: \mathbb{R}^{n}\to\mathbb{R}^{p}$ 是光滑的向量场。$\boldsymbol{G}$ 是一个光滑函数，将 $\mathbb{R}^{n}\to\mathbb{R}^{n\times m}$ 映射，其中的列是光滑的向量场。$\boldsymbol{d}: \mathbb{R}^{n}\to\mathbb{R}^{n}$ 是外部扰动向量。$\boldsymbol{y}\in\mathbb{R}^{P}$ 是被控制的输出向量，可以是系统可观测输出的任意子集的函数
 
+设 $h$ 的元素为 $h_i, i = 1, 2, ..., p$，矩阵 $G$ 的列向量为 $g_j, j = 1, 2, ..., m$，则 $h_i$ 对向量场 $f$ 和 $g_j$ 的 Lie 导数定义为
+\begin{equation}
+  \mathcal{L}_{f}h_{i}=\frac{\partial h_{i}}{\partial x}f,\quad\mathcal{L}_{g_{j}}h_{i}=\frac{\partial h_{i}}{\partial x}g_{j},\quad\mathcal{L}_{f}^{k}h_{i}=\frac{\partial(\mathcal{L}_{f}^{k-1}h_{i})}{\partial x}f,\quad\mathcal{L}_{g_{j}}\mathcal{L}_{f}^{k}h_{i}=\frac{\partial(\mathcal{L}_{f}^{k}h_{i})}{\partial x}g_{j}
+\end{equation}
 
+以下两项假设是所有讨论的前提：
 
+\begin{assumption}\label{assumption1}
+  系统形式为
 
+\end{assumption}
+ 
+\begin{assumption}\label{assumption2}
+  对于每个 
+\end{assumption}
+
+\begin{remark}
+  矩阵
+\end{remark}
+
+\begin{remark}
+  假设 2 是为了
+\end{remark}
+
+在假设 \ref{assumption1} 下
+
+\begin{equation}
+	\left.\left[\begin{array}{c}y_1^{(\gamma_1)}\\y_2^{(\gamma_2)}\\\vdots\\y_p^{(\gamma_p)}\end{array}\right.\right]=\left[\begin{array}{cccc}\mathcal{L}_f^{\gamma_1}h_1(x)\\\\\mathcal{L}_f^{\gamma_2}h_2(x)\\\vdots\\\mathcal{L}_f^{\gamma_p}h_p(x)\end{array}\right] +  \beta(x)  \boldsymbol{u}
+  \end{equation}
+  或者
+  \begin{equation}
+	y^{(\gamma)}=\alpha(x) + \beta(x) \boldsymbol{u}
+	\label{outputdynamic}
+  \end{equation}
+  并且行向量 $dh_{1}(x),\ldots,dL_{f}^{\gamma_{1}-1}h_{1}(x),\ldots,dh_{p}(x),\ldots,dL_{f}^{\gamma_{p}-1}h_{p}(x)$ 是线性无关的。那么系统的相对度 $\gamma$ 满足 $\gamma=\|\gamma\|_{1}=\sum_{i=1}^{p}\gamma_{i}\leq n$，并且 $h_i(x),L_{f}h_i(x),\ldots,L_{f}^{\gamma_{i}-1}h_i(x)$，$1\leq i\leq p$ 可以作为新坐标的一部分。对于 $1\leq i\leq p$，设 
+  \begin{equation}
+	\begin{aligned}
+	  \phi_{1}^{i}(x)&= h_{i}(x)\\
+	  \phi_{2}^{i}(x)&= L_{f}h_{i}(x)\\
+	  &\vdots\\
+	  \phi_{\gamma_{i}}^{i}(x)&= L_{f}^{\gamma_{i}-1}h_{i}(x) 
+	\end{aligned}
+  \end{equation}
+  如果 $\gamma  = n$，对于每个 $\boldsymbol{x} \in  \mathbb{D}$，存在一个邻域 $\mathbb{N}$，使得映射 
+  \begin{equation}
+  \Phi=[\phi_{1}^{1}(x),\ldots,\phi_{\gamma_1}^{1}(x),\ldots,\phi_{1}^{p}(x),\ldots,\phi_{\gamma_{p}}^{p}(x)]^{T}
+  \end{equation}
+  在 $\mathbb{N}$ 上是一个微分同胚。否则，如果 $\gamma < n$，对于每个 $\boldsymbol{x} \in  \mathbb{D}$，总可以找到光滑函数 $\phi_{r+1}(x),\ldots,\phi_{n}(x)$，使得
+  \begin{equation}
+	\Phi=[\phi_{1}^{1}(x),\ldots,\phi_{\gamma_1}^{1}(x),\ldots,\phi_{1}^{p}(x),\ldots,\phi_{\gamma_{p}}^{p}(x),\phi_{\gamma+1}(x),\ldots,\phi_{n}(x)]^{T}
+  \end{equation}
+  在 $\boldsymbol{x}$ 的邻域 $\mathbb{N}$ 上是一个微分同胚。根据假设 \ref{assumption2}，根据 Frobenius 定理，总是可以选择 $\phi_{r+1}(x),\ldots,\phi_{n}(x)$，使得对所有 $r+1\leq i\leq n$ 和所有 $1\leq j\leq m$，有 $L_{g_{j}}\phi_{i}(x)=0$，对于所有 $x \in \mathbb{N}$。 
+  
+  总之，如果假设 \ref{assumption1} 和 \ref{assumption2}（对于 $\gamma < n$）成立，并且忽略外部干扰，总可以找到适当的局部坐标变换 $\phi(x)$，在其下，原始系统 \eqref{system} 可以表示为标准形式。设 
+  \begin{equation}
+	\xi^i=\begin{pmatrix}\xi_1^i\\\xi_2^i\\\vdots\\\xi_{\gamma_i}^i\end{pmatrix}=\begin{pmatrix}\phi_1^i(x)\\\phi_2^i(x)\\\vdots\\\phi_{\gamma_i}^i(x)\end{pmatrix} \quad  
+	  \xi=\begin{pmatrix}\xi^1 \\ \vdots \\ \xi^m\end{pmatrix} \quad  
+	  \eta=\begin{pmatrix}\eta_1\\\eta_2\\\vdots\\\eta_{n-\gamma}\end{pmatrix}=\begin{pmatrix}\phi_{\gamma+1}(x)\\\phi_{\gamma+2}(x)\\\vdots\\\phi_n(x)\end{pmatrix} \quad   
+	  z=\Phi(x)=\begin{pmatrix}\xi\\\eta\end{pmatrix}
+	  \label{stran}
+  \end{equation}
+  然后，方程 \eqref{system} 可以重写为标准形式,为简便起见，我们仍然保留原始坐标，并以向量形式重写系统 \eqref{system} 的标准形式：
+  \begin{equation}
+	\begin{aligned}&\dot{\eta}= f_{0}(\eta,\xi)\\&\dot{\xi}= A_{c}\xi+B_{c}[\alpha(x)+\beta(x)u]\\&\text{y}= C_{c}\xi\end{aligned}
+  \end{equation}
+  % \section{增量非线性动态逆的重表述}
+  其中 
+  \begin{equation}
+	A_c=\mathrm{diag}(A_{1},\ldots,A_{m})\quad B_c=\mathrm{diag}(B_{1},\ldots,B_{m})\quad C_c=\mathrm{diag}(C_{1},\ldots,C_{m})
+  \end{equation}
+  和
+  \begin{equation}
+	A_i=\left[\begin{array}{ccccc}0&1&0&\dots&0\\0&0&1&\dots&0\\\vdots&&\ddots&&\vdots\\\vdots&&&0&1\\0&\dots&\dots&0&0\end{array}\right]_{\gamma_i \times \gamma_i}, B_i=\left[\begin{array}{c}0\\0\\\vdots\\0\\1\end{array}\right]_{\gamma_i \times 1}, C_i=\left[\begin{array}{ccccc}1&0&\dots&0&0\end{array}\right]_{1 \times \gamma_i}
+  \end{equation}
+   
+  如果考虑外部干扰 $d(x)$，通过坐标变换 \eqref{stran}，系统 \eqref{system} 变为 
+  \begin{equation}
+	\begin{aligned}
+	  &\dot{\eta}=\frac{\partial\eta}{\partial x}(f(x)+d(x))\Big|_{x=\Phi^{-1}(z)}= f_{d}(\eta,\xi,d)\\
+	  &\dot{\xi}= A_{c}\xi+B_{c}[\alpha(x)+\beta(x)u] + L\\
+	  &\text{y}= C_{c}\xi\end{aligned}
+	  \label{with_external}
+  \end{equation}
+  其中
+  \begin{equation}
+	L=\begin{pmatrix}L^1\\L^2\\\vdots\\L^m\end{pmatrix} \quad \quad \quad L^i=\begin{pmatrix}L_1^i\\L_2^i\\\vdots\\L_{\gamma_i}^i\end{pmatrix}=\begin{pmatrix}L_{d}h_{i}(x)\\L_{d}L_{f}h_{i}(x)\\\vdots\\L_{d}L_{f}^{\gamma_i -1}h_{i}(x)\end{pmatrix} 
+  \end{equation}
+
+  
+  
