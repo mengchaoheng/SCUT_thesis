@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[no-math]{fontspec}        
+\usepackage{xeCJK}            
+\usepackage{amsmath}   
+  
+\setmainfont{Times New Roman} 
+\setCJKmainfont{SimSun}    
+\usepackage{unicode-math} 
+\setmathfont{XITS Math}[math-style=ISO,bold-style=ISO]
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+这是正文部分，中文使用 SimSun 字体，英文使用 Times New Roman 字体。
+
+文本环境abcdefghijklmnopqrstuvwxyz文本环境。
+
+行间公式环境$\mathup{abcdefghijklmnopqrstuvwxyz}$。
+
+行间公式环境${abcdefghijklmnopqrstuvwxyz}$。
+
+公式环境：
+
+${{\boldsymbol{\omega }}^{B}}=[\boldsymbol{p \quad q \quad r}]^{T}$。
+
+${{\boldsymbol{\omega }}^{B}}=[p \quad q \quad r]^{T}$。
+
+英文字母小写：
+\begin{equation}
+  abcdefghijklmnopqrstuvwxyz 
+\end{equation}
+\begin{equation}
+  \boldsymbol{abcdefghijklmnopqrstuvwxyz} 
+\end{equation}
+\begin{equation}
+  \mathrm{abcdefghijklmnopqrstuvwxyz}
+\end{equation}
+\begin{equation}
+  \mathbf{abcdefghijklmnopqrstuvwxyz}
+\end{equation}
+
+英文字母大写：
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+\begin{equation}
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ 
+\end{equation}
+\begin{equation}
+  \boldsymbol{ABCDEFGHIJKLMNOPQRSTUVWXYZ} 
+\end{equation}
+\begin{equation}
+  \mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+\end{equation}
+\begin{equation}
+  \mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+\end{equation}
+\end{document}

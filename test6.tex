@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{xcolor}  
+\usepackage{enumitem}  
+\usepackage[no-math]{fontspec}        
+\usepackage{xeCJK}            
+\usepackage{booktabs}   
+\usepackage{amsmath}   
+\usepackage{latexsym}  
+\usepackage{yhmath}    
+\usepackage{amssymb}  
+\usepackage{eucal}   % \EuScript
+\usepackage{mathrsfs}    
+% 设置正文字体
+\setmainfont{Times New Roman} % 正文数字和字母使用 Times New Roman
+% 设置中文正文字体为 SimSun
+\setCJKmainfont{SimSun}       % 正文中文使用 SimSun
+% \usepackage{unicode-math} 
+% \setmathfont{XITS Math}[math-style=ISO,bold-style=ISO]%注意math-style设定不同符号默认的直体斜体，bold-style设定加粗后的行为（有可能斜体改直体后加粗，取决于具体命令）
+% \setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1]
+
+%%%%%%%%%%%%下面的定义是lshort书中符号表所需要的定义%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{symbols}[1]%
+  {\small\def\arraystretch{1.5
+  }
+  \begin{tabular}{@{}#1@{}}}%
+  {\end{tabular}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+这是正文部分，中文使用 SimSun 字体，英文使用 Times New Roman 字体。
+
+文本环境abcdefghijklmnopqrstuvwxyz文本环境。
+
+公式环境：
+
+$\text{ }\!\!\{\!\!\text{ }{\boldsymbol{X}^{B}},{\boldsymbol{Y}^{B}},{\boldsymbol{Z}^{B}}\text{ }\!\!\}\!\!\text{ }$。
+
+${{\boldsymbol{\omega }}^{B}}=[\boldsymbol{p \quad q \quad r}]^{T}$。
+
+${{\boldsymbol{\omega }}^{B}}=[p \quad q \quad r]^{T}$。
+
+英文字母小写：
+\begin{equation}
+  abcdefghijklmnopqrstuvwxyz 
+\end{equation}
+\begin{equation}
+  \boldsymbol{abcdefghijklmnopqrstuvwxyz} 
+\end{equation}
+\begin{equation}
+  \mathrm{abcdefghijklmnopqrstuvwxyz}
+\end{equation}
+\begin{equation}
+  \mathbf{abcdefghijklmnopqrstuvwxyz}
+\end{equation}
+
+英文字母大写：
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+\begin{equation}
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ 
+\end{equation}
+\begin{equation}
+  \boldsymbol{ABCDEFGHIJKLMNOPQRSTUVWXYZ} 
+\end{equation}
+\begin{equation}
+  \mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+\end{equation}
+\begin{equation}
+  \mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+\end{equation}
+\end{document}
