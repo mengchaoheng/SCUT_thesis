@@ -1,10 +1,22 @@
-\chapter{第五章}
-本章摘选一些公式作为公式字体测试，同学们可以换成自己的文本，测试不同公式字体设置的效果。更多字体测试文件在math\_font文件夹。
+\chapter{公式字体选项——新增功能}
+2024年陆续有同学提出公式数学符号字体不对，于是有了\url{https://github.com/mengchaoheng/SCUT_thesis/issues/81}的讨论——数学公式字体应该使用什么？这里简单提一下：
+
+1）如果十分确定自己使用什么字体，或者对unicode-math的兼容性问题无法忍受，又或者持保守态度，不想冒险使用“新字体”，那不要改任何设置，使用默认的 Computer Modern 即可，因为模板的有效性已经由很多届同学验证，我反复提到这句话是因为，我们只是写毕业论文，不是成为latex专家，不要在修改模板上花时间，尽量使用现有的东西。不想折腾字体的同学可以不用继续往下看本章了。
+
+2）若还是非常执著于修改公式字体，那可以试试所有OpenType math字体，XITS Math是我看比较合适的一种。在导言区或者cls文件加入
+\begin{lstlisting}
+\usepackage{unicode-math} 
+\setmathfont{XITS Math}[math-style=ISO,bold-style=ISO] 
+\setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1] 
+\end{lstlisting}
+即实现了通过unicode-math宏包设置XITS Math字体并设置了选项[math-style=ISO,bold-style=ISO]。具体功能可以查看宏包文件。
+
+本章摘选一些公式作为公式字体测试，同学们可以换成自己的文本，测试不同公式字体设置的效果。更多字体测试文件在math\_font文件夹。或者在\url{https://github.com/mengchaoheng/OpenType-MATH-TTF}对比多种字体效果。注意基本的符号规范，可在math\_font文件夹翻一翻基本内容。
 
 \section{建模}
 \label{sec:1}
 \subsection{符号约定}
-涵道风扇无人机的机体系如图所示。 机体系的原点位于重心，正交的机体轴线表示为$\text{ }\!\!\{\!\!\text{ }{\boldsymbol{X}^{B}},{\boldsymbol{Y}^{B}},{\boldsymbol{Z}^{B}}\text{ }\!\!\}\!\!\text{ }$。 无人机沿机身轴线的角速度表示为${{\boldsymbol{\omega }}^{B}}=[p \quad q \quad r]^{T}$。风扇的转速记为$\Omega$。 每个控制舵的偏转角表示为 ${{\delta }_{i}}$，以矢量形式描述为$[{{\delta }_{1}} \quad {{\delta }_{2}} \quad {{\delta }_{3}} \quad {{\delta }_{4}}]^T$。
+机体系的原点位于重心，正交的机体轴线表示为$\text{ }\!\!\{\!\!\text{ }{\boldsymbol{X}^{B}},{\boldsymbol{Y}^{B}},{\boldsymbol{Z}^{B}}\text{ }\!\!\}\!\!\text{ }$。 无人机沿机身轴线的角速度表示为${{\boldsymbol{\omega }}^{B}}=[p \quad q \quad r]^{T}$。风扇的转速记为$\Omega$。 每个控制舵的偏转角表示为 ${{\delta }_{i}}$，以矢量形式描述为$[{{\delta }_{1}} \quad {{\delta }_{2}} \quad {{\delta }_{3}} \quad {{\delta }_{4}}]^T$。
 
 
 
@@ -66,13 +78,11 @@
 	\label{eq_6}
 \end{equation}
 
-从式 \eqref{eq_5} 和式 \eqref{eq_6} 中，$\boldsymbol{B}$ 的定义表示虚拟输入的大小被标准化为 $[-1,1] \centerdot {{\delta }_{m }}$。 通过这种模块化，在式 \eqref{eq_2} 中从舵偏转角到控制力矩的直接映射被转换为从舵偏转角到虚拟输入的映射，而映射矩阵 $\boldsymbol{B}$ 不包含模型信息。
-
 \section{控制器设计}
 
 
 \subsection{控制分配}
-在底层设计中，我们解决控制分配问题，即利用下式，对给定的 ${{\boldsymbol{\nu }}_{d}}$ 求解适当的舵偏转角 $\boldsymbol{\delta }$，
+对给定的 ${{\boldsymbol{\nu }}_{d}}$ 求解适当的舵偏转角 $\boldsymbol{\delta }$，
 \begin{equation}
 	{\boldsymbol {\nu}_d}={\boldsymbol{B\delta}}
 	\label{eq_29.5}
@@ -94,8 +104,7 @@
 	\label{eq_32}
 \end{equation}
 
-
-为了克服伪逆的缺点，所提出的 PCA 算法倾向于通过解决以下优化问题：
+PCA 算法通过解决以下优化问题：
 \begin{equation}
 	\begin{aligned}
 	&\max _{\alpha, \boldsymbol{\delta}} \alpha\\
