@@ -596,7 +596,7 @@
 
 %%定理环境
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \RequirePackage{bm} % 数学符号粗体 % 引入unicode-math后不再需要。
+% \RequirePackage{bm} % 数学符号粗体 % 引入unicode-math后不再需要。若不使用unicode-math，unicode-math命令也没法加粗，则可借助bm包。
 %\RequirePackage[amsmath,thmmarks]{ntheorem}
 \RequirePackage{amsthm}
 %允许公式换页显示,否则大型推导公式都在一页内，
