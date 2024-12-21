@@ -1,5 +1,5 @@
 \chapter{第五章}
-公式字体测试
+本章摘选一些公式作为公式字体测试，同学们可以换成自己的文本，测试不同公式字体设置的效果。
 
 \section{建模}
 \label{sec:1}
@@ -8,21 +8,20 @@
 
 
 
-惯性系中的速度、惯性系中的姿态和风速分别表示为${{\boldsymbol{V}}^{I}}$，$\boldsymbol{\eta }$ 和 ${{\boldsymbol{W}}^{I}}$。 虽然不涉及角度控制设计，但这里也使用了这些与惯性系相关的变量，因为它们对于指定 INDI 的有效性至关重要。
-
+惯性系中的速度、惯性系中的姿态和风速分别表示为${{\boldsymbol{V}}^{I}}$，$\boldsymbol{\eta }$ 和 ${{\boldsymbol{W}}^{I}}$。 
 由于涵道风扇无人机对所有机身轴对称，无人机的惯性矩阵可以简化为对角矩阵，表示为 $ \boldsymbol{I}=\text{diag}({{I}_{x} },{{I}_{y}},{{I}_{z}}) $。
 
 在机体坐标系中表示的合力矩表示为 $\boldsymbol M$ ，为以下几项的和：
 \begin{equation}
-	{\boldsymbol{M}} = {{\boldsymbol{M}}_{vane}} + {{\boldsymbol{M}}_{flap}} + {{\boldsymbol{M}}_\mathrm{fan}} + {{\boldsymbol{M}}_\text{aero}}
+	{\boldsymbol{M}} = {{\boldsymbol{M}}_\text{vane}} + \boldsymbol{M}_{\text{flap}} + {\boldsymbol{M}}_{\text{fan}} + {\boldsymbol{M}}_{\text{aero}}
 	\label{eq_1}
 \end{equation}
-其中 $ {{\boldsymbol{M}}_{vane}} $ 是从控制舵产生的控制力矩矢量。 $ {{\boldsymbol{M}}_{flap}} $ 是作用在固定气动襟翼上的反扭矩作用。 $ {{\boldsymbol{M}}_{fan}}$ 包括来自旋转的风扇的气动扭矩、角加速度力矩和陀螺效应。 $ {{\boldsymbol{M}}_{aero}} $ 是气动力矩。
+其中 $ {{\boldsymbol{M}}_\text{vane}} $ 是从控制舵产生的控制力矩矢量。 $ \boldsymbol{M}_{\text{flap}} $ 是作用在固定气动襟翼上的反扭矩作用。 $ {\boldsymbol{M}}_{\text{fan}} $ 包括来自旋转的风扇的气动扭矩、角加速度力矩和陀螺效应。 $  {\boldsymbol{M}}_{\text{aero}} $ 是气动力矩。
 
 \subsection{控制力矩}
-在INDI设计中，只需要辨识控制力矩，控制力矩 ${{\boldsymbol{M}}_{vane}} $ 是涵道风扇无人机角速度子系统的控制输入，由控制舵产生。 一个偏转舵受到垂直于无人机 ${{\boldsymbol{Z}}^{B}}$ 轴的力，并同时受到两个相对于相应机体系轴的正交力矩。 四个控制舵的总控制力矩可以通过以下公式表示：
+四个控制舵的总控制力矩可以通过以下公式表示：
 \begin{equation}
-{{\boldsymbol{M}}_{vane}} = {k_{cv}}V_e^2\left[ {\begin{array}{*{20}{c}}
+{{\boldsymbol{M}}_\text{vane}} = {k_{cv}}V_e^2\left[ {\begin{array}{*{20}{c}}
 	{{\rm{ - }}{l_1}}&0&{{l_1}}&0\\
 	0&{{\rm{ - }}{l_1}}&0&{{l_1}}\\
 	{{l_2}}&{{l_2}}&{{l_2}}&{{l_2}}
@@ -45,7 +44,7 @@
 显然，式\eqref{eq_2} 将冗余舵偏转角映射到三维的控制力矩，表明无人机角速度子系统的过度驱动特性。 通过使用虚拟控制输入$ \boldsymbol{\nu }=[{\nu }_{x} \quad {\nu }_{y} \quad {\nu }_{z}]^{T}$，可以将控制力矩效应重构为模块化形式：
 \begin{equation}
 	\left\{ \begin{array}{l}
-	{{\boldsymbol{I}}^{ - 1}}{{\boldsymbol{M}}_{vane}} = {{\boldsymbol{H}}_1}{\boldsymbol{\nu }}{\Omega ^2}\\
+	{{\boldsymbol{I}}^{ - 1}}{{\boldsymbol{M}}_\text{vane}} = {{\boldsymbol{H}}_1}{\boldsymbol{\nu }}{\Omega ^2}\\
 	{\boldsymbol{\nu }} = {\boldsymbol{B\delta }}
 	\end{array} \right.
 	\label{eq_5}
@@ -86,11 +85,11 @@
 	\end{array} \right.
 	\label{eq_17}
 \end{equation}
-其中 ${\boldsymbol{L}} = {\boldsymbol{L}}({{\boldsymbol{V}}^I},{\boldsymbol{\eta}},{{\boldsymbol{W}}^I} ,{{\boldsymbol{\omega }}^B}) \buildrel \Delta \over = {{\boldsymbol{I}}^{ - 1}}({{\boldsymbol{M}}_{aero}} + {\boldsymbol{I}}{{\boldsymbol{\omega }}^B}{\boldsymbol{ \times }}{{\boldsymbol{\omega }}^B})$。 矩阵 ${{\boldsymbol{H}}_{1}}$由式 \eqref{eq_6}  定义。
+其中 ${\boldsymbol{L}} = {\boldsymbol{L}}({{\boldsymbol{V}}^I},{\boldsymbol{\eta}},{{\boldsymbol{W}}^I} ,{{\boldsymbol{\omega }}^B}) \buildrel \Delta \over = {{\boldsymbol{I}}^{ - 1}}({{\boldsymbol{M}}_\text{aero}} + {\boldsymbol{I}}{{\boldsymbol{\omega }}^B}{\boldsymbol{ \times }}{{\boldsymbol{\omega }}^B})$。 矩阵 ${{\boldsymbol{H}}_{1}}$由式 \eqref{eq_6}  定义。
 
 \section{控制器设计}
 
-\subsection{增量非线性动态逆}
+\subsection{非线性动态}
 
 \begin{equation}
 	{{\boldsymbol{\dot \omega }}^B} = {\boldsymbol{L}}({{\boldsymbol{V}}^I},{\boldsymbol{\eta }},{{\boldsymbol{W}}^I},{{\boldsymbol{\omega }}^B}) + {{\boldsymbol{H}}_1}{\boldsymbol{\nu }}{\Omega ^2} + {{\boldsymbol{H}}_2}({{\boldsymbol{\omega }}^B})\Omega  + {{\boldsymbol{H}}_3}\dot \Omega
@@ -162,9 +161,8 @@
 	\label{eq_32}
 \end{equation}
 
-在伪逆法中，在某些极端情况下，即使 ${{\boldsymbol{\nu }}_{d}}$ 在其 AS 中，计算出的${{\boldsymbol{\delta }}_{d}}$ 可能会超出他们的约束，即 ${{\boldsymbol{\delta }}_{d}}\notin \Delta $，导致实际控制效果与预期不同的情况。 如果这种情况与结构设计式 \eqref{eq_29} 不匹配，则闭环系统可能不稳定。
 
-为了克服伪逆的缺点，所提出的 PCA 算法倾向于通过解决以下优化问题来实现结构设计 \eqref{eq_29}：
+为了克服伪逆的缺点，所提出的 PCA 算法倾向于通过解决以下优化问题：
 \begin{equation}
 	\begin{aligned}
 	&\max _{\alpha, \boldsymbol{\delta}} \alpha\\
@@ -180,9 +178,9 @@
 
 
 
-\section{增量非线性动态逆控制理论}
+\section{控制理论}
 
-\subsection{有扰动情况下的局部坐标变换}
+\subsection{坐标变换}
 考虑一个多输入多输出的非线性系统，其形式描述为
 \begin{equation}
   \begin{aligned}
