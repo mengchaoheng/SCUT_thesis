@@ -1,5 +1,5 @@
 \chapter{第五章}
-本章摘选一些公式作为公式字体测试，同学们可以换成自己的文本，测试不同公式字体设置的效果。
+本章摘选一些公式作为公式字体测试，同学们可以换成自己的文本，测试不同公式字体设置的效果。更多字体测试文件在math\_font文件夹。
 
 \section{建模}
 \label{sec:1}
@@ -68,75 +68,8 @@
 
 从式 \eqref{eq_5} 和式 \eqref{eq_6} 中，$\boldsymbol{B}$ 的定义表示虚拟输入的大小被标准化为 $[-1,1] \centerdot {{\delta }_{m }}$。 通过这种模块化，在式 \eqref{eq_2} 中从舵偏转角到控制力矩的直接映射被转换为从舵偏转角到虚拟输入的映射，而映射矩阵 $\boldsymbol{B}$ 不包含模型信息。
 
-
-\subsection{角速度环动力学}
-在无人机控制的意义上，旋转风扇通常被假设为一个圆盘，对飞行器施加稳定的推力和扭矩，因此无人机可以被视为刚体。 因此角速度动力学方程为：
-\begin{equation}
-	{{\boldsymbol{\dot \omega }}^B} = {{\boldsymbol{I}}^{ - 1}}\left( {{\boldsymbol{M + I}}{{\boldsymbol{\omega }}^B}{\boldsymbol{ \times }}{{\boldsymbol{\omega }}^B}} \right)
-	\label{eq_16}
-\end{equation}
-其中 $\boldsymbol M$ 由式 \eqref{eq_1} 预先定义，$\times$ 表示向量的叉积。
-
-通过将式 \eqref{eq_1}、\eqref{eq_5} 代入式 \eqref{eq_16}，可以将角速度动力学重写为：
-\begin{equation}
-	\left\{ \begin{array}{l}
-	{{{\boldsymbol{\dot \omega }}}^B} = {\boldsymbol{L}} + {{\boldsymbol{H}}_1}{\boldsymbol{\nu }}{\Omega ^2} + {{\boldsymbol{H}}_2}\Omega  + {{\boldsymbol{H}}_3}\dot \Omega \\
-	{\boldsymbol{\nu }} = {\boldsymbol{B\delta }}
-	\end{array} \right.
-	\label{eq_17}
-\end{equation}
-其中 ${\boldsymbol{L}} = {\boldsymbol{L}}({{\boldsymbol{V}}^I},{\boldsymbol{\eta}},{{\boldsymbol{W}}^I} ,{{\boldsymbol{\omega }}^B}) \buildrel \Delta \over = {{\boldsymbol{I}}^{ - 1}}({{\boldsymbol{M}}_\text{aero}} + {\boldsymbol{I}}{{\boldsymbol{\omega }}^B}{\boldsymbol{ \times }}{{\boldsymbol{\omega }}^B})$。 矩阵 ${{\boldsymbol{H}}_{1}}$由式 \eqref{eq_6}  定义。
-
 \section{控制器设计}
 
-\subsection{非线性动态}
-
-\begin{equation}
-	{{\boldsymbol{\dot \omega }}^B} = {\boldsymbol{L}}({{\boldsymbol{V}}^I},{\boldsymbol{\eta }},{{\boldsymbol{W}}^I},{{\boldsymbol{\omega }}^B}) + {{\boldsymbol{H}}_1}{\boldsymbol{\nu }}{\Omega ^2} + {{\boldsymbol{H}}_2}({{\boldsymbol{\omega }}^B})\Omega  + {{\boldsymbol{H}}_3}\dot \Omega
-	\label{eq_18}
-\end{equation}
-
-\begin{equation}
-	\begin{aligned}
-	   {{{\boldsymbol{\dot{\omega }}}}^{B}}= &\ \boldsymbol{L}({{\boldsymbol{V}}^{I}},\boldsymbol{\eta },{{\boldsymbol{W}}^{I}},{{\boldsymbol{\omega }}^{B}})+{{\boldsymbol{H}}_{1}}\boldsymbol{\nu }{{\Omega }^{2}}+{{\boldsymbol{H}}_{2}}({{\boldsymbol{\omega }}^{B}})\Omega +{{\boldsymbol{H}}_{3}}\dot{\Omega } \\ 
-	  = &\ {{\boldsymbol{L}}_{0}}+{{\boldsymbol{H}}_{1}}{{\boldsymbol{\nu }}_{0}}{{\Omega }_{0}}^{2}+{{\boldsymbol{H}}_{20}}{{\Omega }_{0}}+{{\boldsymbol{H}}_{3}}{{{\dot{\Omega }}}_{0}} \\ 
-	   &\ +[\frac{\partial \boldsymbol{L}}{\partial {{\boldsymbol{V}}^{I}}}({{\boldsymbol{V}}^{I}}-{{\boldsymbol{V}}_{0}}^{I})+\frac{\partial \boldsymbol{L}}{\partial \boldsymbol{\eta }}(\boldsymbol{\eta }-{{\boldsymbol{\eta }}_{0}})+\frac{\partial \boldsymbol{L}}{\partial {{\boldsymbol{\omega }}^{B}}}({{\boldsymbol{\omega }}^{B}}-{{\boldsymbol{\omega }}_{0}}^{B}) \\ 
-	   &\ +\frac{\partial \boldsymbol{L}}{\partial {{\boldsymbol{W}}^{I}}}({{\boldsymbol{W}}^{I}}-{{\boldsymbol{W}}_{0}}^{I}) \\ 
-	   &\ +\frac{\partial ({{\boldsymbol{H}}_{1}}\boldsymbol{\nu }{{\Omega }^{2}})}{\partial \boldsymbol{\nu }}(\boldsymbol{\nu }-{{\boldsymbol{\nu }}_{0}})+\frac{\partial ({{\boldsymbol{H}}_{1}}\boldsymbol{\nu }{{\Omega }^{2}})}{\partial \Omega }(\Omega -{{\Omega }_{0}}) \\ 
-	   &\ +\frac{\partial ({{\boldsymbol{H}}_{2}}\Omega )}{\partial {{\boldsymbol{\omega }}^{B}}}({{\boldsymbol{\omega }}^{B}}-{{\boldsymbol{\omega }}_{0}}^{B})+\frac{\partial ({{\boldsymbol{H}}_{2}}\Omega )}{\partial \Omega }(\Omega -{{\Omega }_{0}}) \\ 
-	   &\ +{{\left. \frac{\partial ({{\boldsymbol{H}}_{3}}\dot{\Omega })}{\partial \dot{\Omega }}(\dot{\Omega }-{{{\dot{\Omega }}}_{0}})] \right|}_{\begin{smallmatrix} 
-	 {{\boldsymbol{V}}^{I}}={{\boldsymbol{V}}_{0}}^{I},\boldsymbol{\eta }={{\boldsymbol{\eta }}_{0}},{{\boldsymbol{\omega }}^{B}}={{\boldsymbol{\omega }}_{0}}^{B},{{\boldsymbol{W}}^{I}}=\boldsymbol{W}_{0}^{I} \\ 
-	 \boldsymbol{\nu }={{\boldsymbol{\nu }}_{0}},\Omega ={{\Omega }_{0}},\dot{\Omega }={{{\dot{\Omega }}}_{0}} 
-	\end{smallmatrix}}}
-	\end{aligned}
-	\label{eq_19}
-\end{equation}
-
-\begin{equation}
-	\begin{array}{ccccc}
-	{\left. {\dfrac{{\partial ({{\boldsymbol{H}}_1}{\boldsymbol{\nu }}{\Omega ^2})}}{{\partial {\boldsymbol{\nu }}}}} \right|_{\Omega  = {\Omega _0}}} &  = {{\boldsymbol{H}}_1}{\Omega _0}^2  ,\quad{\left. {     \dfrac{{\partial ({{\boldsymbol{H}}_1}{\boldsymbol{\nu }}{\Omega ^2})}}{{\partial \Omega }}} \right|_{{\boldsymbol{\nu }} = {{\boldsymbol{\nu }}_0}}} =  & 2{{\boldsymbol{H}}_1}{{\boldsymbol{\nu }}_0}{\Omega _0}\\
-	{\left. {\dfrac{{\partial ({{\boldsymbol{H}}_2}\Omega )}}{{\partial \Omega }}} \right|_{\Omega  = {\Omega _0}}} &  = {{\boldsymbol{H}}_2}({{\boldsymbol{\omega }}_0}^B),\quad {\left. {      \dfrac{{\partial ({{\boldsymbol{H}}_3}\dot \Omega )}}{{\partial \dot \Omega }}} \right|_{\dot \Omega  = {{\dot \Omega }_0}}} =  & {{\boldsymbol{H}}_3}
-	\end{array}
-	\label{eq_20}
-\end{equation}
-
-最终，我们有：
-\begin{equation}
-	{{\boldsymbol{\dot \omega }}^B} = {{\boldsymbol{K}}_\omega }({\boldsymbol{\omega }}_d^B - {{\boldsymbol{\omega }}^B})
-	\label{eq_27}
-\end{equation}
-其中 ${{\boldsymbol{K}}_{\omega }}=\text{diag}({{K}_{\omega 1}}$, ${{K}_{\omega 2}}$, ${{K}_{\omega 3}})$ 是反馈增益矩阵，$\boldsymbol{\omega }_{d}^{B}$ 表示所需的角速度。
-
-
-\begin{equation}
-	\begin{array}{l}
-	{{\boldsymbol{\nu }}_d} = {{\boldsymbol{\tau }}_i} + {{\boldsymbol{\tau }}_f},\\
-	{{\boldsymbol{\tau }}_i} =  - {\left( {{{\boldsymbol{H}}_1}{\Omega _0}^2} \right)^{ - 1}}\left[ {{{{\boldsymbol{\dot \omega }}}_0}^B + {\boldsymbol{T}}({\Omega _d},{{\dot \Omega }_d})} \right] + {{\boldsymbol{\nu }}_0},\\
-	{{\boldsymbol{\tau }}_f} = {\left( {{{\boldsymbol{H}}_1}{\Omega _0}^2} \right)^{ - 1}}{{\boldsymbol{K}}_\omega }({\boldsymbol{\omega }}_d^B - {{\boldsymbol{\omega }}^B})
-	\end{array}
-	\label{eq_28}
-\end{equation}
-其中 ${{\boldsymbol{\tau }}_{i}}$ 定义为INDI 输入，${{\boldsymbol{\tau }}_{f}}$ 定义为反馈输入。
 
 \subsection{控制分配}
 在底层设计中，我们解决控制分配问题，即利用下式，对给定的 ${{\boldsymbol{\nu }}_{d}}$ 求解适当的舵偏转角 $\boldsymbol{\delta }$，
