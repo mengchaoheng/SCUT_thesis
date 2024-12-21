@@ -6,7 +6,12 @@
 \setmainfont{Times New Roman} 
 \setCJKmainfont{SimSun}    
 \usepackage{unicode-math} 
-\setmathfont{XITS Math}[math-style=ISO,bold-style=ISO]
+\setmathfont{Latin Modern Math}[math-style=ISO,bold-style=ISO]
+
+
+
+\def\TAG#1{\tag*{\scriptsize\ttfamily\textbackslash#1}}
+
 
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,43 +19,47 @@
 
 文本环境abcdefghijklmnopqrstuvwxyz文本环境。
 
-行间公式环境$\mathup{abcdefghijklmnopqrstuvwxyz}$。
+% 行间公式环境$\mathup{abcdefghijklmnopqrstuvwxyz}$。
 
 行间公式环境${abcdefghijklmnopqrstuvwxyz}$。
 
-公式环境：
+$A_i$和 $W_i$
 
-${{\boldsymbol{\omega }}^{B}}=[\boldsymbol{p \quad q \quad r}]^{T}$。
+$A^i$和 $W^i$
 
-${{\boldsymbol{\omega }}^{B}}=[p \quad q \quad r]^{T}$。
+% 公式环境：
 
-英文字母小写：
-\begin{equation}
-  abcdefghijklmnopqrstuvwxyz 
-\end{equation}
-\begin{equation}
-  \boldsymbol{abcdefghijklmnopqrstuvwxyz} 
-\end{equation}
-\begin{equation}
-  \mathrm{abcdefghijklmnopqrstuvwxyz}
-\end{equation}
-\begin{equation}
-  \mathbf{abcdefghijklmnopqrstuvwxyz}
-\end{equation}
+% ${{\boldsymbol{\omega }}^{B}}=[\boldsymbol{p \quad q \quad r}]^{T}$。
 
-英文字母大写：
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
+% ${{\boldsymbol{\omega }}^{B}}=[p \quad q \quad r]^{T}$。
 
-\begin{equation}
-  ABCDEFGHIJKLMNOPQRSTUVWXYZ 
-\end{equation}
-\begin{equation}
-  \boldsymbol{ABCDEFGHIJKLMNOPQRSTUVWXYZ} 
-\end{equation}
-\begin{equation}
-  \mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
-\end{equation}
-\begin{equation}
-  \mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
-\end{equation}
+% 英文字母小写：
+% \begin{equation}
+%   abcdefghijklmnopqrstuvwxyz 
+% \end{equation}
+% \begin{equation}
+%   \boldsymbol{abcdefghijklmnopqrstuvwxyz} 
+% \end{equation}
+% \begin{equation}
+%   \mathrm{abcdefghijklmnopqrstuvwxyz}
+% \end{equation}
+% \begin{equation}
+%   \mathbf{abcdefghijklmnopqrstuvwxyz}
+% \end{equation}
+
+% 英文字母大写：
+% ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+% \begin{equation}
+%   ABCDEFGHIJKLMNOPQRSTUVWXYZ 
+% \end{equation}
+% \begin{equation}
+%   \boldsymbol{ABCDEFGHIJKLMNOPQRSTUVWXYZ} 
+% \end{equation}
+% \begin{equation}
+%   \mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+% \end{equation}
+% \begin{equation}
+%   \mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+% \end{equation}
 \end{document}
