@@ -8,8 +8,8 @@
 % \includeonly{chapter/chapter04}
 %参考文献设置
 \usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase]{biblatex}% 可试着设style=gb7714-1987
-\addbibresource[location=local]{dependencies/MyLibrary.bib} % 如果在其他盘，改为相对路径。比如F盘，改为：F/MyLibrary.bib
-\addbibresource[location=local]{dependencies/mybibfile2.bib} % 无论什么来源的bib文件，只要由参考文献的BibTeX组成，都可以使用此模板。参考文献的BibTeX获取方法可百度
+\addbibresource[location=local]{biblibrary/MyLibrary.bib} % 如果在其他盘，改为相对路径。比如F盘，改为：F/MyLibrary.bib
+\addbibresource[location=local]{biblibrary/mybibfile2.bib} % 无论什么来源的bib文件，只要由参考文献的BibTeX组成，都可以使用此模板。参考文献的BibTeX获取方法可百度
 %页眉页脚设置
 \usepackage{fancyhdr}
 \usepackage{listings}
@@ -91,7 +91,7 @@
 	\include{chapter/chapter02}%第二章
 	\include{chapter/chapter03}%第三章
 	\include{chapter/chapter04}
-	% \include{chapter/chapter05} % 新增公式字体设置，需要引入字体包unicode-math然后通过setmainfont设置不同字体（unicode-math包默认Latin Modern Math字体，而latex默认Computer Modern Math字体）， Computer Modern Math也是模板一直以来使用的字体。这里提供给需要更多字体的同学探索。
+	% \include{chapter/chapter05} % 新增公式字体设置，需要引入字体包unicode-math然后通过setmainfont设置不同字体（unicode-math包默认Latin Modern Math字体，而latex默认Computer Modern Math字体）， Computer Modern Math也是模板一直以来使用的字体。这里提供给需要更多字体的同学探索。模版的修改在scutthesis.cls文件82-85行，自行探索各种常用数学符号的区别，编译math_font文件夹的各种测试文件。
 	% 自行根据需要添加章节。
 
 	\backmatter %章节不编号但页码继续
