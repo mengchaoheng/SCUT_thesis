@@ -48,7 +48,8 @@ latex和office在写论文、写slides时只是不同的工具，就像是两把
 
 3)还可以在本页面将master branch改为选择overleaf分支后在download本项目等.zip文件，然后上传overleaf。
 
-> **Note:** 实际上前三种方法都依赖于安装的texlive，可以在终端（win,macos,linux任一系统都一样）输入命令行`tex -v`测试编译环境是否正确安装，`xelatex`引擎编译则运行`xelatex scutthesis.tex`。只是不同方法在不同的地方调用这些命令，也因此vscode需要写配置文件，TeXstudio已经做好GUI图形用户界面，直接选配即可，而编译脚本`all.bat`则是直接写出要执行的tex命令。使用overleaf是有网站已经部署好的远程编译环境，因此不需要本地安装。
+> **Note:** 实际上前三种方法都依赖于安装的texlive，可以在终端（win,macos,linux任一系统都一样）输入命令行`tex -v`测试编译环境是否正确安装，`xelatex`引擎编译则运行`xelatex scutthesis.tex`。只是不同方法在不同的地方调用这些命令，也因此vscode需要写配置文件，TeXstudio已经做好GUI图形用户界面，直接选配即可，而编译脚本`all.bat`则是直接写出要执行的tex命令。使用overleaf是有网站已经部署好的远程编译环境，因此不需要本地安装。有编程基础的同学可以很容易对任一系统写一个编译脚本，甚至只需要在终端使用几条命令就可以编译。
+
 > **Note:** 封面需要用微软的word打开另存为pdf，不能使用wps（暂时不明原因报错）。
 
 > **Note:** 如果有更新版本的封面，可自行替换。建议每届毕业生都到官网下载最新封面，替换`cover_file`中的内容，防止学校改建校年份引起校徽的变化。建校年份还能改这点我是非常意外的。
