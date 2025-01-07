@@ -28,7 +28,7 @@ latex和office在写论文、写slides时只是不同的工具，就像是两把
 
 使用之前可先阅读本文模板编译后生成的使用说明[scutthesis.pdf](https://github.com/mengchaoheng/SCUT_thesis/blob/master/scutthesis.pdf)文件、并有选择性地阅读[《一份（不太）简短的LATEX 2ε 介绍》](https://github.com/CTeX-org/lshort-zh-cn.git) 入门。还可以阅读[tutorial](https://github.com/mengchaoheng/SCUT_thesis/tree/master/tutorial)里的`scutthesis说明.pdf`文件，这是旧模板的文件，可以参考旧模板的东西。使用案例为[本人的学位论文](https://github.com/mengchaoheng/SCUTthesis-mengchaoheng.git)(注意该论文是基于初代模板，而现在的模板已经不断更新)。
 
-编译之前首先安装[texlive](https://www.tug.org/texlive/)，找到对应系统（Linux，win，macOS）的版本。注意macOS是MacTeX。
+若不使用在线编译overleaf，则编译之前需要先安装[texlive](https://www.tug.org/texlive/)，找到对应系统（Linux，win，macOS）的版本。注意macOS是MacTeX。
 
 ## 快速使用：
 
@@ -48,9 +48,8 @@ latex和office在写论文、写slides时只是不同的工具，就像是两把
 
 3)还可以在本页面将master branch改为选择overleaf分支后在download本项目等.zip文件，然后上传overleaf。
 
+> **Note:** 实际上前三种方法都依赖于安装的texlive，可以在终端（win,macos,linux任一系统都一样）输入命令行`tex -v`测试编译环境是否正确安装，`xelatex`引擎编译则运行`xelatex scutthesis.tex`。只是不同方法在不同的地方调用这些命令，也因此vscode需要写配置文件，TeXstudio已经做好GUI图形用户界面，直接选配即可，而编译脚本`all.bat`则是直接写出要执行的tex命令。使用overleaf是有网站已经部署好的远程编译环境，因此不需要本地安装。
 > **Note:** 封面需要用微软的word打开另存为pdf，不能使用wps（暂时不明原因报错）。
-
-> **Note:** 使用Mac的同学也可以用texifier，但亲测体验不怎么好，因人而异。
 
 > **Note:** 如果有更新版本的封面，可自行替换。建议每届毕业生都到官网下载最新封面，替换`cover_file`中的内容，防止学校改建校年份引起校徽的变化。建校年份还能改这点我是非常意外的。
 
