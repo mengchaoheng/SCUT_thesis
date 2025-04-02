@@ -262,7 +262,7 @@ amsmath 宏包还直接提供了多种排版矩阵的环境，包括不带定界
 	x_{n1} & x_{n2} & \ldots & x_{nn}
    \end{bmatrix}
 \end{gather}	
-其中矩阵/向量加粗使用\textbackslash{}boldsymbol\{\}命令，bm宏包的\textbackslash{}bm\{\}命令和unicode-math包有兼容性问题，若使用unicode-math包，可能需要使用新的加粗命令（具体在math\_font文件夹的测试文件对比差异）。另外还可以使用array环境排版矩阵，类似tabular环境，用$ \verb|\\|$ 和\& 用来分隔行和列，这里不再赘述。	
+其中矩阵/向量加粗使用\textbackslash{}boldsymbol\{\}命令，bm宏包的\textbackslash{}bm\{\}命令和unicode-math包有兼容性问题，若使用unicode-math包，就不能使用bm包加粗，unicode-math的一些加粗命令比较特别（具体在math\_font文件夹的测试文件对比差异）。若不使用unicode-math，boldsymbol命令也没法加粗，则再考虑借助bm包。简而言之，公式加粗使用\textbackslash{}boldsymbol\{\}命令。另外还可以使用array环境排版矩阵，类似tabular环境，用$ \verb|\\|$ 和\& 用来分隔行和列，这里不再赘述。	
 \begin{lstlisting}
 \begin{array }[外部对齐tcb]{列对齐lcr}
 	行列内容
