@@ -24,10 +24,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifmasterdegree\masterdegreefalse %默认为doctor
 \newif\ifpdfcover\pdfcoverfalse
+\newif\ifblindpdfcover\blindpdfcoverfalse % --adi
 \newif\ifchapterx\chapterxfalse
 
 \DeclareOption{master}{\masterdegreetrue}
 \DeclareOption{pdfcover}{\pdfcovertrue} %using pdfcover,TOdo
+\DeclareOption{blindpdfcover}{\blindpdfcovertrue} %adi
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax %revised by Quansheng Guan \ProcessOptions
 \LoadClass[12pt,a4paper,openany]{book}
@@ -429,8 +431,16 @@
   \ifpdfcover
 %%coverpage from pdf file
        %% \includepdf[pages=-]{thesis_cover.pdf}%pdf文件路径为主文件tex或lyx的当前目录
-          \includepdf[pages={1-5,{},7-8}]{cover_file/thesis_cover.pdf}
+          \includepdf[pages={1-5,{},7-8}]{cover_file/thesis_cover.pdf} % 正式封面
+          % \includepdf[pages={1}]{cover_file/blind_cover.pdf} % 盲审封面
    \else
+      \ifblindpdfcover
+%%coverpage from pdf file
+       %% \includepdf[pages=-]{thesis_cover.pdf}%pdf文件路径为主文件tex或lyx的当前目录
+          % \includepdf[pages={1-5,{},7-8}]{cover_file/thesis_cover.pdf} % 正式封面
+          \includepdf[pages={1}]{cover_file/blind_cover.pdf} % 盲审封面
+   \else
+
 %%buildin coverpage
 \begin{titlepage}
 \raggedleft
@@ -454,7 +464,7 @@
 \centerline{\songti\normalsize{\@institute}}
 \centerline{\songti\normalsize{\@date}}
 \end{titlepage}
-
+  \fi
 \fi
 }
 %%摘要分中英文页，而且有两者排版方式：
