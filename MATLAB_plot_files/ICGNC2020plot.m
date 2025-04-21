@@ -2,19 +2,19 @@
 % clear all;
 close all;
 % clear all;
-% set(groot,'defaultLineLineWidth',0.8);% Ä¬ÈÏÏß¿í£¨¿ÉÑ¡£¬ºóÎÄÒÑÉèÖÃ£©
-% Width  =7.15;    % ±£´æºóµÄÍ¼Æ¬¿í¶È
-% Height =12;    % ±£´æºóµÄÍ¼Æ¬¸ß¶È
+% set(groot,'defaultLineLineWidth',0.8);% é»˜è®¤çº¿å®½ï¼ˆå¯é€‰ï¼Œåæ–‡å·²è®¾ç½®ï¼‰
+% Width  =7.15;    % ä¿å­˜åçš„å›¾ç‰‡å®½åº¦
+% Height =12;    % ä¿å­˜åçš„å›¾ç‰‡é«˜åº¦
 r2d=180/pi;
 %% ----------------------------1--------------------------------------------------------------------------------------------
-% ½×Ô¾ĞÅºÅ
+% é˜¶è·ƒä¿¡å·
 load('ICGNC2020step.mat');
 fig1a=figure;%
 % Axes=subplot(3,1,1);
 plot(time,dca_surfase_out*r2d,'b-','Marker','none','MarkerIndices',tt);hold on;
 plot(time,wls_surfase_out*r2d,'r--','Marker','none','MarkerIndices',tt);hold on;grid on;
 axis([0 0.5 -2 22]);
-xlabel({'Ê±¼ä (s)','a) 3ºÅ²Ù×İÃæÆ«×ª½Ç\delta_3'});ylabel('Æ«×ª½Ç (\circ)')
+xlabel({'æ—¶é—´ (s)','a) 3å·æ“çºµé¢åè½¬è§’\delta_3'});ylabel('åè½¬è§’ (\circ)')
 h=legend('dca','sca');% legend('boxoff');
 set(h,'NumColumns',1,'location','northwest');%northwest
 % axis([0 xrange -15 15]);Axes.XTick = [0 1 2 3 4];Axes.YTick = [-15 -10 -5 0 5 10 15];% fig1a.CurrentAxes.YTick = [-15 -10 -5 0 5 10 15];
@@ -27,7 +27,7 @@ fig1b=figure;%
 plot(time,dca_T_out,'b-','Marker','none','MarkerIndices',tt);hold on;
 plot(time,wls_T_out,'r--','Marker','none','MarkerIndices',tt);hold on;grid on;
 axis([0 0.5 -10 90]);
-xlabel({'Ê±¼ä (s)','b) 9ºÅ²Ù×İÃæ\delta_9'});ylabel('×ªËÙ²î (rad/s)')
+xlabel({'æ—¶é—´ (s)','b) 9å·æ“çºµé¢\delta_9'});ylabel('è½¬é€Ÿå·® (rad/s)')
 h=legend('dca','sca');
 set(h,'NumColumns',1,'location','northwest');%northwest
 set(fig1b.CurrentAxes, 'FontSize', 10.5,'LabelFontSizeMultiplier', 1,'TitleFontSizeMultiplier',1,'LineWidth',0.5)
@@ -40,7 +40,7 @@ plot(time,in_x,'k-','Marker','none','MarkerIndices',tt);hold on;
 plot(time,out_dca_x,'Color','b','LineStyle','-.','Marker','x','MarkerIndices',tt,'MarkerSize',5);hold on;
 plot(time,out_wls_x,'Color','r','LineStyle','--','Marker','o','MarkerIndices',tt,'MarkerSize',4);hold on;grid on;
 axis([0 0.5 -1 7]);
-xlabel({'Ê±¼ä (s)','c) Î±¿ØÖÆÊäÈëÏìÓ¦'});ylabel('$\dot p\ \rm(rad/s^2)$','interpreter','latex')
+xlabel({'æ—¶é—´ (s)','c) ä¼ªæ§åˆ¶è¾“å…¥å“åº”'});ylabel('$\dot p\ \rm(rad/s^2)$','interpreter','latex')
 h=legend('cmd','dca','sca');
 set(h,'NumColumns',1,'location','northwest');%northwest
 set(fig1c.CurrentAxes, 'FontSize', 10.5,'LabelFontSizeMultiplier', 1,'TitleFontSizeMultiplier',1,'LineWidth',0.5)
@@ -56,7 +56,7 @@ PlotToFileColorPDF(fig1c,'TDF_step_response_c.pdf',14,5);
 % plot(time,dca_surfase_out*r2d,'b-','Marker','none','MarkerIndices',tt);hold on;
 % plot(time,wls_surfase_out*r2d,'r--','Marker','none','MarkerIndices',tt);hold on;grid on;
 % axis([0 3 -22 22]);
-% xlabel({'Ê±¼ä (s)','a) 3ºÅ²Ù×İÃæÆ«×ª½Ç\delta_3'});ylabel('Æ«×ª½Ç (\circ)')
+% xlabel({'æ—¶é—´ (s)','a) 3å·æ“çºµé¢åè½¬è§’\delta_3'});ylabel('åè½¬è§’ (\circ)')
 % h=legend('dca','sca');
 % set(h,'NumColumns',1,'location','best');%northwest,,,'LineWidth',2,,'Position',[0.75  0.75 0 0],,, 'FontSize', 9
 % set(fig2a.CurrentAxes, 'FontSize', 10.5,'LabelFontSizeMultiplier', 1,'TitleFontSizeMultiplier',1,'LineWidth',0.5)
@@ -68,7 +68,7 @@ PlotToFileColorPDF(fig1c,'TDF_step_response_c.pdf',14,5);
 % plot(time,dca_T_out,'b-','Marker','none','MarkerIndices',tt);hold on;
 % plot(time,wls_T_out,'r--','Marker','none','MarkerIndices',tt);hold on;grid on;
 % axis([0 3 -95 85]);
-% xlabel({'Ê±¼ä (s)','b) 9ºÅ²Ù×İÃæ\delta_9'});ylabel('×ªËÙ²î (rad/s)')
+% xlabel({'æ—¶é—´ (s)','b) 9å·æ“çºµé¢\delta_9'});ylabel('è½¬é€Ÿå·® (rad/s)')
 % h=legend('dca','sca');
 % set(h,'NumColumns',2,'location','best');
 % set(fig2b.CurrentAxes, 'FontSize', 10.5,'LabelFontSizeMultiplier', 1,'TitleFontSizeMultiplier',1,'LineWidth',0.5);
@@ -82,7 +82,7 @@ PlotToFileColorPDF(fig1c,'TDF_step_response_c.pdf',14,5);
 % plot(time,out_dca_x,'Color','b','LineStyle','-.','Marker','x','MarkerIndices',tt,'MarkerSize',5);hold on;
 % plot(time,out_wls_x,'Color','r','LineStyle','--','Marker','o','MarkerIndices',tt,'MarkerSize',4);hold on;grid on;
 % axis([0 3 -10 6.6]);
-% xlabel({'Ê±¼ä (s)','c) Î±¿ØÖÆÊäÈëÏìÓ¦'});ylabel('$\dot p\ \rm(rad/s^2)$','interpreter','latex')
+% xlabel({'æ—¶é—´ (s)','c) ä¼ªæ§åˆ¶è¾“å…¥å“åº”'});ylabel('$\dot p\ \rm(rad/s^2)$','interpreter','latex')
 % h=legend('cmd','dca','sca');
 % set(h,'NumColumns',3,'location','best');
 % set(fig2c.CurrentAxes, 'FontSize', 10.5,'LabelFontSizeMultiplier', 1,'TitleFontSizeMultiplier',1,'LineWidth',0.5)
@@ -101,7 +101,7 @@ p1=plot(time,dca_surfase_in*r2d,'k-','Marker','none','MarkerIndices',tt,'MarkerS
 plot(time,dca_surfase_out*r2d,'b--','Marker','o','MarkerIndices',tt,'MarkerSize',4);hold on;grid on;
 plot(time,wls_surfase_out_off*r2d,'r-.','Marker','x','MarkerIndices',tt,'MarkerSize',5);hold on;
 axis([0 3 -22 22]);
-xlabel({'Ê±¼ä (s)','a) 3ºÅ²Ù×İÃæÆ«×ª½Ç\delta_3'});ylabel('Æ«×ª½Ç (\circ)')
+xlabel({'æ—¶é—´ (s)','a) 3å·æ“çºµé¢åè½¬è§’\delta_3'});ylabel('åè½¬è§’ (\circ)')
 h=legend('cmd','with','without');
 set(h,'NumColumns',3,'location','best');
 set(fig3a.CurrentAxes, 'FontSize', 10.5,'LabelFontSizeMultiplier', 1,'TitleFontSizeMultiplier',1,'LineWidth',0.5)
@@ -115,7 +115,7 @@ plot(time,dca_T_in,'k','Marker','none','MarkerIndices',tt,'MarkerSize',5);hold o
 p2=plot(time,dca_T_out,'b--','Marker','o','MarkerIndices',tt,'MarkerSize',4);hold on;grid on;
 plot(time,wls_T_out_off,'r-.','Marker','x','MarkerIndices',tt,'MarkerSize',5);hold on;
 axis([0 3 -95 85]);
-xlabel({'Ê±¼ä (s)','b) 9ºÅ²Ù×İÃæ\delta_9'});ylabel('×ªËÙ²î (rad/s)')
+xlabel({'æ—¶é—´ (s)','b) 9å·æ“çºµé¢\delta_9'});ylabel('è½¬é€Ÿå·® (rad/s)')
 h=legend('cmd','with','without');
 set(h,'NumColumns',3,'location','best');
 set(fig3b.CurrentAxes, 'FontSize', 10.5,'LabelFontSizeMultiplier', 1,'TitleFontSizeMultiplier',1,'LineWidth',0.5)%
@@ -130,7 +130,7 @@ plot(time,in_x,'k-','Marker','none','MarkerIndices',tt,'MarkerSize',5);hold on;
 plot(time,out_dca_x,'Color','b','LineStyle','--','Marker','o','MarkerIndices',tt,'MarkerSize',4);hold on;
 p3=plot(time,out_wls_x_off,'Color','r','LineStyle','-.','Marker','x','MarkerIndices',tt,'MarkerSize',5);hold on;grid on;
 axis([0 3 -10 6.6]);
-xlabel({'Ê±¼ä (s)','c) Î±¿ØÖÆÊäÈëÏìÓ¦'});ylabel('$\dot p\ \rm(rad/s^2)$','interpreter','latex')
+xlabel({'æ—¶é—´ (s)','c) ä¼ªæ§åˆ¶è¾“å…¥å“åº”'});ylabel('$\dot p\ \rm(rad/s^2)$','interpreter','latex')
 h=legend('cmd','with','without');
 set(h,'NumColumns',3,'location','best');
 set(fig3c.CurrentAxes, 'FontSize', 10.5,'LabelFontSizeMultiplier', 1,'TitleFontSizeMultiplier',1,'LineWidth',0.5)
