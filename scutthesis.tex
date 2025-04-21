@@ -1,5 +1,12 @@
-\documentclass[unicode,master]{scutthesis} % 草稿封面，硕士则添加选项master，博士则去掉。使用正式封面时注释该行
-%\documentclass[unicode,master,pdfcover]{scutthesis} %   % 论文正式封面，pdfcover为可选项，终稿再添加，使用草稿封面时注释该行
+%======== 切换封面格式 ========
+%----------硕士封面-----------
+%\documentclass[unicode,master,pdfcover]{scutthesis}	% 论文正式封面，使用pdf文件封面的 硕士模板
+\documentclass[unicode,master]{scutthesis}	%  草稿封面，不使用pdf文件封面的 硕士模板
+%----------博士封面-----------
+% \documentclass[unicode,pdfcover]{scutthesis}	% 论文正式封面，使用pdf文件封面的博士模板
+% \documentclass[unicode]{scutthesis}	%  草稿封面，不使用pdf文件封面的博士模板
+%======== 切换封面格式 END ========
+
 \usepackage{fontspec,color,array,longtable,graphicx} 
 \usepackage{anyfontsize} %消除字体警告
 \usepackage{enumitem}
