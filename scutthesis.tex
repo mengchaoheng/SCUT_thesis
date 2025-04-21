@@ -13,10 +13,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%——by MCH
 %编译范围
 % \includeonly{chapter04}
-%参考文献设置
-\usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase]{biblatex}
+
+
+%============== 参考文献设置 ==============
+%-------- 使用gb7714-2015格式 --------
+% %-------- 会议ref样式：xxxxxx[C]//某某会议，xxxxx -----------
+% \usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase]{biblatex}
+
+% %-------- 会议ref样式：xxxxxx[C]. in:某某会议，xxxxx --------
+% \usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase ,gbpunctin=false]{biblatex} % 添加gbpuctin=false用于去除//
+
+%-------- 会议ref样式：xxxxxx[C]. 某某会议，xxxxx --------
+\usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase ,gbpunctin=false]{biblatex} % 添加gbpuctin=false用于去除//
+\DefineBibliographyStrings{english}{in={}} % 去掉会议前的 "in:"
+% 会议参考文献格式讨论可参考：https://github.com/mengchaoheng/SCUT_thesis/issues/38
+
+%-------- 配置bib lib库文件 --------
 \addbibresource[location=local]{MyLibrary.bib} % 如果在其他盘，改为相对路径。比如F盘，改为：F/MyLibrary.bib
 \addbibresource[location=local]{mybibfile2.bib} % 无论什么来源的bib文件，只要由参考文献的BibTeX组成，都可以使用此模板。参考文献的BibTeX获取方法可百度
+%============== 参考文献设置 END ==============
+
 %页眉页脚设置
 \usepackage{fancyhdr}
 \usepackage{listings}
