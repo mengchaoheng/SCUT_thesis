@@ -1,15 +1,38 @@
-\documentclass[unicode,master]{scutthesis} % 草稿封面，硕士则添加选项master，博士则去掉。使用正式封面时注释该行
-%\documentclass[unicode,master,pdfcover]{scutthesis} %   % 论文正式封面，pdfcover为可选项，终稿再添加，使用草稿封面时注释该行
+%======== 切换封面格式 ========
+%----------硕士封面-----------
+%\documentclass[unicode,master,pdfcover]{scutthesis}	% 论文正式封面，使用pdf文件封面的 硕士模板
+\documentclass[unicode,master]{scutthesis}	%  草稿封面，不使用pdf文件封面的 硕士模板
+%----------博士封面-----------
+% \documentclass[unicode,pdfcover]{scutthesis}	% 论文正式封面，使用pdf文件封面的博士模板
+% \documentclass[unicode]{scutthesis}	%  草稿封面，不使用pdf文件封面的博士模板
+%======== 切换封面格式 END ========
+
 \usepackage{fontspec,color,array,longtable,graphicx} 
 \usepackage{anyfontsize} %消除字体警告
 \usepackage{enumitem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%——by MCH
 %编译范围
 % \includeonly{chapter04}
-%参考文献设置
-\usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase]{biblatex}
-\addbibresource[location=local]{MyLibrary.bib} % 如果在其他盘，改为相对路径。比如F盘，改为：F/MyLibrary.bib
-\addbibresource[location=local]{mybibfile2.bib} % 无论什么来源的bib文件，只要由参考文献的BibTeX组成，都可以使用此模板。参考文献的BibTeX获取方法可百度
+
+
+%============== 参考文献设置 ==============
+%-------- 使用gb7714-2015格式 --------
+% %-------- 会议ref样式：xxxxxx[C]//某某会议，xxxxx -----------
+% \usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase]{biblatex}
+
+% %-------- 会议ref样式：xxxxxx[C]. in:某某会议，xxxxx --------
+% \usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase ,gbpunctin=false]{biblatex} % 添加gbpuctin=false用于去除//
+
+%-------- 会议ref样式：xxxxxx[C]. 某某会议，xxxxx --------
+\usepackage[backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbnamefmt = lowercase ,gbpunctin=false]{biblatex} % 添加gbpuctin=false用于去除//
+\DefineBibliographyStrings{english}{in={}} % 去掉会议前的 "in:"
+% 会议参考文献格式讨论可参考：https://github.com/mengchaoheng/SCUT_thesis/issues/38
+
+%-------- 配置bib lib库文件 --------
+\addbibresource[location=local]{biblibrary/MyLibrary.bib} % 如果在其他盘，改为相对路径。比如F盘，改为：F/MyLibrary.bib
+\addbibresource[location=local]{biblibrary/mybibfile2.bib} % 无论什么来源的bib文件，只要由参考文献的BibTeX组成，都可以使用此模板。参考文献的BibTeX获取方法可百度
+%============== 参考文献设置 END ==============
+
 %页眉页脚设置
 \usepackage{fancyhdr}
 \usepackage{listings}
@@ -34,8 +57,13 @@
 	pdfsubject={华南理工大学硕士学位论文},
 %%	pdfsubject={华南理工大学博士学位论文},
 	pdfkeywords={PDF关键字1;PDF关键字2},
-%%		linkcolor=black, anchorcolor=black, citecolor=black, filecolor=black, menucolor=black, urlcolor=black, pdfstartview=FitH}% 黑白，提交版
-	linkcolor=blue, anchorcolor=black, citecolor=red, filecolor=magenta, menucolor=red, urlcolor=magenta, pdfstartview=FitH}% 彩色
+%
+%=========== PDF 引用、超链接、URL颜色设置 ===========
+	% linkcolor=black, anchorcolor=black, citecolor=black, filecolor=black, menucolor=black, urlcolor=black, % 黑白，提交版
+	linkcolor=blue, anchorcolor=black, citecolor=red, filecolor=magenta, menucolor=red, urlcolor=magenta, % 彩色
+%=========== PDF 引用、超链接、URL颜色设置 END ===========
+	pdfstartview=FitH
+}
 
 \makeatletter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
@@ -55,7 +83,7 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\maketitle	
 	\frontmatter	%此后为罗马数字页码，页面类型为plain
-	\include{abstract} % 中英文摘要
+	\include{chapter/abstract} % 中英文摘要
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% 目录、表格目录、插图目录这几个字本身的大纲级别是一级的，即和章名有相同的字号字体。目录表的内容通过titletoc宏包在。cls文件设置了。
 	%\cleardoublepage % pdfbookmark可能需要这一条才能正常工作
@@ -76,8 +104,8 @@
 	\endgroup
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\include{symbols}	% 符号对照表(可选)
-	\include{abbreviation} 	% 缩略词	
+	\include{chapter/symbols}	% 符号对照表(可选)
+	\include{chapter/abbreviation} 	% 缩略词	
 	
 	\mainmatter %此后为阿拉伯数字页码
 	
@@ -87,17 +115,17 @@
     }	% 每章的第一页会默认使用plain，没有页眉。通过重定义plain为fancy解决
     \pagestyle{fancy}	%设置页眉页脚为fancy
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%分章节，结合导言区的\includeonly命令可仅编译部分章节，编译时不用切换界面，直接在相应章节编译即可。
-	\include{chapter01}%第一章
-	\include{chapter02}%第二章
-	\include{chapter03}%第三章
-	\include{chapter04}
+	\include{chapter/chapter01}%第一章
+	\include{chapter/chapter02}%第二章
+	\include{chapter/chapter03}%第三章
+	\include{chapter/chapter04}
 	% 自行根据需要添加章节。
 
 	\backmatter %章节不编号但页码继续
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    微调，使得后续章节的页眉不带章号——by MCH
 	\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\include{conclusion} %结论
+	\include{chapter/conclusion} %结论
 	 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% bibtex参考文献设置  （原版）
 %%	\bibliographystyle{scutthesis}
 %%	\bibliography{F:/MyLibrary}
@@ -109,11 +137,11 @@
 	\printbibliography	% 参考文献著录
  	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  	% 只有一个附录
-% 	\include{appendix}
+% 	\include{chapter/appendix}
  	% 有多个附录
-	\include{appendix1} %附录1
-	\include{appendix2} %附录2
+	\include{chapter/appendix1} %附录1
+	\include{chapter/appendix2} %附录2
  	%%%%%%%%%%%%%%%%%%%
-	\include{pub} %成果
-	\include{ack} %致谢
+	\include{chapter/pub} %成果
+	\include{chapter/ack} %致谢
 \end{document}

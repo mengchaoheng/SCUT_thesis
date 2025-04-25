@@ -1,0 +1,87 @@
+\chapter{模板简介}
+%
+与很多外文杂志社不同，大部分中文期刊都不提供\LaTeX{}模板给投稿者使用，也很少有学校给学生提供官方的毕业论文模板。目前github上的大部分模板都是由学生发起的非官方模板。在此感谢Shun Xu以及yecfly等人的工作，他们的无私贡献使得华南理工大学硕博士毕业论文也可以使用\LaTeX{}撰写。
+
+本模板是直接修改前人的模板得到的，更详细的介绍可到\parencite{_,_a}下载。本章仅从用户的角度简要介绍模板的使用，而尽量避免涉及\LaTeX{}的模板制作细节（实际上是因为本人也不会）。正如我们使用手机并不需要了解麦克斯韦方程组，使用\LaTeX{}写作也无需了解模板是如何制作的。
+
+\LaTeX{}的源代码保存在后缀名为.tex的文件中。当编写长篇文档时，例如当编写书籍、毕业论文时，单个源文件会使修改、校对变得十分困
+难。将源文件分割成若干个文件，例如将每章内容单独写在一个文件中，会大大简化修改和校对
+的工作。为方便，本文将scutthesis.tex文件称为主文件，而将abstract.tex、chapter0x.tex、conclusion.tex等文件称为章节文件。
+
+值得注意的是，要每次编译时都更新参考文献著录，TeXstudio软件的选项->设置中的构建并查看、编译器需要设置成如图\ref{TeXstudio}、\ref{setup}所示。此时只需在任意一个文件中点击构建并查看按钮即可编译文档。每次编译都更新参考文献会使得编译时间很长。
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.55]{Fig/TeXstudio.png}
+	\caption{\label{TeXstudio}TeXstudio环境}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.55]{Fig/setup.png}
+	\caption{\label{setup}TeXstudio编译选项}
+\end{figure}
+
+\section{主文件}
+scutthesis.tex文件相当于主函数，调用各章的内容。\LaTeX{}源代码以一个\textbackslash{}documentclass 命令作为开头，它指定了文档使用的文档类。文档类规定了\LaTeX{}源代码所要生成的文档的性质——普通文章、书籍、演示文稿、个人简
+历等等。
+\begin{lstlisting}
+\documentclass[⟨options⟩]{⟨class-name⟩}
+\end{lstlisting}
+其中class-name为文档类的名称，如\LaTeX{}提供的article, book, report，可在其基础上派
+生的一些文档类或者有其它功能的一些文档类。\LaTeX{}提供的基础文档类见文献\parencite{_c}。还可以自定义文档类，如华南理工大学硕博士论文文档类scutthesis，其实现保存在后缀名为.cls的文件中。可选参数options 为文档类指定选项。
+
+
+document环境当中的内容是文档正文：
+\begin{lstlisting}
+\begin{document}
+正文内容
+\end{document}
+\end{lstlisting}
+正文中包含各章节内容：
+\begin{lstlisting}
+\include{abstract} % 中英文摘要
+\tableofcontents	% 目录
+\listoftables	% 表格目录（可选）
+\listoffigures	% 插图目录（可选）
+\include{symbols}	% 符号对照表(可选)
+\include{abbreviation} 	% 缩略词	
+...
+\include{chapter01}	% 第一章
+\include{chapter02} % 第二章
+\include{chapter03} % 第三章
+% 自行根据需要添加章节。
+...
+\include{conclusion} % 结论
+...
+\printbibliography	% 参考文献著录
+\include{appendix} % 附录
+\include{pub} % 成果
+\include{ack} % 致谢
+\end{lstlisting}
+其中$\%$之后的内容为注释，...表示省略其他代码，仅保留论文内容主体部分。\textbackslash{}include\{xxx\}指令用于包含xxx.tex文件的内容，各章节的内容主要在xxx.tex中保存。在\textbackslash{}documentclass 和\textbackslash{}begin\{document\} 之间的位置称为导言区。在导言区中一般会使用\textbackslash{}usepackage 调用宏包，以及会进行对文档的全局设置。本模板的导言区除调用所需的宏包外，还进行了页眉页脚的设置。有的模板会把所有调用宏包的指令放到一个.sty宏包文件中，页面的设置放在文档类文件.cls文件中。因本人时间有限，就不做整理，欢迎有志之士加入完善。使用本模板并不需要了解导言区的指令，在需要时额外添加即可（要注意宏包冲突）。特别地，\textbackslash{}includeonly\{xxx\}指令用于使文档仅编译xxx.tex文件的内容，这就是分章节包含（include）的好处，可大大减少编译时间。
+
+将封面打印保存为 thesis\_cover.pdf 文件，硕士使用master\_cover.docx ，博士使用 doctor\_cover.doc 。如果有更新版本的封面，可自行替换。文档类默认是博士论文，下面指令将控制添加封面与否：
+\begin{lstlisting}
+\documentclass[unicode,master,pdfcover]{scutthesis}	% 使用pdf文件封面的 硕士模板
+\documentclass[unicode,master]{scutthesis}	% 不使用pdf文件封面的 硕士模板
+\documentclass[unicode,pdfcover]{scutthesis}	% 使用pdf文件封面的博士模板
+\documentclass[unicode]{scutthesis}	% 不使用pdf文件封面的博士模板
+\end{lstlisting}
+不使用thesis\_cover.pdf 文件指定的封面时，将使用草稿封面。草稿封面也可以减少编译时间，因此可以在最终提交论文时再使用论文封面。草稿封面用以下指令设置：
+\begin{lstlisting}
+%%%%%%%%%%%%%草稿封面设置%%%%%%%%%%%%%	
+\title{LaTeX模板}	
+\author{作者姓名}	
+\supervisor{指导教师：xxx\ 教授}	
+\institute{华南理工大学}	
+\date{2020年5月20日}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{lstlisting}
+\section{章节文件}
+章节文件如chapter0x.tex等，其内容由\textbackslash{}chapter\{章名\}开头。新建一章可新建一个文件并由\textbackslash{}chapter\{新建章名\}开头填写内容即可。节及小节分别用\textbackslash{}section\{新建节名\}、\textbackslash{}subsection\{新建小节名\}命令。
+
+正文的的书写和txt文本文件的书写类似。\LaTeX{} 源代码中，空格键和Tab键输入的空白字符视为“空格”。连续的若干个空白字符视为一个空格。一行开头的空格忽略不计。行末的回车视为一个空格；但连续两个回车，也就是空行，会将文字分段。多个空行被视为一个空行。也可以在行末使用\textbackslash{}par 命令分段。在本模板中，英文之间的空格被保留，中文之间的空格被忽略。特别地，摘要，附录，结论等两个字的大纲级别为章的章名，中间使用空格隔开。对此论文撰写规范并没有明文要求，只是为了美观。也可以全部不加空格。一般情况下，在文本文字中添加空格使用\textbackslash{}quad命令，但由于文献\parencite{_d}所述原因，直接使用\textbackslash{}quad命令会报警，因而使用\textbackslash{}texorpdfstring\{\textbackslash{}quad\}\{\}，其中最后一个\{\}里面可以加一个空格，不影响使用。目录二字之间添加空格在scutthesis.cls文件317行设置。
+
+正文本环境中使用公式，即行内公式，需要用两个\$包围，如源码：\$a+b=c\$ 显示为$a+b=c$。使用其他字符可自行百度或阅读参考文献。再次提醒，使用\LaTeX{}撰写论文不需要研究其原理，在达到某种效果（图文显示、公式显示效果）时百度或查书寻找其代码即可。
+
+综上，论文撰写只需要将自己的文本（包含行内公式）放到相应的章节处，并添加行间公式、图表环境并填写图表即可。行间公式、图表将在下一章介绍。
+
