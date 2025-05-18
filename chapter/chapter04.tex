@@ -1,4 +1,4 @@
-\chapter{列举环境}
+\chapter{列举环境和算法环境}
 以下资料来自宏包说明和网络，翻译不一定正确：
 
 在LaTeX中有三种基本的列举(列表)环境，即enumerate(编号)、itemize(分条目)和description(描述)环境。调整latex的列表环境时，使用 enumitem 宏包可以方便的调整间距（注意区分包名和环境名）和自定义编号样式。
@@ -187,3 +187,62 @@
 	
 	% 第三项的第二段。
 \end{enumerate}
+
+\section{算法环境}
+算法环境原来的模板就有，用户可以按需使用，后来实验室有同学写的我看不错，就更新了一下（.cls文件算法环境部份）。
+
+以下资料来自往届毕业生：
+\begin{algorithm}
+    \caption{RemoveRedundantNodes}
+    \label{冗余节点删除策略}
+    \begin{algorithmic}[1]
+        \setlength{\baselineskip}{16pt} % 设置伪代码行间距
+            \State  $\textbf{Input:}\text{ initPath}$
+            \State  $\text{optiPath} \gets \text{initPath};$
+            \State  $\text{index} \gets 1;$
+            \While{$\text{index} <= \text{optiPath.size()}$-2}
+                \If{$\text{ObstacleFree}(\text{optiPath[index]},\text{optiPath[index+2]})$}
+                    \State $\text{optiPath} \gets \text{optiPath.remove}(\text{index+1});$
+                \Else
+                    \State $\text{index} \gets \text{index} + 1;$
+                \EndIf
+            \EndWhile
+            \State $\textbf{Output:}\text{ optiPath}$
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+    \caption{RRT-Connect算法}
+    \label{RRT-Connect算法}
+    \begin{algorithmic}[1]
+        \setlength{\baselineskip}{16pt}
+        \State $\boldsymbol{T}_1\leftarrow\boldsymbol{x}_{start};\boldsymbol{E}_1\leftarrow\emptyset;$
+        \State $\boldsymbol{T}_2\leftarrow\boldsymbol{x}_{end};\boldsymbol{E}_2\leftarrow\emptyset;$
+        \State $\text{Final} \gets false ;$
+        \While{$not$ Final}
+            \State $\boldsymbol{x}_{rand}\gets\text{RandomSample}();$
+            \State $\boldsymbol{x}_{near1}\gets\text{GetNearest}(\boldsymbol{x}_{rand},\boldsymbol{T}_1);$
+            \State $\boldsymbol{x}_{new1}\gets\text{GetNewNode}(\boldsymbol{x}_{rand},\boldsymbol{x}_{near1},step);$
+            \If{$\text{ObstacleFree}(\boldsymbol{x}_{new1},\boldsymbol{x}_{near1})$}
+                \State $\boldsymbol{T}_1\leftarrow \boldsymbol{T}_1\cup\{\boldsymbol{x}_{new1}\};$
+                $\boldsymbol{E}_1\leftarrow \boldsymbol{E}_1\cup\{\boldsymbol{x}_{near1},\boldsymbol{x}_{new1}\};$
+                \State $\boldsymbol{x}_{near2}\gets\text{GetNearest}(\boldsymbol{x}_{new1},\boldsymbol{T}_2);$
+                \State $\boldsymbol{x}_{new2}\gets\text{GetNewNode}(\boldsymbol{x}_{new1},\boldsymbol{x}_{near2},step);$
+                \While{$\text{ObstacleFree}(\boldsymbol{x}_{new2},\boldsymbol{x}_{near2})$}
+                \State $\boldsymbol{T}_2\leftarrow \boldsymbol{T}_2\cup\{\boldsymbol{x}_{new2}\};$
+                $\boldsymbol{E}_2\leftarrow \boldsymbol{E}_2\cup\{\boldsymbol{x}_{near2},\boldsymbol{x}_{new2}\};$
+                \State $\boldsymbol{x}_{near\_tmp}\gets\text{GetNearest}(\boldsymbol{x}_{new2},\boldsymbol{T}_1);$
+                \If{$\text{ObstacleFree}(\boldsymbol{x}_{new2},\boldsymbol{x}_{near\_tmp}) \text{ }and \text{ dist}(\boldsymbol{x}_{new2},\boldsymbol{x}_{near\_tmp}) < d_{th}$}
+                    \State $\text{Final} \gets true ;$
+                    \State break;
+                \EndIf
+                \State $\boldsymbol{x}_{near2}\gets\boldsymbol{x}_{new2};$
+                \State $\boldsymbol{x}_{new2}\gets\text{GetNewNode}(\boldsymbol{x}_{new1},\boldsymbol{x}_{near2},step);$
+                \EndWhile
+                \State swap$(\boldsymbol{T}_1,\boldsymbol{T}_2);$swap$(\boldsymbol{E}_1,\boldsymbol{E}_2);$
+            \EndIf
+        \EndWhile \\
+        \Return $(\boldsymbol{T}_1,\boldsymbol{T}_2,\boldsymbol{E}_1,\boldsymbol{E}_2)$
+\end{algorithmic}
+\end{algorithm}

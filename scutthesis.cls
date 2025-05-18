@@ -259,7 +259,13 @@
   \captionsetup{list=true}
   \renewcommand{\tablename}{表}
 }
-
+% 算法环境，按需使用。
+% --by MCH
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\renewcommand{\thealgorithm}{\thechapter-\arabic{algorithm}} % 算法编号格式
+% --原版：
 %\RequirePackage{algorithm}
 %\RequirePackage{algpseudocode}
 %% algorithm2e 中文标题定制
